@@ -1,0 +1,14 @@
+{
+  "name": "hltv-featured",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "GNU GPLv3",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "prettier": "^1.18.2"
+  }
+}
