@@ -13,4 +13,12 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {},
+  overrides: [
+    {
+      files: '**/__tests__/*',
+      env: {
+        jest: true,
+      },
+    },
+  ],
 }
