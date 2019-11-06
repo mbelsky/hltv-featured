@@ -2,7 +2,7 @@ const axios = require('axios')
 const {
   removeOutdatedMatches,
   saveFeaturedMatches,
-} = require('./manageMatches')
+} = require('hltv-firebase-helper')
 const htmlToMatches = require('./parseHtml')
 
 const root = process.env.ROOT_URL || 'https://www.hltv.org'

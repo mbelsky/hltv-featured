@@ -1,7 +1,7 @@
 jest.mock('axios', () => () =>
   Promise.resolve({ data: require('./matches-example') }),
 )
-jest.mock('../manageMatches', () => ({
+jest.mock('hltv-firebase-helper', () => ({
   removeOutdatedMatches: () => Promise.resolve(),
   saveFeaturedMatches: () => 42,
 }))

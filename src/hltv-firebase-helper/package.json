@@ -1,0 +1,7 @@
+{
+  "name": "hltv-firebase-helper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "GNU GPLv3",
+  "private": true
+}
