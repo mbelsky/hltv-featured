@@ -24,16 +24,16 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot
   .use((ctx, next) => {
-    console.log(ctx)
-    // TODO: Check isn't a group usage
+    const { chat = {} } = ctx
+
+    if ('private' !== chat.type) {
+      return ctx.reply('Sorry, but groups and channels not supported yet')
+    }
+
     return next()
   })
   .use(session())
   .use(stage.middleware())
-  .use((ctx, next) => {
-    console.log(ctx)
-    return next()
-  })
   .start((ctx) => ctx.scene.enter(startSceneName))
   .help(commands.help)
   .command(setFilterSceneName, (ctx) => ctx.scene.enter(setFilterSceneName))
