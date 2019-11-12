@@ -29,6 +29,9 @@ bot
     if ('private' !== chat.type) {
       return ctx.reply('Sorry, but groups and channels not supported yet')
     }
+    if (ctx.editedMessage) {
+      return ctx.reply('Please send a new message instead of editing an older')
+    }
 
     return next()
   })
