@@ -8,10 +8,11 @@ const help = (ctx) =>
   )
 
 const stop = async (ctx) => {
-  // sendChatAction
-
   // TODO: Wrap in try catch
-  await setFilter({ chatId: ctx.chat.id, filter: Number.MAX_SAFE_INTEGER })
+  await Promise.all([
+    ctx.replyWithChatAction('typing'),
+    setFilter({ chatId: ctx.chat.id, filter: Number.MAX_SAFE_INTEGER }),
+  ])
   ctx.reply('You may subscribe again with /start')
 }
 

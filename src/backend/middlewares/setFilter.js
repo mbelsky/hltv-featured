@@ -16,11 +16,12 @@ const setFilter = async (ctx) => {
     })
   }
 
-  // sendChatAction
-
   const filter = getFilterValue(message)
   // TODO: Wrap in try catch
-  await writeFilterValue({ chatId: ctx.chat.id, filter })
+  await Promise.all([
+    ctx.replyWithChatAction('typing'),
+    writeFilterValue({ chatId: ctx.chat.id, filter }),
+  ])
 
   ctx.scene.leave()
 }
