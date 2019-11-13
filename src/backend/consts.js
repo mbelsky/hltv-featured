@@ -9,6 +9,9 @@ const SET_FILTER_REPLY_MARKUP = {
   one_time_keyboard: true,
   resize_keyboard: true,
 }
+const SET_FILTER_REPLY_MARKUP_REMOVE = {
+  remove_keyboard: true,
+}
 const FILTER_OPTIONS = SET_FILTER_REPLY_MARKUP.keyboard.flat()
 
 module.exports = {
@@ -16,4 +19,5 @@ module.exports = {
   SET_FILTER_MSG_ENTER,
   SET_FILTER_MSG_LEAVE,
   SET_FILTER_REPLY_MARKUP,
+  SET_FILTER_REPLY_MARKUP_REMOVE,
 }
