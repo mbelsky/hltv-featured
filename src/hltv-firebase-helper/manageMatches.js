@@ -1,6 +1,23 @@
 const { MATCHES_COLLECTION } = require('./consts')
 const db = require('./firestore')
 
+const ONE_DAY_MILLIS = 24 * 60 * 60 * 1000
+
+async function getUpcomingMatches() {
+  const now = Date.now()
+  const nextDay = now + ONE_DAY_MILLIS
+  const query = db
+    .collection(MATCHES_COLLECTION)
+    .where('unixTimestamp', '<=', nextDay)
+    .where('unixTimestamp', '>=', now)
+
+  const querySnapshot = await query.get()
+
+  return querySnapshot.docs
+    .map((documentSnapshot) => documentSnapshot.data())
+    .filter(Boolean)
+}
+
 async function removeOutdatedMatches() {
   const query = db
     .collection(MATCHES_COLLECTION)
@@ -28,6 +45,7 @@ async function saveFeaturedMatches(matches) {
 }
 
 module.exports = {
+  getUpcomingMatches,
   removeOutdatedMatches,
   saveFeaturedMatches,
 }

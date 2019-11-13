@@ -15,7 +15,7 @@ scene.enter((ctx) =>
     reply_markup: SET_FILTER_REPLY_MARKUP,
   }),
 )
-// fix reply_markup duplication for scenes leave
+// TODO: fix reply_markup duplication for scenes leave
 scene.leave((ctx) =>
   ctx.reply(SET_FILTER_MSG_LEAVE, {
     reply_markup: SET_FILTER_REPLY_MARKUP_REMOVE,
