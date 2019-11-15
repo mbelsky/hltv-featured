@@ -2,9 +2,9 @@ const SET_FILTER_MSG_ENTER = 'Please choose an option'
 const SET_FILTER_MSG_LEAVE = `Done! Your filter has been updated`
 const SET_FILTER_REPLY_MARKUP = {
   keyboard: [
-    ['Notify me about all matches'],
     ['⭐️', '⭐️⭐️', '⭐️⭐️⭐️'],
     ['⭐️⭐️⭐️⭐️ and more'],
+    ['Notify me about all matches'],
   ],
   one_time_keyboard: true,
   resize_keyboard: true,
