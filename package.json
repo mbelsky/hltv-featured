@@ -7,6 +7,11 @@
   "workspaces": [
     "src/*"
   ],
+  "scripts": {
+    "start": "node ./src/backend",
+    "notifier": "node ./src/notifier",
+    "scraper": "node ./src/scraper"
+  },
   "devDependencies": {
     "eslint": "^6.6.0",
     "jest": "^24.9.0",

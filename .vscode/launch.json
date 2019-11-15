@@ -13,6 +13,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch Notifier",
+      "program": "${workspaceFolder}/src/notifier/index.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Scraper",
       "program": "${workspaceFolder}/src/scraper/index.js"
     },
@@ -21,7 +27,7 @@
       "request": "launch",
       "name": "Jest Scraper",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": ["--runInBand", "src/scraper/__tests__/scraper.spec.js"],
+      "args": ["--runInBand", "src/scraper/__tests__/"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
