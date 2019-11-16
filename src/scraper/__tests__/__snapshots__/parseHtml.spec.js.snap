@@ -866,5 +866,21 @@ Array [
     "title": "RED Canids vs paiN",
     "unixTimestamp": 1574284500000,
   },
+  Object {
+    "event": "DreamHack Open Atlanta 2019",
+    "href": "https://example.com/matches/2337829/illuminar-vs-triumph-sprout-winner-dreamhack-open-atlanta-2019",
+    "id": 2337829,
+    "stars": 1,
+    "title": "Illuminar vs Triumph/Sprout winner",
+    "unixTimestamp": 1573938000000,
+  },
+  Object {
+    "event": "DreamHack Open Atlanta 2019",
+    "href": "https://example.com/matches/2337831/cr4zy-vs-group-a-2nd-dreamhack-open-atlanta-2019",
+    "id": 2337831,
+    "stars": 1,
+    "title": "CR4ZY vs Group A 2nd",
+    "unixTimestamp": 1574002800000,
+  },
 ]
 `;

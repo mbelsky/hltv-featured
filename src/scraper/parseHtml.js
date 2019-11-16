@@ -38,7 +38,7 @@ module.exports = function htmlToMatches(html, { root }) {
       event = container.find(s.eventPlaceholder).text()
     }
 
-    event = event.replace(/\s+/g, ' ')
+    event = event.replace(/\s+/g, ' ').trim()
 
     return [...matches, { id, href, unixTimestamp, title, stars, event }]
   }, [])
