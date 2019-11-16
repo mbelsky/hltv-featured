@@ -10,6 +10,7 @@ async function getUpcomingMatches() {
     .collection(MATCHES_COLLECTION)
     .where('unixTimestamp', '<=', nextDay)
     .where('unixTimestamp', '>=', now)
+    .orderBy('unixTimestamp')
 
   const querySnapshot = await query.get()
 
