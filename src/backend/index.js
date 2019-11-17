@@ -4,6 +4,8 @@ if (error) {
   throw error
 }
 
+const alerter = require('alerter')
+
 const Telegraf = require('telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
@@ -23,6 +25,17 @@ stage.register(setFilterScene)
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot
+  .catch(async (err, ctx) => {
+    alerter.error(err)
+
+    try {
+      await ctx.reply(
+        '🙈 Oops, something went wrong. We will try to fix that as soon as we can.',
+      )
+    } catch (e) {
+      alerter.error(e)
+    }
+  })
   .use((ctx, next) => {
     const { chat = {} } = ctx
 

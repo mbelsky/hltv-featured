@@ -1,3 +1,5 @@
+const alerter = require('alerter')
+
 const axios = require('axios')
 const {
   removeOutdatedMatches,
@@ -10,19 +12,13 @@ const url = process.env.PAGE_URL || 'https://www.hltv.org/matches'
 
 function scrap() {
   return removeOutdatedMatches()
-    .catch((e) => console.log('removeOutdatedMatches has failed: ' + e))
+    .catch(alerter.error)
     .then(() => axios(url))
-    .then(
-      ({ data }) => {
-        const matches = htmlToMatches(data, { root })
+    .then(({ data }) => {
+      const matches = htmlToMatches(data, { root })
 
-        return saveFeaturedMatches(matches)
-      },
-      (e) => {
-        console.log('Failed to load html')
-        throw e
-      },
-    )
+      return saveFeaturedMatches(matches)
+    })
 }
 
 if (require.main === module) {
