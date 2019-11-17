@@ -1,5 +1,6 @@
 const Scene = require('telegraf/scenes/base')
 const {
+  HELP_MSG,
   SET_FILTER_MSG_LEAVE,
   SET_FILTER_REPLY_MARKUP,
   SET_FILTER_REPLY_MARKUP_REMOVE,
@@ -7,10 +8,10 @@ const {
 const setFilter = require('../middlewares/setFilter')
 
 const enterMessage = `
-I can notify you about interesting upcoming matches listed on [https://www.hltv.org/matches/](https://www.hltv.org/matches/)
+${HELP_MSG}
 
-[HLTV.org](https://www.hltv.org) uses a ⭐️ system to feature matches. So let's configure your feed.
-In how high-rated matches are you interested? Please choose a minimal ⭐️ count for a match`.trim()
+[HLTV.org](https://www.hltv.org) uses a ⭐️ system to feature upcoming matches. So let's configure your feed.
+What is the minimal rating for a match you want to be notified about? Please choose minimal ⭐️ count`.trim()
 
 const name = 'start'
 

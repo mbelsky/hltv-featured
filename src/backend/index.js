@@ -57,7 +57,7 @@ bot
   .use(async (ctx, next) => {
     await (next && next())
     ctx.reply(
-      `Sorry, I don't know how to handle this. Please use something from /help`,
+      `Sorry, I don't know how to handle this. Please use a command described in /help`,
     )
   })
 

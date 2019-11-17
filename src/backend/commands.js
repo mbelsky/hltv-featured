@@ -1,10 +1,15 @@
 const { setFilter } = require('hltv-firebase-helper/manageUsers')
+const { HELP_MSG } = require('./consts')
 
 const help = (ctx) =>
   ctx.reply(
-    `Help and start.
-/setfilter – change matches filter
+    `${HELP_MSG}
+
+You can control me by sending these commands:
+
+/setfilter – set minimum stars count for a match
 /stop – stop getting notifications`,
+    { disable_web_page_preview: true, parse_mode: 'Markdown' },
   )
 
 const stop = async (ctx) => {
