@@ -1,6 +1,4 @@
-const {
-  setFilter: writeFilterValue,
-} = require('hltv-firebase-helper/manageUsers')
+const { setFilter: writeFilterValue } = require('common/manageUsers')
 const {
   FILTER_OPTIONS,
   SET_FILTER_MSG_ENTER,

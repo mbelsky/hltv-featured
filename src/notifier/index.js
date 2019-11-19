@@ -7,8 +7,8 @@ if (error) {
 const alerter = require('alerter')
 
 const Telegram = require('telegraf/telegram')
-const { getUpcomingMatches } = require('hltv-firebase-helper/manageMatches')
-const { getActiveUsers } = require('hltv-firebase-helper/manageUsers')
+const { getUpcomingMatches } = require('common/manageMatches')
+const { getActiveUsers } = require('common/manageUsers')
 const { getMatchesFeed } = require('./utils')
 
 ;(async function main() {

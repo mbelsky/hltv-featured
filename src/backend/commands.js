@@ -1,4 +1,4 @@
-const { setFilter } = require('hltv-firebase-helper/manageUsers')
+const { setFilter } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
 
 const help = (ctx) =>
