@@ -1,4 +1,4 @@
-const { formatUTCString } = require('../utils')
+const { formatUTCString } = require('../formatMatches')
 describe('utils', () => {
   describe('formateDate', () => {
     test('', () => {
