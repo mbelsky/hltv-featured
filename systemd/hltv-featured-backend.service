@@ -1,0 +1,15 @@
+[Unit]
+Description=HLTV Featured Backend
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=10
+
+[Service]
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/hltv-featured
+ExecStart=yarn backend
+Restart=always
+RestartSec=500ms
+
+[Install]
+WantedBy=multi-user.target
