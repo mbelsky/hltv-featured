@@ -8,7 +8,8 @@
     "src/*"
   ],
   "scripts": {
-    "start": "node ./src/backend",
+    "start": "yarn backend",
+    "backend": "node ./src/backend",
     "notifier": "node ./src/notifier",
     "scraper": "node ./src/scraper"
   },
