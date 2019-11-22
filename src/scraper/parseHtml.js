@@ -1,21 +1,23 @@
 const cheerio = require('cheerio')
 
 const s = {
+  container: 'div.upcoming-match',
   event: '.event .event-name',
   eventPlaceholder: 'td.placeholder-text-cell',
   teamName: '.team-cell div.team',
   time: '.time div.time',
   star: 'i.star',
-  upcomingMatch: 'a.upcoming-match',
+  upcomingMatch: 'div.match a',
 }
 
 module.exports = function htmlToMatches(html, { root }) {
   const $ = cheerio.load(html)
-  const matchContainers = $(s.upcomingMatch)
+  const matchContainers = $(s.container)
 
   return Array.from(matchContainers).reduce((matches, container) => {
     container = $(container)
-    const href = root + container.attr('href')
+
+    const href = root + container.find(s.upcomingMatch).attr('href')
     const id = Number(href.match(/matches\/(\d+)\//)[1])
 
     if (isNaN(id)) {
