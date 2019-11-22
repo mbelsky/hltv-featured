@@ -1,0 +1,8 @@
+[Unit]
+Requires=hltvf-notify.service
+
+[Timer]
+OnCalendar=*-*-* 5:00:00
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Scrap HLTV.org matches
+Wants=hltvf-scrap.timer
+
+[Service]
+User=hltv
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/hltv-featured
+ExecStart=/usr/bin/yarn scraper

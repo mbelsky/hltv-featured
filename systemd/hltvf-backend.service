@@ -5,9 +5,10 @@ StartLimitBurst=3
 StartLimitIntervalSec=10
 
 [Service]
+User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
-ExecStart=yarn backend
+ExecStart=/usr/bin/yarn backend
 Restart=always
 RestartSec=500ms
 
