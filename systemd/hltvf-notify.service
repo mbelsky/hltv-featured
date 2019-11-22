@@ -7,3 +7,6 @@ User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
 ExecStart=/usr/bin/yarn notifier
+
+[Install]
+RequiredBy=hltvf-notify.timer

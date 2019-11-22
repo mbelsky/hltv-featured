@@ -7,3 +7,6 @@ User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
 ExecStart=/usr/bin/yarn scraper
+
+[Install]
+RequiredBy=hltvf-scrap.timer
