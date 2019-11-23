@@ -3,13 +3,13 @@ jest.mock('axios', () => () =>
 )
 jest.mock('common/manageMatches', () => ({
   removeOutdatedMatches: () => Promise.resolve(),
-  saveFeaturedMatches: () => 42,
+  saveFeaturedMatches: () => Promise.resolve(),
 }))
 
 const scrap = require('../index')
 
 describe('scraper', () => {
   test('integration', async () => {
-    expect(await scrap()).toBe(42)
+    expect(await scrap()).toBeUndefined()
   })
 })
