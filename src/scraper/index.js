@@ -17,7 +17,17 @@ function scrap() {
     .then(({ data }) => {
       const matches = htmlToMatches(data, { root })
 
-      return saveFeaturedMatches(matches)
+      return saveFeaturedMatches(matches).then(() => {
+        if (!matches.length) {
+          alerter.warn('Zero matches scraped. HTML:\n\n' + data)
+        }
+
+        if ('production' === process.env.NODE_ENV) {
+          console.log(`Scraped & saved ${matches.length} matches`)
+        } else {
+          console.log(JSON.stringify(matches, null, 2))
+        }
+      })
     })
 }
 

@@ -32,7 +32,11 @@ async function removeOutdatedMatches() {
   await batch.commit()
 }
 
-async function saveFeaturedMatches(matches) {
+async function saveFeaturedMatches(matches = []) {
+  if (!matches.length) {
+    return
+  }
+
   const batch = db.batch()
 
   matches.forEach((match) => {
@@ -41,8 +45,6 @@ async function saveFeaturedMatches(matches) {
   })
 
   await batch.commit()
-
-  console.log(JSON.stringify(matches, null, 2))
 }
 
 module.exports = {
