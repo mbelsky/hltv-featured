@@ -29,12 +29,16 @@ const { getMatchesFeed } = require('./utils')
   const feed = getMatchesFeed(matches)
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
-  Object.entries(users).forEach(([id, { filter }]) =>
-    telegram
-      .sendMessage(Number(id), feed[filter], {
-        disable_web_page_preview: true,
-        parse_mode: 'Markdown',
-      })
-      .catch(alerter.error),
-  )
+  Object.entries(users).forEach(([id, { filter }]) => {
+    const message = feed[filter]
+
+    if (message) {
+      telegram
+        .sendMessage(Number(id), message, {
+          disable_web_page_preview: true,
+          parse_mode: 'Markdown',
+        })
+        .catch(alerter.error)
+    }
+  })
 })()
