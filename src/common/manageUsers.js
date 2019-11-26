@@ -14,6 +14,18 @@ async function getActiveUsers() {
   }, {})
 }
 
+async function initUser({ chatId }) {
+  const userRef = db.collection(USERS_COLLECTION).doc(String(chatId))
+
+  await db.runTransaction(async function initUserTransaction(t) {
+    const doc = await t.get(userRef)
+
+    if (!doc.data()) {
+      await t.set(userRef, { filter: 2 })
+    }
+  })
+}
+
 async function setFilter({ chatId, filter }) {
   const userRef = db.collection(USERS_COLLECTION).doc(String(chatId))
   await userRef.set({ filter }, { merge: true })
@@ -21,5 +33,6 @@ async function setFilter({ chatId, filter }) {
 
 module.exports = {
   getActiveUsers,
+  initUser,
   setFilter,
 }

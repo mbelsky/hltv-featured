@@ -1,5 +1,6 @@
+const alerter = require('alerter')
 const { convertToMessage } = require('common/formatMatches')
-const { setFilter } = require('common/manageUsers')
+const { initUser, setFilter } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
 const { getCachedMatches } = require('./utils')
 
@@ -15,19 +16,26 @@ You can control me by sending these commands:
   )
 
 const start = async (ctx) => {
+  ctx.replyWithChatAction('typing')
+
+  try {
+    await initUser({ chatId: ctx.chat.id })
+  } catch (e) {
+    alerter.error(e)
+    return ctx.reply(`😢 Sorry, something went wrong. Please, try again /start`)
+  }
+
   await ctx.reply(
     `
 ${HELP_MSG}
 
-By default I will send you notifications about two or more ⭐️ matches. To get less or more, please use /setfilter to update your filter.
+I will send you notifications about matches with two or more ⭐️. To get less or more, please use /setfilter to update your filter.
 `.trim(),
     {
       disable_web_page_preview: true,
       parse_mode: 'Markdown',
     },
   )
-
-  ctx.replyWithChatAction('typing')
 
   const matches = await getCachedMatches()
   const feed = matches.map(convertToMessage).join('\n\n')
