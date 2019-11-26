@@ -1,5 +1,7 @@
 # HLTV Featured
 
+[@hltvFeaturedBot](https://t.me/hltvFeaturedBot)
+
 This is a set of nodejs applications to get data about upcoming CSGO matches and notify a Telegram bot subscribers:
 
 - `src/backend` handles subscribers requests
