@@ -9,7 +9,6 @@ const alerter = require('alerter')
 const Telegraf = require('telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
-const { scene: startScene, name: startSceneName } = require('./scenes/start')
 const {
   scene: setFilterScene,
   name: setFilterSceneName,
@@ -19,7 +18,6 @@ const commands = require('./commands')
 
 const stage = new Stage()
 
-stage.register(startScene)
 stage.register(setFilterScene)
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
@@ -50,7 +48,7 @@ bot
   })
   .use(session())
   .use(stage.middleware())
-  .start((ctx) => ctx.scene.enter(startSceneName))
+  .start(commands.start)
   .help(commands.help)
   .command(setFilterSceneName, (ctx) => ctx.scene.enter(setFilterSceneName))
   .command('stop', commands.stop)

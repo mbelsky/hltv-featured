@@ -17,7 +17,7 @@ const FILTER_OPTIONS = SET_FILTER_REPLY_MARKUP.keyboard.flat()
 module.exports = {
   FILTER_OPTIONS,
   HELP_MSG:
-    'I can notify you about interesting upcoming matches listed on [https://www.hltv.org/matches/](https://www.hltv.org/matches/)',
+    'I can notify you about interesting upcoming matches listed on [HLTV.org](https://www.hltv.org).',
   SET_FILTER_MSG_ENTER,
   SET_FILTER_MSG_LEAVE,
   SET_FILTER_REPLY_MARKUP,

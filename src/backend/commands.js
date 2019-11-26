@@ -1,5 +1,7 @@
+const { convertToMessage } = require('common/formatMatches')
 const { setFilter } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
+const { getCachedMatches } = require('./utils')
 
 const help = (ctx) =>
   ctx.reply(
@@ -12,8 +14,31 @@ You can control me by sending these commands:
     { disable_web_page_preview: true, parse_mode: 'Markdown' },
   )
 
+const start = async (ctx) => {
+  await ctx.reply(
+    `
+${HELP_MSG}
+
+By default I will send you notifications about two or more ⭐️ matches. To get less or more, please use /setfilter to update your filter.
+`.trim(),
+    {
+      disable_web_page_preview: true,
+      parse_mode: 'Markdown',
+    },
+  )
+
+  ctx.replyWithChatAction('typing')
+
+  const matches = await getCachedMatches()
+  const feed = matches.map(convertToMessage).join('\n\n')
+
+  await ctx.reply(`A few today matches:\n\n${feed}`, {
+    disable_web_page_preview: true,
+    parse_mode: 'Markdown',
+  })
+}
+
 const stop = async (ctx) => {
-  // TODO: Wrap in try catch
   await Promise.all([
     ctx.replyWithChatAction('typing'),
     setFilter({ chatId: ctx.chat.id, filter: Number.MAX_SAFE_INTEGER }),
@@ -23,5 +48,6 @@ const stop = async (ctx) => {
 
 module.exports = {
   help,
+  start,
   stop,
 }

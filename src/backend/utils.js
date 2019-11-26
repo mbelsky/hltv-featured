@@ -1,6 +1,6 @@
 const { getUpcomingMatches } = require('common/manageMatches')
 
-const CACHED_MATCHES_COUNT = 5
+const CACHED_MATCHES_COUNT = 3
 
 const sortByStars = (lhs, rhs) => rhs.stars - lhs.stars
 const sortByTime = (lhs, rhs) => lhs.unixTimestamp - rhs.unixTimestamp
