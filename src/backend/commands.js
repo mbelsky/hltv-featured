@@ -29,7 +29,7 @@ const start = async (ctx) => {
     `
 ${HELP_MSG}
 
-I will send you notifications about matches with two or more ⭐️. To get less or more, please use /setfilter to update your filter.
+Every morning I will send you notifications about matches with two or more ⭐️. To get less or more, please use /setfilter to update your filter.
 `.trim(),
     {
       disable_web_page_preview: true,
