@@ -8,7 +8,7 @@ const alerter = require('alerter')
 
 const Telegram = require('telegraf/telegram')
 const { getUpcomingMatches } = require('common/manageMatches')
-const { getActiveUsers } = require('common/manageUsers')
+const { getActiveUsers, updateUser } = require('common/manageUsers')
 const { getMatchesFeed } = require('./utils')
 
 ;(async function main() {
@@ -29,16 +29,31 @@ const { getMatchesFeed } = require('./utils')
   const feed = getMatchesFeed(matches)
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
-  Object.entries(users).forEach(([id, { filter }]) => {
-    const message = feed[filter]
+  Object.entries(users).forEach(([id, { filter, seenEmptyMessage }]) => {
+    let message = feed[filter]
+    let disable_notification = false
 
-    if (message) {
-      telegram
-        .sendMessage(Number(id), message, {
-          disable_web_page_preview: true,
-          parse_mode: 'Markdown',
-        })
-        .catch(alerter.error)
+    if (!message) {
+      if (seenEmptyMessage) {
+        return
+      }
+
+      message = `There are no ${filter}-stars matches today. And I won't spam you with this message every morning.\n\nNext time just send /upcoming if no morning notification.`
+      disable_notification = true
+      seenEmptyMessage = true
     }
+
+    telegram
+      .sendMessage(Number(id), message, {
+        disable_notification,
+        disable_web_page_preview: true,
+        parse_mode: 'Markdown',
+      })
+      .then(() => {
+        if (seenEmptyMessage) {
+          return updateUser(id, { seenEmptyMessage: true })
+        }
+      })
+      .catch(alerter.error)
   })
 })()

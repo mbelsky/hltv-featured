@@ -26,13 +26,20 @@ async function initUser({ chatId }) {
   })
 }
 
+// TODO: Replace with updateUser
 async function setFilter({ chatId, filter }) {
   const userRef = db.collection(USERS_COLLECTION).doc(String(chatId))
   await userRef.set({ filter }, { merge: true })
+}
+
+async function updateUser(chatId, props) {
+  const userRef = db.collection(USERS_COLLECTION).doc(String(chatId))
+  await userRef.set(props, { merge: true })
 }
 
 module.exports = {
   getActiveUsers,
   initUser,
   setFilter,
+  updateUser,
 }
