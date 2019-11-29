@@ -51,6 +51,7 @@ bot
   .start(commands.start)
   .help(commands.help)
   .command(setFilterSceneName, (ctx) => ctx.scene.enter(setFilterSceneName))
+  .command('upcoming', commands.upcoming)
   .command('stop', commands.stop)
   .use(async (ctx, next) => {
     await (next && next())

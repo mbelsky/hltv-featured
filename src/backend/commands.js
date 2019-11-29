@@ -1,8 +1,7 @@
 const alerter = require('alerter')
-const { convertToMessage } = require('common/formatMatches')
 const { initUser, setFilter } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
-const { getCachedMatches } = require('./utils')
+const { getCachedMatches, convertMatchesToFeed } = require('./utils')
 
 const help = (ctx) =>
   ctx.reply(
@@ -11,6 +10,7 @@ const help = (ctx) =>
 You can control me by sending these commands:
 
 /setfilter – set minimum stars count for a match
+/upcoming – get three high-rated today upcoming matches
 /stop – stop getting notifications`,
     { disable_web_page_preview: true, parse_mode: 'Markdown' },
   )
@@ -38,12 +38,14 @@ Every morning I will send you notifications about matches with two or more ⭐�
   )
 
   const matches = await getCachedMatches()
-  const feed = matches.map(convertToMessage).join('\n\n')
+  const feed = convertMatchesToFeed(matches)
 
-  await ctx.reply(`A few today matches:\n\n${feed}`, {
-    disable_web_page_preview: true,
-    parse_mode: 'Markdown',
-  })
+  if (feed) {
+    await ctx.reply(`A few today matches:\n\n${feed}`, {
+      disable_web_page_preview: true,
+      parse_mode: 'Markdown',
+    })
+  }
 }
 
 const stop = async (ctx) => {
@@ -54,8 +56,25 @@ const stop = async (ctx) => {
   ctx.reply('You may subscribe again with /start')
 }
 
+const upcoming = async (ctx) => {
+  const [matches] = await Promise.all([
+    getCachedMatches(),
+    ctx.replyWithChatAction('typing'),
+  ])
+  const feed = convertMatchesToFeed(matches)
+  const message = feed
+    ? `Upcoming today matches:\n\n${feed}`
+    : `There are no upcoming matches today`
+
+  await ctx.reply(message, {
+    disable_web_page_preview: true,
+    parse_mode: 'Markdown',
+  })
+}
+
 module.exports = {
   help,
   start,
   stop,
+  upcoming,
 }

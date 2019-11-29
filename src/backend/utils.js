@@ -1,3 +1,4 @@
+const { convertToMessage } = require('common/formatMatches')
 const { getUpcomingMatches } = require('common/manageMatches')
 
 const CACHED_MATCHES_COUNT = 3
@@ -33,6 +34,10 @@ const getCachedMatchesFactory = () => {
   }
 }
 
+const convertMatchesToFeed = (matches) =>
+  matches.map(convertToMessage).join('\n\n')
+
 module.exports = {
   getCachedMatches: getCachedMatchesFactory(),
+  convertMatchesToFeed,
 }
