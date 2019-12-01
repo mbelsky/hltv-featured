@@ -13,8 +13,8 @@ const rollbar = new Rollbar({
 })
 
 module.exports = {
-  error(err) {
-    rollbar.error(err)
+  error() {
+    rollbar.error(...arguments)
   },
   warn(text) {
     rollbar.warn(text)

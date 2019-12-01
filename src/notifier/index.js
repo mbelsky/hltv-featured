@@ -4,6 +4,8 @@ if (error) {
   throw error
 }
 
+const TEST_ACCS = (process.env.TEST_ACCS || '').split(',')
+
 const alerter = require('alerter')
 
 const Telegram = require('telegraf/telegram')
@@ -30,6 +32,10 @@ const { getMatchesFeed } = require('./utils')
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
   Object.entries(users).forEach(([id, { filter, seenEmptyMessage }]) => {
+    if (process.env.NODE_ENV === 'production' || !TEST_ACCS.includes(id)) {
+      return
+    }
+
     let message = feed[filter]
     let disable_notification = false
 
@@ -54,6 +60,10 @@ const { getMatchesFeed } = require('./utils')
           return updateUser(id, { seenEmptyMessage: true })
         }
       })
-      .catch(alerter.error)
+      .catch((e = {}) => {
+        if (403 !== e.code) {
+          alerter.error('chat id: ' + id, e)
+        }
+      })
   })
 })()
