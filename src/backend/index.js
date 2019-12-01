@@ -60,4 +60,18 @@ bot
     )
   })
 
-bot.launch().then(() => console.log('Bot has been launched'))
+const handleShutdown = async (signal) => {
+  console.log('Received signal:', signal)
+
+  await bot
+    .stop(() => process.exit(0))
+    .catch((e) => {
+      alerter.error(e)
+      process.exit(1)
+    })
+}
+
+bot.launch().then(() => {
+  console.log('Bot has been launched')
+  ;['SIGTERM', 'SIGINT'].forEach((s) => process.on(s, handleShutdown))
+})
