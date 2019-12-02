@@ -32,7 +32,7 @@ const { getMatchesFeed } = require('./utils')
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
   Object.entries(users).forEach(([id, { filter, seenEmptyMessage }]) => {
-    if (process.env.NODE_ENV === 'production' || !TEST_ACCS.includes(id)) {
+    if (process.env.NODE_ENV !== 'production' && !TEST_ACCS.includes(id)) {
       return
     }
 
