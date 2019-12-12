@@ -43,7 +43,7 @@ Every morning I will send you notifications about matches with two or more â­ï¸
   if (feed) {
     await ctx.reply(`A few today matches:\n\n${feed}`, {
       disable_web_page_preview: true,
-      parse_mode: 'Markdown',
+      parse_mode: 'HTML',
     })
   }
 }
@@ -68,7 +68,7 @@ const upcoming = async (ctx) => {
 
   await ctx.reply(message, {
     disable_web_page_preview: true,
-    parse_mode: 'Markdown',
+    parse_mode: 'HTML',
   })
 }
 

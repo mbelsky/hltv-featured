@@ -13,7 +13,7 @@ const { getUpcomingMatches } = require('common/manageMatches')
 const { getActiveUsers, updateUser } = require('common/manageUsers')
 const { getMatchesFeed } = require('./utils')
 
-;(async function main() {
+async function notify() {
   const users = await getActiveUsers()
 
   if (!Object.keys(users).length) {
@@ -53,7 +53,7 @@ const { getMatchesFeed } = require('./utils')
       .sendMessage(Number(id), message, {
         disable_notification,
         disable_web_page_preview: true,
-        parse_mode: 'Markdown',
+        parse_mode: 'HTML',
       })
       .then(() => {
         if (seenEmptyMessage) {
@@ -66,4 +66,10 @@ const { getMatchesFeed } = require('./utils')
         }
       })
   })
-})()
+}
+
+if (require.main === module) {
+  notify()
+} else {
+  module.exports = notify
+}

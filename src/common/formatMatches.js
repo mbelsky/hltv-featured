@@ -1,3 +1,4 @@
+const escapeHtml = require('escape-html')
 const NBSP = '\u00A0'
 
 function formatUTCString(utcString) {
@@ -13,9 +14,9 @@ function convertToMessage({ event, href, stars, title, unixTimestamp }) {
   const date = formatUTCString(when).replace(/\s/g, NBSP)
 
   return `
-[${title.replace(/\s/g, NBSP)}](${href})
+<a href="${href}">${escapeHtml(title).replace(/\s/g, NBSP)}</a>
 Rating: ${'☆'.repeat(stars) || '–'}
-_${date} @ ${event}_
+<i>${date} @ ${escapeHtml(event)}</i>
 `.trim()
 }
 

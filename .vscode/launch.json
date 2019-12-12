@@ -14,7 +14,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Notifier",
-      "program": "${workspaceFolder}/src/notifier/index.js"
+      "program": "${workspaceFolder}/src/notifier/notifier.js"
     },
     {
       "type": "node",
