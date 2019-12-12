@@ -1,6 +1,7 @@
 jest.mock('axios', () => () =>
   Promise.resolve({ data: require('./matches-example') }),
 )
+jest.mock('alerter', () => ({}))
 jest.mock('common/manageMatches', () => ({
   removeOutdatedMatches: () => Promise.resolve(),
   saveFeaturedMatches: () => Promise.resolve(),
