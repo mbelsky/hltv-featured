@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scraper integration 1`] = `
+Array [
+  Array [
+    Object {
+      "event": "EPICENTER 2019 CIS Open Qualifier",
+      "href": "https://www.hltv.org/matches/2338015/hellraisers-vs-melbet-extremum-loser-epicenter-2019-cis-open-qualifier",
+      "id": 2338015,
+      "stars": 0,
+      "title": "HellRaisers vs MELBET/EXTREMUM loser",
+      "unixTimestamp": 1574444700000,
+    },
+    Object {
+      "event": "United Masters League Season 2",
+      "href": "https://www.hltv.org/matches/2337980/illuminar-vs-ancient-united-masters-league-season-2",
+      "id": 2337980,
+      "stars": 1,
+      "title": "Illuminar vs Ancient",
+      "unixTimestamp": 1574449200000,
+    },
+    Object {
+      "event": "CS:GO Asia Championships 2019",
+      "href": "https://www.hltv.org/matches/2337958/mibr-vs-avangar-csgo-asia-championships-2019",
+      "id": 2337958,
+      "stars": 2,
+      "title": "MIBR vs AVANGAR",
+      "unixTimestamp": 1574485200000,
+    },
+    Object {
+      "event": "CAC - Grand Final",
+      "href": "https://www.hltv.org/matches/2337962/cac-grand-final-csgo-asia-championships-2019",
+      "id": 2337962,
+      "stars": 0,
+      "title": "TBD vs TBD",
+      "unixTimestamp": 1574593200000,
+    },
+    Object {
+      "event": "ECS Season 8 Finals",
+      "href": "https://www.hltv.org/matches/2337797/evil-geniuses-vs-avangar-ecs-season-8-finals",
+      "id": 2337797,
+      "stars": 3,
+      "title": "Evil Geniuses vs AVANGAR",
+      "unixTimestamp": 1574953200000,
+    },
+    Object {
+      "event": "BLAST Global Final Lower Bracket final",
+      "href": "https://www.hltv.org/matches/2337846/blast-global-final-lower-bracket-final-blast-pro-series-global-final-2019",
+      "id": 2337846,
+      "stars": 0,
+      "title": "TBD vs TBD",
+      "unixTimestamp": 1576252800000,
+    },
+  ],
+]
+`;
