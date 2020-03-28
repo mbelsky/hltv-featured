@@ -11,7 +11,8 @@
     "start": "yarn backend",
     "backend": "node ./src/backend",
     "notifier": "node ./src/notifier",
-    "scraper": "node ./src/scraper"
+    "scraper": "node ./src/scraper",
+    "test": "yarn jest"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
