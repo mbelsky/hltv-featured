@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "dotenv": "^8.2.0",
-    "telegraf": "^3.33.3"
+    "telegraf": "^3.33.3",
+    "telegraf-ratelimit": "^2.0.0"
   }
 }

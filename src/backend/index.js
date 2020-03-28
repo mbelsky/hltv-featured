@@ -9,6 +9,9 @@ const alerter = require('alerter')
 const Telegraf = require('telegraf/telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
+
+const rateLimit = require('telegraf-ratelimit')
+
 const {
   scene: setFilterScene,
   name: setFilterSceneName,
@@ -21,6 +24,11 @@ const stage = new Stage()
 stage.register(setFilterScene)
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
+const rateLimitConfig = {
+  limit: parseInt(process.env.USER_REQUESTS_RATE_LIMIT || 1, 10),
+  window: 1000,
+  onLimitExceeded: (ctx) => ctx.reply('Please try again later'),
+}
 
 bot
   .catch(async (err, ctx) => {
@@ -46,6 +54,7 @@ bot
 
     return next()
   })
+  .use(rateLimit(rateLimitConfig))
   .use(session())
   .use(stage.middleware())
   .start(commands.start)
