@@ -6,7 +6,7 @@ if (error) {
 
 const alerter = require('alerter')
 
-const Telegraf = require('telegraf')
+const Telegraf = require('telegraf/telegraf')
 const session = require('telegraf/session')
 const Stage = require('telegraf/stage')
 const {
