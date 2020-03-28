@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "backend.js",
   "license": "GNU GPLv3",
   "private": true,
   "dependencies": {

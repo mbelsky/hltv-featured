@@ -9,7 +9,7 @@ jest.mock('common/manageMatches', () => ({
   saveFeaturedMatches: jest.fn(() => Promise.resolve()),
 }))
 
-const scrap = require('../index')
+const scrap = require('../scraper')
 
 describe('scraper', () => {
   test('integration', async () => {
