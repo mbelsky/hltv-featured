@@ -12,6 +12,7 @@
     "backend": "node ./src/backend",
     "notifier": "node ./src/notifier",
     "scraper": "node ./src/scraper",
+    "lint": "eslint . && prettier -c .",
     "test": "yarn jest"
   },
   "devDependencies": {
