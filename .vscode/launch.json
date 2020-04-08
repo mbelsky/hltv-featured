@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Backend",
-      "program": "${workspaceFolder}/src/backend/index.js"
+      "program": "${workspaceFolder}/src/backend/backend.js"
     },
     {
       "type": "node",
@@ -20,7 +20,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Scraper",
-      "program": "${workspaceFolder}/src/scraper/index.js"
+      "program": "${workspaceFolder}/src/scraper/scraper.js"
     },
     {
       "type": "node",
