@@ -57,6 +57,8 @@ bot
   .use(rateLimit(rateLimitConfig))
   .use(session())
   .use(stage.middleware())
+  // TODO: set limiter
+  .on('location', commands.location)
   .start(commands.start)
   .help(commands.help)
   .command(setFilterSceneName, (ctx) => ctx.scene.enter(setFilterSceneName))

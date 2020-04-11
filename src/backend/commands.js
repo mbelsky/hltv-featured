@@ -1,5 +1,6 @@
 const alerter = require('alerter')
-const { initUser, setFilter } = require('common/manageUsers')
+const { getTimezone } = require('common/getTimezone')
+const { initUser, setFilter, updateUser } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
 const { getCachedMatches, convertMatchesToFeed } = require('./utils')
 
@@ -72,8 +73,39 @@ const upcoming = async (ctx) => {
   })
 }
 
+const location = async (ctx) => {
+  const { date: timestamp, location } = ctx.message
+  const { latitude, longitude } = location
+
+  ctx.replyWithChatAction('typing')
+
+  const { timeZoneId, ...rest } = await getTimezone({
+    latitude,
+    longitude,
+    timestamp,
+  })
+
+  if ('undefined' === typeof timeZoneId) {
+    alerter.error(
+      new Error(
+        'getTimezone returns undefined.\n' +
+          JSON.stringify({ latitude, longitude, ...rest }),
+      ),
+    )
+
+    return ctx.reply('Please try again later')
+  }
+
+  await updateUser(ctx.chat.id, {
+    location: { latitude, longitude, timeZoneId },
+  })
+
+  return ctx.reply('Your timezone has changed to ' + timeZoneId)
+}
+
 module.exports = {
   help,
+  location,
   start,
   stop,
   upcoming,
