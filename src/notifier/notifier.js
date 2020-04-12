@@ -9,6 +9,7 @@ const TEST_ACCS = (process.env.TEST_ACCS || '').split(',')
 const alerter = require('alerter')
 
 const Telegram = require('telegraf/telegram')
+const { getTimeZoneOffsetsMap } = require('common/getTimeZoneOffsetsMap')
 const {
   DEFAULT_TIMEZONE_OFFSET,
   convertMatchesToFeed,
@@ -16,7 +17,7 @@ const {
 } = require('common/formatMatches')
 const { getUpcomingMatches } = require('common/manageMatches')
 const { getActiveUsers, updateUser } = require('common/manageUsers')
-const { getTimeZoneOffsetsMap, splitMatchesByFilter } = require('./utils')
+const { splitMatchesByFilter } = require('./utils')
 
 async function notify() {
   const users = await getActiveUsers()
