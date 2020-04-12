@@ -6,21 +6,38 @@ function formatUTCString(utcString) {
     /\w+, (?<day>\d{2}) (?<month>\w+) \d{4} (?<hours>\d{2}):(?<minutes>\d{2})/,
   ).groups
 
-  return `${day} ${month} ${hours}:${minutes} UTC`
+  return `${day} ${month} ${hours}:${minutes}`
 }
 
-function convertToMessage({ event, href, stars, title, unixTimestamp }) {
-  const when = new Date(unixTimestamp).toUTCString()
-  const date = formatUTCString(when).replace(/\s/g, NBSP)
+function convertMatchesToFeed(matches) {
+  return matches.map(convertToMessage).join('\n\n')
+}
 
+function convertToMessage({ event, href, stars, title, datetime }) {
   return `
 <a href="${href}">${escapeHtml(title).replace(/\s/g, NBSP)}</a>
 Rating: ${'☆'.repeat(stars) || '–'}
-<i>${date} @ ${escapeHtml(event)}</i>
+<i>${datetime} @ ${escapeHtml(event)}</i>
 `.trim()
 }
 
+const DEFAULT_TIMEZONE_OFFSET = 0
+
+function convertUnixTimestampToDateTime(
+  unixTimestampMillis,
+  timeZoneOffsetMillis = DEFAULT_TIMEZONE_OFFSET,
+) {
+  const when = new Date(
+    unixTimestampMillis + timeZoneOffsetMillis,
+  ).toUTCString()
+  const suffix = DEFAULT_TIMEZONE_OFFSET === timeZoneOffsetMillis ? ' UTC' : ''
+
+  return (formatUTCString(when) + suffix).replace(/\s/g, NBSP)
+}
+
 module.exports = {
-  formatUTCString,
-  convertToMessage,
+  DEFAULT_TIMEZONE_OFFSET,
+  NBSP,
+  convertMatchesToFeed,
+  convertUnixTimestampToDateTime,
 }
