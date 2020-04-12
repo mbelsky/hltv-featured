@@ -1,8 +1,9 @@
 const alerter = require('alerter')
+const { convertMatchesToFeed } = require('common/formatMatches')
 const { getTimezone } = require('common/getTimezone')
 const { initUser, setFilter, updateUser } = require('common/manageUsers')
 const { HELP_MSG } = require('./consts')
-const { getCachedMatches, convertMatchesToFeed } = require('./utils')
+const { convertMatchesToDateTimed, getCachedMatches } = require('./utils')
 
 const help = (ctx) =>
   ctx.reply(
@@ -39,7 +40,7 @@ Every morning I will send you notifications about matches with two or more â­ï¸
   )
 
   const matches = await getCachedMatches()
-  const feed = convertMatchesToFeed(matches)
+  const feed = convertMatchesToFeed(convertMatchesToDateTimed(matches))
 
   if (feed) {
     await ctx.reply(`A few today matches:\n\n${feed}`, {
@@ -62,7 +63,7 @@ const upcoming = async (ctx) => {
     getCachedMatches(),
     ctx.replyWithChatAction('typing'),
   ])
-  const feed = convertMatchesToFeed(matches)
+  const feed = convertMatchesToFeed(convertMatchesToDateTimed(matches))
   const message = feed
     ? `Upcoming today matches:\n\n${feed}`
     : `There are no upcoming matches today`

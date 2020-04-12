@@ -1,10 +1,16 @@
-const { convertToMessage } = require('common/formatMatches')
+const { convertUnixTimestampToDateTime } = require('common/formatMatches')
 const { getUpcomingMatches } = require('common/manageMatches')
 
 const CACHED_MATCHES_COUNT = 3
 
 const sortByStars = (lhs, rhs) => rhs.stars - lhs.stars
 const sortByTime = (lhs, rhs) => lhs.unixTimestamp - rhs.unixTimestamp
+
+const convertMatchesToDateTimed = (matches) =>
+  matches.map(({ unixTimestamp, ...rest }) => ({
+    ...rest,
+    datetime: convertUnixTimestampToDateTime(unixTimestamp),
+  }))
 
 // Define as factory to incapsulate cachedMatches
 const getCachedMatchesFactory = () => {
@@ -34,10 +40,7 @@ const getCachedMatchesFactory = () => {
   }
 }
 
-const convertMatchesToFeed = (matches) =>
-  matches.map(convertToMessage).join('\n\n')
-
 module.exports = {
+  convertMatchesToDateTimed,
   getCachedMatches: getCachedMatchesFactory(),
-  convertMatchesToFeed,
 }
