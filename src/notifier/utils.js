@@ -28,7 +28,7 @@ async function getTimeZoneOffsetsMap(users) {
         return map
       }, {})
 
-    if (Object.keys(result).length !== getTimeZonePromises) {
+    if (Object.keys(result).length !== getTimeZonePromises.length) {
       alerter.warn(
         new Error(
           'There are invalid getTimeZone responses:\n' +
