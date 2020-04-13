@@ -51,7 +51,7 @@ async function notify() {
       const timeZoneOffset =
         timeZoneOffsetsMap[location.timeZoneId] || DEFAULT_TIMEZONE_OFFSET
 
-      const userMatches = rawFeedList[filter].map(
+      const userMatches = (rawFeedList[filter] || []).map(
         ({ unixTimestamp, ...rest }) => {
           const datetime = convertUnixTimestampToDateTime(
             unixTimestamp,
