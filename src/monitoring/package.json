@@ -1,5 +1,5 @@
 {
-  "name": "alerter",
+  "name": "@hltvf/monitoring",
   "version": "0.1.0",
   "main": "alerter.js",
   "license": "GNU GPLv3",

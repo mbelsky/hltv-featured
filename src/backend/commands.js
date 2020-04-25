@@ -1,4 +1,4 @@
-const alerter = require('alerter')
+const alerter = require('@hltvf/monitoring/alerter')
 const { convertMatchesToFeed } = require('common/formatMatches')
 const { getTimezone } = require('common/getTimezone')
 const { initUser, setFilter, updateUser } = require('common/manageUsers')

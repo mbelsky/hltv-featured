@@ -4,7 +4,7 @@ if (error) {
   throw error
 }
 
-const alerter = require('alerter')
+const alerter = require('@hltvf/monitoring/alerter')
 
 const Telegraf = require('telegraf/telegraf')
 const session = require('telegraf/session')

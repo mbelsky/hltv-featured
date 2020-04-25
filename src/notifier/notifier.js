@@ -6,7 +6,7 @@ if (error) {
 
 const TEST_ACCS = (process.env.TEST_ACCS || '').split(',')
 
-const alerter = require('alerter')
+const alerter = require('@hltvf/monitoring/alerter')
 
 const Telegram = require('telegraf/telegram')
 const { getTimeZoneOffsetsMap } = require('common/getTimeZoneOffsetsMap')

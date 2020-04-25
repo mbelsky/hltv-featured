@@ -1,4 +1,4 @@
-const alerter = require('alerter')
+const alerter = require('@hltvf/monitoring/alerter')
 const { getTimezone } = require('./getTimezone')
 
 async function getTimeZoneOffsetsMap(users) {
