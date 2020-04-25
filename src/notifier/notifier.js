@@ -7,6 +7,7 @@ if (error) {
 const TEST_ACCS = (process.env.TEST_ACCS || '').split(',')
 
 const alerter = require('@hltvf/monitoring/alerter')
+const log = require('./logger')()
 
 const Telegram = require('telegraf/telegram')
 const { getTimeZoneOffsetsMap } = require('common/getTimeZoneOffsetsMap')
@@ -20,6 +21,8 @@ const { getActiveUsers, updateUser } = require('common/manageUsers')
 const { splitMatchesByFilter } = require('./utils')
 
 async function notify() {
+  log('Notifier has started')
+
   const users = await getActiveUsers()
 
   if (!Object.keys(users).length) {
@@ -36,9 +39,12 @@ async function notify() {
 
   const timeZoneOffsetsMap = await getTimeZoneOffsetsMap(users)
 
+  log(`There are ${Object.keys(timeZoneOffsetsMap)} time zone ids`)
+
   const rawFeedList = splitMatchesByFilter(matches)
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
+  // TODO: Replace sync forEach with Promises
   Object.entries(users).forEach(
     ([
       id,
