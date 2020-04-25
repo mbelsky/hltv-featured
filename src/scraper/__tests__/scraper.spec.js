@@ -2,7 +2,10 @@ jest.mock('axios', () => () =>
   Promise.resolve({ data: require('./matches-example') }),
 )
 
-jest.mock('alerter', () => ({}))
+jest.mock('@hltvf/monitoring/alerter', () => ({}))
+jest.mock('@hltvf/monitoring/logger', () => ({
+  logFabric: () => () => ({}),
+}))
 
 jest.mock('common/manageMatches', () => ({
   removeOutdatedMatches: () => Promise.resolve(),

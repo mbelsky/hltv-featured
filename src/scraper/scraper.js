@@ -1,4 +1,5 @@
 const alerter = require('@hltvf/monitoring/alerter')
+const log = require('@hltvf/monitoring/logger').logFabric('requests-scraper')
 
 const axios = require('axios')
 const {
@@ -10,7 +11,30 @@ const htmlToMatches = require('./parseHtml')
 const root = process.env.ROOT_URL || 'https://www.hltv.org'
 const url = process.env.PAGE_URL || 'https://www.hltv.org/matches'
 
+const logResult = (matches) => {
+  if ('production' === process.env.NODE_ENV) {
+    const message = `Scraped & saved ${matches.length} matches`
+
+    console.log(message)
+    log({
+      level: 'info',
+      data: {
+        message,
+      },
+    })
+  } else {
+    console.log(JSON.stringify(matches, null, 2))
+  }
+}
+
 function scrap() {
+  log({
+    level: 'info',
+    data: {
+      message: 'Scraper has started',
+    },
+  })
+
   return removeOutdatedMatches()
     .catch(alerter.error)
     .then(() => axios(url))
@@ -22,11 +46,7 @@ function scrap() {
           alerter.warn('Zero matches scraped. HTML:\n\n' + data)
         }
 
-        if ('production' === process.env.NODE_ENV) {
-          console.log(`Scraped & saved ${matches.length} matches`)
-        } else {
-          console.log(JSON.stringify(matches, null, 2))
-        }
+        logResult(matches)
       })
     })
 }
