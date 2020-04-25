@@ -5,6 +5,7 @@
   "license": "GNU GPLv3",
   "private": true,
   "dependencies": {
+    "@elastic/elasticsearch": "^7",
     "dotenv": "^8.2.0",
     "rollbar": "^2.14.4"
   }
