@@ -18,6 +18,7 @@ const {
 } = require('./scenes/setFilter')
 
 const commands = require('./commands')
+const updateLogger = require('./middlewares/updateLogger')
 
 const stage = new Stage()
 
@@ -42,6 +43,7 @@ bot
       alerter.error(e)
     }
   })
+  .use(updateLogger())
   .use((ctx, next) => {
     const { chat = {} } = ctx
 
