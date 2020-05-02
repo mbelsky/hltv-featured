@@ -91,6 +91,7 @@ async function notify() {
 
       let message = convertMatchesToFeed(userMatches)
       let disable_notification = false
+      let setUserSeenEmptyMessage = () => undefined
 
       if (!message) {
         if (seenEmptyMessage) {
@@ -100,6 +101,10 @@ async function notify() {
         message = `There are no ${filter}-stars matches today. And I won't spam you with this message every morning.\n\nNext time just send /upcoming if no morning notification.`
         disable_notification = true
         seenEmptyMessage = true
+        setUserSeenEmptyMessage = () =>
+          updateUser(id, { seenEmptyMessage: true }).catch((e) =>
+            alerter.error('chat id: ' + id, e),
+          )
       }
 
       telegram
@@ -108,12 +113,7 @@ async function notify() {
           disable_web_page_preview: true,
           parse_mode: 'HTML',
         })
-        .then(() => {
-          // TODO: check it doesn't update user if a message isn't empty and seenEmptyMessage is true
-          if (seenEmptyMessage) {
-            return updateUser(id, { seenEmptyMessage: true })
-          }
-        })
+        .then(setUserSeenEmptyMessage)
         .then(sendCustomizeLocationMessage)
         .catch((e = {}) => {
           if (403 !== e.code) {
