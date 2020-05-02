@@ -25,10 +25,17 @@ const stage = new Stage()
 stage.register(setFilterScene)
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-const rateLimitConfig = {
+const commonRateLimitConfig = {
   limit: parseInt(process.env.USER_REQUESTS_RATE_LIMIT || 1, 10),
   window: 1000,
   onLimitExceeded: (ctx) => ctx.reply('Please try again later'),
+}
+
+const ONE_DAY = 24 * 60 * 60 * 1000
+const locationRateLimitConfig = {
+  limit: parseInt(process.env.SET_LOCATION_RATE_LIMIT || 3, 10),
+  window: ONE_DAY,
+  onLimitExceeded: (ctx) => ctx.reply('Please try to change location tomorrow'),
 }
 
 bot
@@ -56,10 +63,10 @@ bot
 
     return next()
   })
-  .use(rateLimit(rateLimitConfig))
+  .use(rateLimit(commonRateLimitConfig))
   .use(session())
   .use(stage.middleware())
-  // TODO: set limiter
+  .on('location', rateLimit(locationRateLimitConfig))
   .on('location', commands.location)
   .start(commands.start)
   .help(commands.help)
@@ -68,7 +75,7 @@ bot
   .command('stop', commands.stop)
   .use(async (ctx, next) => {
     await (next && next())
-    ctx.reply(
+    return ctx.reply(
       `Sorry, I don't know how to handle this. Please use a command described in /help`,
     )
   })
