@@ -15,9 +15,9 @@ const setFilter = async (ctx) => {
   }
 
   const filter = getFilterValue(message)
-  // TODO: Wrap in try catch
+
   await Promise.all([
-    ctx.replyWithChatAction('typing'),
+    ctx.replyWithChatAction('typing').catch(() => undefined),
     writeFilterValue({ chatId: ctx.chat.id, filter }),
   ])
 
