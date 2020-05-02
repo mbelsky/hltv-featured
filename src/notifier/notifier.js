@@ -72,7 +72,6 @@ async function notify() {
       )
 
       const chatId = Number(id)
-      // eslint-disable-next-line no-unused-vars
       const sendCustomizeLocationMessage = async () => {
         const shouldSendMessage =
           userMatches.length > 0 &&
@@ -115,8 +114,7 @@ async function notify() {
             return updateUser(id, { seenEmptyMessage: true })
           }
         })
-        // Uncomment after alpha
-        // .then(sendCustomizeLocationMessage)
+        .then(sendCustomizeLocationMessage)
         .catch((e = {}) => {
           if (403 !== e.code) {
             alerter.error('chat id: ' + id, e)
