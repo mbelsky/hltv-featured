@@ -17,7 +17,8 @@ const {
   name: setFilterSceneName,
 } = require('./scenes/setFilter')
 
-const commands = require('./commands')
+const commands = require('./commands/commands')
+const favoritesCommands = require('./commands/favorites')
 const updateLogger = require('./middlewares/updateLogger')
 
 const stage = new Stage()
@@ -73,6 +74,8 @@ bot
   .command(setFilterSceneName, (ctx) => ctx.scene.enter(setFilterSceneName))
   .command('upcoming', commands.upcoming)
   .command('stop', commands.stop)
+  .command('resetfavorites', favoritesCommands.resetFavorites)
+  .command('setfavorites', favoritesCommands.setFavorites)
   .use(async (ctx, next) => {
     await (next && next())
     return ctx.reply(

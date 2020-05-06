@@ -2,8 +2,8 @@ const alerter = require('@hltvf/monitoring/alerter')
 const { convertMatchesToFeed } = require('common/formatMatches')
 const { getTimezone } = require('common/getTimezone')
 const { initUser, setFilter, updateUser } = require('common/manageUsers')
-const { HELP_MSG } = require('./consts')
-const { convertMatchesToDateTimed, getCachedMatches } = require('./utils')
+const { HELP_MSG } = require('../consts')
+const { convertMatchesToDateTimed, getCachedMatches } = require('../utils')
 
 const help = (ctx) =>
   ctx.reply(
