@@ -20,6 +20,18 @@ const { getUpcomingMatches } = require('common/manageMatches')
 const { getActiveUsers, updateUser } = require('common/manageUsers')
 const { splitMatchesByFilter } = require('./utils')
 
+const mapRawFeed = (timeZoneOffset, { unixTimestamp, ...rest }) => {
+  const datetime = convertUnixTimestampToDateTime(
+    unixTimestamp,
+    timeZoneOffset * 1000,
+  )
+
+  return {
+    ...rest,
+    datetime,
+  }
+}
+
 async function notify() {
   log('Notifier has started')
 
@@ -48,7 +60,13 @@ async function notify() {
   Object.entries(users).forEach(
     ([
       id,
-      { filter, location = {}, seenEmptyMessage, seenCustomizeLocationMessage },
+      {
+        favorites,
+        filter,
+        location = {},
+        seenEmptyMessage,
+        seenCustomizeLocationMessage,
+      },
     ]) => {
       if (process.env.NODE_ENV !== 'production' && !TEST_ACCS.includes(id)) {
         return
@@ -57,21 +75,42 @@ async function notify() {
       const timeZoneOffset =
         timeZoneOffsetsMap[location.timeZoneId] || DEFAULT_TIMEZONE_OFFSET
 
-      const userMatches = (rawFeedList[filter] || []).map(
-        ({ unixTimestamp, ...rest }) => {
-          const datetime = convertUnixTimestampToDateTime(
-            unixTimestamp,
-            timeZoneOffset * 1000,
-          )
-
-          return {
-            ...rest,
-            datetime,
-          }
-        },
+      const userMatches = (rawFeedList[filter] || []).map((match) =>
+        mapRawFeed(timeZoneOffset, match),
       )
-
       const chatId = Number(id)
+
+      const sendFavoriteTeamsMatchesMessage = async () => {
+        if (!Array.isArray(favorites) || 0 === favorites.length) {
+          return
+        }
+
+        // TODO: Replace favorites with Map/Set
+
+        const matches = (rawFeedList[0] || [])
+          .filter(({ title }) => {
+            const teams = title.toLowerCase().split(' vs ')
+            const isFavoriteTeamMatch =
+              0 !== teams.filter((team) => favorites.includes(team)).length
+
+            return isFavoriteTeamMatch
+          })
+          .map((match) => mapRawFeed(timeZoneOffset, match))
+
+        if (0 === matches.length) {
+          return
+        }
+
+        const message =
+          '<b>Your favorite teams matches:</b>\n\n' +
+          convertMatchesToFeed(matches)
+
+        return telegram.sendMessage(chatId, message, {
+          disable_web_page_preview: true,
+          parse_mode: 'HTML',
+        })
+      }
+
       const sendCustomizeLocationMessage = async () => {
         const shouldSendMessage =
           userMatches.length > 0 &&
@@ -93,27 +132,31 @@ async function notify() {
       let disable_notification = false
       let setUserSeenEmptyMessage = () => undefined
 
-      if (!message) {
-        if (seenEmptyMessage) {
-          return
-        }
+      Promise.resolve()
+        .then(() => {
+          if (!message) {
+            if (seenEmptyMessage) {
+              return
+            }
 
-        message = `There are no ${filter}-stars matches today. And I won't spam you with this message every morning.\n\nNext time just send /upcoming if no morning notification.`
-        disable_notification = true
-        seenEmptyMessage = true
-        setUserSeenEmptyMessage = () =>
-          updateUser(id, { seenEmptyMessage: true }).catch((e) =>
-            alerter.error('chat id: ' + id, e),
-          )
-      }
+            message = `There are no ${filter}-stars matches today. And I won't spam you with this message every morning.\n\nNext time just send /upcoming if no morning notification.`
+            disable_notification = true
+            seenEmptyMessage = true
+            setUserSeenEmptyMessage = () =>
+              updateUser(id, { seenEmptyMessage: true }).catch((e) =>
+                alerter.error('chat id: ' + id, e),
+              )
+          }
 
-      telegram
-        .sendMessage(chatId, message, {
-          disable_notification,
-          disable_web_page_preview: true,
-          parse_mode: 'HTML',
+          return telegram.sendMessage(chatId, message, {
+            disable_notification,
+            disable_web_page_preview: true,
+            parse_mode: 'HTML',
+          })
         })
-        .then(setUserSeenEmptyMessage)
+        .then(sendFavoriteTeamsMatchesMessage)
+        // Don't replace with `.then(setUserSeenEmptyMessage)` bcs setUserSeenEmptyMessage is mutable
+        .then(() => setUserSeenEmptyMessage())
         .then(sendCustomizeLocationMessage)
         .catch((e = {}) => {
           if (403 !== e.code) {
