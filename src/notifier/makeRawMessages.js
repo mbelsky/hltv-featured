@@ -3,15 +3,11 @@ const {
   convertMatchesToFeed,
   convertUnixTimestampToDateTime,
 } = require('common/formatMatches')
+const { FEATURED_MATCHES_TYPES } = require('./consts')
 const { splitMatchesByFilter } = require('./utils')
 
 const CUSTOM_LOCATION_MESSAGE =
   'You may change matches timezone for your feed. Just tap on the 📎 attachment button, choose Location and send your city coordinates as a message.'
-
-const FEATURED_MATCHES_TYPES = {
-  empty: 'EMPTY',
-  success: 'SUCCESS',
-}
 
 const getCustomLocationMessage = (location, seenCustomizeLocationMessage) =>
   seenCustomizeLocationMessage || undefined !== location.timeZoneId
