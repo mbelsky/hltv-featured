@@ -10,14 +10,13 @@ const alerter = require('@hltvf/monitoring/alerter')
 const log = require('./logger')()
 
 const Telegram = require('telegraf/telegram')
-const { getTimeZoneOffsetsMap } = require('common/getTimeZoneOffsetsMap')
 const {
   DEFAULT_TIMEZONE_OFFSET,
   convertMatchesToFeed,
   convertUnixTimestampToDateTime,
 } = require('common/formatMatches')
-const { getUpcomingMatches } = require('common/manageMatches')
-const { getActiveUsers, updateUser } = require('common/manageUsers')
+const { updateUser } = require('common/manageUsers')
+const { fetchData } = require('./fetchData')
 const { splitMatchesByFilter } = require('./utils')
 
 const mapRawFeed = (timeZoneOffset, { unixTimestamp, ...rest }) => {
@@ -35,21 +34,13 @@ const mapRawFeed = (timeZoneOffset, { unixTimestamp, ...rest }) => {
 async function notify() {
   log('Notifier has started')
 
-  const users = await getActiveUsers()
+  const data = await fetchData()
 
-  if (!Object.keys(users).length) {
-    alerter.warn('There is no active users')
+  if (!data) {
     return
   }
 
-  const matches = await getUpcomingMatches()
-
-  if (!matches.length) {
-    alerter.warn('There is no upcoming matches')
-    return
-  }
-
-  const timeZoneOffsetsMap = await getTimeZoneOffsetsMap(users)
+  const { matches, timeZoneOffsetsMap, users } = data
 
   log(`There are ${Object.keys(timeZoneOffsetsMap)} time zone ids`)
 
