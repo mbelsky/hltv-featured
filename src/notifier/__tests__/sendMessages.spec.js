@@ -23,6 +23,21 @@ describe('sendMessages', () => {
     expect(telegram.sendMessage.mock.calls.length).toBe(1)
   })
 
+  test('featuredMatches & customLocation messages', async () => {
+    const messages = [
+      {
+        messages: [
+          { type: MESSAGE_TYPES.featuredMatches },
+          { type: MESSAGE_TYPES.customLocation },
+        ],
+      },
+    ]
+
+    await sendMessages(makeArgs(messages))
+
+    expect(telegram.sendMessage.mock.calls.length).toBe(2)
+  })
+
   test('single emptyFeaturedMatches message', async () => {
     const messages = [
       { messages: [{ type: MESSAGE_TYPES.emptyFeaturedMatches }] },
