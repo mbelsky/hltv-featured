@@ -3,4 +3,10 @@ module.exports = {
     empty: 'EMPTY',
     success: 'SUCCESS',
   },
+  MESSAGE_TYPES: {
+    emptyFeaturedMatches: 'emptyFeaturedMatches',
+    featuredMatches: 'featuredMatches',
+    favoriteTeamsMatches: 'favoriteTeamsMatches',
+    customLocation: 'customLocation',
+  },
 }

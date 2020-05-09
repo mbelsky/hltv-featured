@@ -1,4 +1,4 @@
-const { FEATURED_MATCHES_TYPES } = require('./consts')
+const { FEATURED_MATCHES_TYPES, MESSAGE_TYPES } = require('./consts')
 
 const getFavoriteTeamsMatchesMessage = (raw) => {
   if (!raw) {
@@ -6,6 +6,7 @@ const getFavoriteTeamsMatchesMessage = (raw) => {
   }
 
   return {
+    type: MESSAGE_TYPES.favoriteTeamsMatches,
     text: raw,
     extra: {
       disable_web_page_preview: true,
@@ -20,11 +21,15 @@ const getFeaturedMatchesMessage = (raw) => {
   }
 
   const { message: text, type } = raw
+  const isEmpty = type === FEATURED_MATCHES_TYPES.empty
 
   return {
+    type: isEmpty
+      ? MESSAGE_TYPES.emptyFeaturedMatches
+      : MESSAGE_TYPES.featuredMatches,
     text,
     extra: {
-      disable_notification: type === FEATURED_MATCHES_TYPES.empty,
+      disable_notification: isEmpty,
       disable_web_page_preview: true,
       parse_mode: 'HTML',
     },
@@ -37,6 +42,7 @@ const getCustomLocationMessage = (raw) => {
   }
 
   return {
+    type: MESSAGE_TYPES.customLocation,
     text: raw,
   }
 }
