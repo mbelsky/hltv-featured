@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`makeRawMessages common 1`] = `
+Array [
+  Object {
+    "customLocationMessage": undefined,
+    "favoriteTeamsMatches": undefined,
+    "featuredMatches": Object {
+      "message": "<a href=\\"https://www.hltv.org/matches/2341125\\">5 Renegades vs ORDER</a>
+Rating: ☆☆☆☆☆
+<i>10 May 06:00 UTC @ ESL One: Road to Rio - Oceania</i>",
+      "type": "SUCCESS",
+    },
+    "id": "0",
+  },
+  Object {
+    "customLocationMessage": undefined,
+    "favoriteTeamsMatches": undefined,
+    "featuredMatches": Object {
+      "message": "<a href=\\"https://www.hltv.org/matches/2341125\\">5 Renegades vs ORDER</a>
+Rating: ☆☆☆☆☆
+<i>10 May 12:00 @ ESL One: Road to Rio - Oceania</i>",
+      "type": "SUCCESS",
+    },
+    "id": "1",
+  },
+  Object {
+    "customLocationMessage": "You may change matches timezone for your feed. Just tap on the 📎 attachment button, choose Location and send your city coordinates as a message.",
+    "favoriteTeamsMatches": "<b>Your favorite teams matches:</b>
+
+<a href=\\"https://www.hltv.org/matches/2341120\\">0 Renegades vs NaVi</a>
+Rating: –
+<i>10 May 06:00 UTC @ ESL One: Road to Rio - Oceania</i>",
+    "featuredMatches": Object {
+      "message": "<a href=\\"https://www.hltv.org/matches/2341125\\">5 Renegades vs ORDER</a>
+Rating: ☆☆☆☆☆
+<i>10 May 06:00 UTC @ ESL One: Road to Rio - Oceania</i>",
+      "type": "SUCCESS",
+    },
+    "id": "2",
+  },
+]
+`;
+
+exports[`makeRawMessages without matches 1`] = `
+Array [
+  Object {
+    "customLocationMessage": undefined,
+    "favoriteTeamsMatches": undefined,
+    "featuredMatches": undefined,
+    "id": "0",
+  },
+  Object {
+    "customLocationMessage": undefined,
+    "favoriteTeamsMatches": undefined,
+    "featuredMatches": Object {
+      "message": "There are no 5-stars matches today. And I won't spam you with this message every morning.
+
+Next time just send /upcoming if no morning notification.",
+      "type": "EMPTY",
+    },
+    "id": "1",
+  },
+  Object {
+    "customLocationMessage": "You may change matches timezone for your feed. Just tap on the 📎 attachment button, choose Location and send your city coordinates as a message.",
+    "favoriteTeamsMatches": undefined,
+    "featuredMatches": Object {
+      "message": "There are no 5-stars matches today. And I won't spam you with this message every morning.
+
+Next time just send /upcoming if no morning notification.",
+      "type": "EMPTY",
+    },
+    "id": "2",
+  },
+]
+`;
