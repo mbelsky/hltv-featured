@@ -6,6 +6,8 @@ exports.sendMessages = async ({
   updateUser,
   usersTgMessages,
 }) => {
+  const forbiddenIds = []
+
   for await (const userTgMessages of usersTgMessages) {
     const { id, messages } = userTgMessages
 
@@ -54,7 +56,16 @@ exports.sendMessages = async ({
         }
       }
     } catch (e) {
-      alerter.error('chatid: ' + id, e)
+      // 403: Forbidden: bot was blocked by the user
+      if (403 === e.code) {
+        forbiddenIds.push(id)
+      } else {
+        alerter.error('chatid: ' + id, e)
+      }
     }
+  }
+
+  if (0 < forbiddenIds.length) {
+    alerter.warn('forbiddenIds: ' + forbiddenIds.join(', '))
   }
 }
