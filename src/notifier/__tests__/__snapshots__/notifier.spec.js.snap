@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_notify create and do not send custom location message 1`] = `
+Array [
+  3,
+  "There are no 5-stars matches today. And I won't spam you with this message every morning.
+
+Next time just send /upcoming if no morning notification.",
+  Object {
+    "disable_notification": true,
+    "disable_web_page_preview": true,
+    "parse_mode": "HTML",
+  },
+]
+`;
+
+exports[`_notify send custom location message 1`] = `
+Array [
+  3,
+  "You may change matches timezone for your feed. Just tap on the 📎 attachment button, choose Location and send your city coordinates as a message.",
+  undefined,
+]
+`;
+
+exports[`_notify send empty featured match message 1`] = `
+Array [
+  1,
+  "There are no 4-stars matches today. And I won't spam you with this message every morning.
+
+Next time just send /upcoming if no morning notification.",
+  Object {
+    "disable_notification": true,
+    "disable_web_page_preview": true,
+    "parse_mode": "HTML",
+  },
+]
+`;
+
+exports[`_notify send favorite team match message 1`] = `
+Array [
+  2,
+  "<b>Your favorite teams matches:</b>
+
+<a href=\\"https://www.hltv.org/matches/2341452/w7m-vs-red-canids-clutch-season-2\\">W7M vs RED Canids</a>
+Rating: ☆☆
+<i>17 May 20:57 UTC @ CLUTCH Season 2</i>",
+  Object {
+    "disable_web_page_preview": true,
+    "parse_mode": "HTML",
+  },
+]
+`;
+
+exports[`_notify send featured match message 1`] = `
+Array [
+  0,
+  "<a href=\\"https://www.hltv.org/matches/2341452/w7m-vs-red-canids-clutch-season-2\\">W7M vs RED Canids</a>
+Rating: ☆☆
+<i>17 May 23:57 @ CLUTCH Season 2</i>",
+  Object {
+    "disable_web_page_preview": true,
+    "parse_mode": "HTML",
+  },
+]
+`;

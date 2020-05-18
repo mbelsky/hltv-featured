@@ -34,7 +34,7 @@ describe('splitMatchesByFilter', () => {
   })
 
   test('Empty list', () => {
-    const matches = []
+    const matches = undefined
 
     const result = splitMatchesByFilter(matches)
 

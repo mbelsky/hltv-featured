@@ -23,18 +23,18 @@ const data = {
     'Asia/Bishkek': 21600,
   },
   users: {
-    '0': {
+    0: {
       seenCustomizeLocationMessage: true,
       seenEmptyMessage: true,
       filter: 5,
     },
-    '1': {
+    1: {
       filter: 5,
       location: {
         timeZoneId: 'Asia/Bishkek',
       },
     },
-    '2': {
+    2: {
       filter: 5,
       favorites: ['navi'],
     },
@@ -53,5 +53,19 @@ describe('makeRawMessages', () => {
         matches: [],
       }),
     ).toMatchSnapshot()
+  })
+
+  test('without favorite matches', () => {
+    const { favoriteTeamsMatches } = makeRawMessages({
+      ...data,
+      users: {
+        0: {
+          filter: 0,
+          favorites: ['unknown team'],
+        },
+      },
+    })
+
+    expect(favoriteTeamsMatches).toBe(undefined)
   })
 })
