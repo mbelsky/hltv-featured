@@ -1,20 +1,9 @@
-const { error } = require('dotenv').config()
-
-if (error) {
-  throw error
-}
-
-const alerter = require('@hltvf/monitoring/alerter')
-const log = require('./logger')()
-
-const Telegram = require('telegraf/telegram')
-const { updateUser } = require('common/manageUsers')
-const { fetchData } = require('./fetchData')
 const { makeRawMessages } = require('./makeRawMessages')
-const { makeTgMessages } = require('./makeTgMessages')
+const { makeUsersSmartMessages } = require('./makeUsersSmartMessages')
+const { makeUsersTelegramMessages } = require('./makeUsersTelegramMessages')
 const { sendMessages } = require('./sendMessages')
 
-async function notify() {
+async function _notify({ alerter, fetchData, log, telegram, updateUser }) {
   log('Notifier has started')
 
   const data = await fetchData()
@@ -28,13 +17,51 @@ async function notify() {
   log(`There are ${Object.keys(timeZoneOffsetsMap)} time zone ids`)
 
   const rawMessages = makeRawMessages(data)
-  const usersTgMessages = makeTgMessages(rawMessages)
+  const usersSmartMessages = makeUsersSmartMessages(rawMessages)
+  const usersTelegramMessages = makeUsersTelegramMessages(usersSmartMessages)
+
+  await sendMessages({
+    alerter,
+    telegram,
+    updateUser,
+    usersTgMessages: usersTelegramMessages,
+  })
+}
+
+async function notify() {
+  const { error } = require('dotenv').config()
+
+  if (error) {
+    throw error
+  }
+
+  const alerter = require('@hltvf/monitoring/alerter')
+  const log = require('./logger')()
+
+  const Telegram = require('telegraf/telegram')
+  const { updateUser } = require('common/manageUsers')
+  const { fetchData } = require('./fetchData')
 
   const telegram = new Telegram(process.env.BOT_TOKEN)
 
-  await sendMessages({ alerter, telegram, updateUser, usersTgMessages })
+  try {
+    await _notify({
+      alerter,
+      fetchData,
+      log,
+      telegram,
+      updateUser,
+    })
+  } catch (e) {
+    alerter.error(e)
+  }
 }
 
+module.exports = {
+  _notify,
+}
+
+/* istanbul ignore next */
 if (require.main === module) {
   notify()
 }

@@ -25,6 +25,7 @@ const DEFAULT_TIMEZONE_OFFSET = 0
 
 function convertUnixTimestampToDateTime(
   unixTimestampMillis,
+  /* istanbul ignore next */
   timeZoneOffsetMillis = DEFAULT_TIMEZONE_OFFSET,
 ) {
   const when = new Date(

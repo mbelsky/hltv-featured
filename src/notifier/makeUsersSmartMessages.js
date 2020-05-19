@@ -1,18 +1,18 @@
-const { FEATURED_MATCHES_TYPES, MESSAGE_TYPES } = require('./consts')
+const { FEATURED_MATCHES_TYPES } = require('./consts')
+
+const {
+  CustomLocationMessage,
+  EmptyFeaturedMatchesMessage,
+  FavoriteTeamsMatchesMessage,
+  FeaturedMatchesMessage,
+} = require('./messages')
 
 const getFavoriteTeamsMatchesMessage = (raw) => {
   if (!raw) {
     return
   }
 
-  return {
-    type: MESSAGE_TYPES.favoriteTeamsMatches,
-    text: raw,
-    extra: {
-      disable_web_page_preview: true,
-      parse_mode: 'HTML',
-    },
-  }
+  return new FavoriteTeamsMatchesMessage({ text: raw })
 }
 
 const getFeaturedMatchesMessage = (raw) => {
@@ -21,19 +21,12 @@ const getFeaturedMatchesMessage = (raw) => {
   }
 
   const { message: text, type } = raw
-  const isEmpty = type === FEATURED_MATCHES_TYPES.empty
+  const Constructor =
+    type === FEATURED_MATCHES_TYPES.empty
+      ? EmptyFeaturedMatchesMessage
+      : FeaturedMatchesMessage
 
-  return {
-    type: isEmpty
-      ? MESSAGE_TYPES.emptyFeaturedMatches
-      : MESSAGE_TYPES.featuredMatches,
-    text,
-    extra: {
-      disable_notification: isEmpty,
-      disable_web_page_preview: true,
-      parse_mode: 'HTML',
-    },
-  }
+  return new Constructor({ text })
 }
 
 const getCustomLocationMessage = (raw) => {
@@ -41,13 +34,10 @@ const getCustomLocationMessage = (raw) => {
     return
   }
 
-  return {
-    type: MESSAGE_TYPES.customLocation,
-    text: raw,
-  }
+  return new CustomLocationMessage({ text: raw })
 }
 
-exports.makeTgMessages = (rawMessages) => {
+exports.makeUsersSmartMessages = (rawMessages) => {
   return rawMessages
     .map(
       ({

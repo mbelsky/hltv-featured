@@ -1,5 +1,3 @@
-const { MESSAGE_TYPES } = require('./consts')
-
 exports.sendMessages = async ({
   alerter,
   telegram,
@@ -13,40 +11,16 @@ exports.sendMessages = async ({
 
     try {
       for await (const message of messages) {
-        const hasMessageWithMatches = messages.some(({ type }) =>
-          [
-            MESSAGE_TYPES.featuredMatches,
-            MESSAGE_TYPES.favoriteTeamsMatches,
-          ].includes(type),
-        )
-
-        if (
-          MESSAGE_TYPES.emptyFeaturedMatches === message.type &&
-          hasMessageWithMatches
-        ) {
+        if (!message.meetRequirementsToSend(messages)) {
           continue
         }
 
-        if (
-          MESSAGE_TYPES.customLocation === message.type &&
-          !hasMessageWithMatches
-        ) {
+        await telegram.sendMessage(id, message.getText(), message.getExtra())
+
+        const data = message.getUserPayload()
+
+        if (!data) {
           continue
-        }
-
-        await telegram.sendMessage(id, message.text, message.extra)
-
-        const data = {}
-
-        switch (message.type) {
-          case MESSAGE_TYPES.customLocation:
-            data.seenCustomizeLocationMessage = true
-            break
-          case MESSAGE_TYPES.emptyFeaturedMatches:
-            data.seenEmptyMessage = true
-            break
-          default:
-            continue
         }
 
         try {
