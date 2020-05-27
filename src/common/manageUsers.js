@@ -1,10 +1,10 @@
-const { USERS_COLLECTION } = require('./consts')
+const { FILTER_STOP_VALUE, USERS_COLLECTION } = require('./consts')
 const db = require('./firestore')
 
 async function getActiveUsers() {
   const collectionSnapshot = await db
     .collection(USERS_COLLECTION)
-    .where('filter', '<', Number.MAX_SAFE_INTEGER)
+    .where('filter', '<', FILTER_STOP_VALUE)
     .get()
 
   return collectionSnapshot.docs.reduce((users, documentSnapshot) => {

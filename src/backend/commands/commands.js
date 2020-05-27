@@ -1,4 +1,5 @@
 const alerter = require('@hltvf/monitoring/alerter')
+const { FILTER_STOP_VALUE } = require('common/consts')
 const { convertMatchesToFeed } = require('common/formatMatches')
 const { getTimezone } = require('common/getTimezone')
 const { initUser, setFilter, updateUser } = require('common/manageUsers')
@@ -53,7 +54,7 @@ Every morning I will send you notifications about matches with two or more â­ï¸
 const stop = async (ctx) => {
   await Promise.all([
     ctx.replyWithChatAction('typing'),
-    setFilter({ chatId: ctx.chat.id, filter: Number.MAX_SAFE_INTEGER }),
+    setFilter({ chatId: ctx.chat.id, filter: FILTER_STOP_VALUE }),
   ])
   ctx.reply('You may subscribe again with /start')
 }
