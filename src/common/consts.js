@@ -1,5 +1,6 @@
 module.exports = {
   FILTER_STOP_VALUE: 9007199254740991, // === Number.MAX_SAFE_INTEGER
   MATCHES_COLLECTION: 'matches',
+  TEAMS_COLLECTION: 'teams',
   USERS_COLLECTION: 'users',
 }
