@@ -2,16 +2,22 @@ const alerter = require('@hltvf/monitoring/alerter')
 const log = require('@hltvf/monitoring/logger').logFabric('requests-scraper')
 
 const axios = require('axios')
+const { getTeams } = require('common/getTeams')
 const {
   removeOutdatedMatches,
   saveFeaturedMatches,
 } = require('common/manageMatches')
+const { addTeams } = require('common/manageTeams')
 const htmlToMatches = require('./parseHtml')
 
 const root = process.env.ROOT_URL || 'https://www.hltv.org'
 const url = process.env.PAGE_URL || 'https://www.hltv.org/matches'
 
-const logResult = (matches) => {
+const logResult = (data, matches) => {
+  if (!matches.length) {
+    alerter.warn('Zero matches scraped. HTML:\n\n' + data)
+  }
+
   if ('production' === process.env.NODE_ENV) {
     const message = `Scraped & saved ${matches.length} matches`
 
@@ -22,8 +28,6 @@ const logResult = (matches) => {
         message,
       },
     })
-  } else {
-    console.log(JSON.stringify(matches, null, 2))
   }
 }
 
@@ -40,14 +44,14 @@ function scrap() {
     .then(() => axios(url))
     .then(({ data }) => {
       const matches = htmlToMatches(data, { root })
+      const teams = getTeams(matches)
 
-      return saveFeaturedMatches(matches).then(() => {
-        if (!matches.length) {
-          alerter.warn('Zero matches scraped. HTML:\n\n' + data)
-        }
+      const addTeamsPromise = addTeams(teams).catch(alerter.error)
+      const saveMatchesPromise = saveFeaturedMatches(matches)
+        .then(() => logResult(data, matches))
+        .catch(alerter.error)
 
-        logResult(matches)
-      })
+      return Promise.all([addTeamsPromise, saveMatchesPromise])
     })
 }
 

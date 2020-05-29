@@ -54,3 +54,18 @@ Array [
   ],
 ]
 `;
+
+exports[`scraper integration 2`] = `
+Array [
+  Array [
+    "hellraisers",
+    "melbet/extremum loser",
+    "illuminar",
+    "ancient",
+    "mibr",
+    "avangar",
+    "tbd",
+    "evil geniuses",
+  ],
+]
+`;
