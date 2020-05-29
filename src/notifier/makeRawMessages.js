@@ -3,6 +3,7 @@ const {
   convertMatchesToFeed,
   convertUnixTimestampToDateTime,
 } = require('common/formatMatches')
+const { getMatchTeams } = require('common/getTeams')
 const { FEATURED_MATCHES_TYPES } = require('./consts')
 const { splitMatchesByFilter } = require('./utils')
 
@@ -44,8 +45,8 @@ const getFavoriteTeamsMatchesMessage = (
   // TODO: Replace favorites with Map/Set
 
   const matches = todayMatches
-    .filter(({ title }) => {
-      const teams = title.toLowerCase().split(' vs ')
+    .filter((match) => {
+      const teams = getMatchTeams(match)
       const isFavoriteTeamMatch =
         0 !== teams.filter((team) => favorites.includes(team)).length
 
