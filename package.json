@@ -20,7 +20,7 @@
     "@babel/preset-env": "^7.9.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^7",
-    "jest": "^25.2.3",
+    "jest": "^26",
     "prettier": "^2.0.2"
   },
   "dependencies": {
