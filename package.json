@@ -13,7 +13,7 @@
     "notifier": "node ./src/notifier",
     "scraper": "node ./src/scraper",
     "lint": "eslint . && prettier -c .",
-    "test": "yarn jest"
+    "test": "yarn jest --coverage src"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
