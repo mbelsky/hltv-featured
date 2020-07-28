@@ -13,7 +13,9 @@
     "notifier": "node ./src/notifier",
     "scraper": "node ./src/scraper",
     "lint": "eslint . && prettier -c .",
-    "test": "yarn jest --coverage src"
+    "test": "yarn jest --coverage src",
+    "docker:build": "docker build -t mbelsky/hltv-featured:latest .",
+    "docker:run": "docker run -it --rm mbelsky/hltv-featured:latest"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",

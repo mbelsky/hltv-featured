@@ -1,0 +1,2 @@
+55 4..21 * * * node /app/src/scraper/scraper.js
+# 0 5 * * * node /app/src/notifier/notifier.js

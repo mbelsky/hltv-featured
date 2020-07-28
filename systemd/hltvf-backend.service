@@ -8,7 +8,7 @@ StartLimitIntervalSec=10
 User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
-ExecStart=/usr/bin/yarn backend
+ExecStart=/usr/bin/env node ./src/backend/backend.js
 Restart=always
 RestartSec=500ms
 

@@ -6,7 +6,33 @@ Wants=hltvf-notify.timer
 User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
-ExecStart=/usr/bin/yarn notifier
+ExecStart=/usr/bin/env node ./src/notifier/notifier.js
 
 [Install]
 RequiredBy=hltvf-notify.timer
+
+
+- bot -- v
+- notifier 1/d -- ?
+- scraper 1/h -- ?
+
+docker run hltvf -d // bot
+docker run hltvf -d -e CRON=true
+
+Dockerfile
+
+CMD sh start.sh
+
+start.sh
+
+if [[ "$CRON" ]]; then
+  # https://stackoverflow.com/questions/37458287/how-to-run-a-cron-job-inside-a-docker-container/47960145#47960145
+  crond -f -d 8 # /etc/crontabs/root
+else
+  /usr/bin/env node ...
+fi
+
+/etc/crontabs/root
+
+0 5 * * * /usr/bin/env node notifier
+58 4-21 * * * /usr/bin/env node scraper

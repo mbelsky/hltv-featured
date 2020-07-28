@@ -6,7 +6,8 @@ Wants=hltvf-scrap.timer
 User=hltv
 Environment=NODE_ENV=production
 WorkingDirectory=/opt/hltv-featured
-ExecStart=/usr/bin/yarn scraper
+ExecStart=/usr/bin/env node ./src/scraper/scraper.js
+ExecStart=docker run …
 
 [Install]
 RequiredBy=hltvf-scrap.timer
