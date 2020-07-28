@@ -1,1769 +1,900 @@
 /* eslint-disable */
 module.exports = `
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"
-    id="metaViewport">
-  <meta property="fb:admins" content="1004164229">
-  <meta property="fb:pages" content="249997999009">
-  <meta property="fb:app_id" content="1460388157605817">
-  <meta name="google-site-verification"
-    content="DcypRFLQvgYQL5Acx7feoGWbblSsmKv6HpPI7mM_1uw">
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="/img/static/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="/img/static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16"
-    href="/img/static/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/img/static/favicon/manifest.json">
-  <link rel="mask-icon" href="/img/static/favicon/safari-pinned-tab.svg"
-    color="#5bbad5">
-  <meta name="theme-color" content="#ffffff">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Oswald:700&amp;amp;subset=latin-ext"
-    rel="stylesheet">
-  <link rel="stylesheet"
-    href="/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
-  <script type="text/javascript"
-    src="/scripts/hltv-csstheme.js?hash=c4ed9eeda88e8de33b199aa1e1677a09"
-    data-day-css="6b0d4d9f237a62d2bc72cf3df71a54b7"
-    data-night-css="1c9e7a038fe6f0fd7a40fa6211f399bf"></script>
-  <script type="text/javascript"
-    src="/scripts/hltv.js?hash=dcab8ed6d819ac51e5f9a3f1a7c4c00b"></script>
-  <script type="text/javascript"
-    src="https://notification-secure.hltv.org/hltvNotification.js?v4"
-    async="async"></script>
-  <script type="text/javascript"
-    src="https://scorebot-secure.hltv.org/scorebotClientApi.js?v9"
-    async="async"></script>
-  <title>CS:GO Matches &amp; livescore | HLTV.org</title>
-  <link href="/rss/news" rel="alternate" type="application/rss+xml">
-  <meta name="description"
-    content="All upcoming CS:GO Matches &amp; events listed in one place. Containing livescore, lineups, statistics and much more!">
-  <meta property="og:title"
-    content="HLTV.org - The home of competitive Counter-Strike">
-  <meta property="og:image"
-    content="https://www.hltv.org/img/static/openGraphHltvLogo.png">
-  <meta property="og:site_name" content="HLTV.org">
-</head>
-<body class="preload colsCustom1101  "
-  data-livescore-server-url="https://cf1-scorebot.hltv.org,https://cf2-scorebot.hltv.org,https://cf3-scorebot.hltv.org">
-  <div class="navbar">
-    <nav class="navcon"><a href="/" class="small-logo"><img alt="HLTV.org"
-          src="/img/static/TopSmallLogo2x.png" class="small-logo-img"></a><a
-        href="/" class="navnews">News</a><a href="/matches"
-        class="navmatches">Matches</a><a href="/results"
-        class="navresults">Results</a><a href="/events"
-        class="navevents">Events</a>
-      <div class="navburger navburger1"><i class="fa fa-bars"
-          aria-hidden="true"></i></div>
-      <div class="navbreakline1"></div>
-      <a href="/stats" class="navstats">Stats</a><a href="/galleries"
-        class="navgalleries">Galleries</a><a href="/ranking/teams"
-        class="navranking smartphone-only">Rankings</a><a href="/forums"
-        class="navforums no-promode">Forums</a><a href="/betting/money"
-        class="navbets">Bets</a><a href="/live"
-        class="navlive gtSmartphone-only">Live</a><a href="/fantasy"
-        class="navfantasy">Fantasy<span class="new-feature">NEW!</span></a>
-      <div class="navburger navburger2"><i class="fa fa-bars"
-          aria-hidden="true"></i></div>
-      <div class="navbreakline2"></div>
-      <div class="navsearch search-typeahead">
-        <form action="/search?term="><input type="text" class="navsearchinput"
-            name="query" data-topbar-search-url="/search?term="
-            placeholder="Search...">
-          <div class="search-submit-hidden"><input type="submit" tabIndex="-1">
-          </div>
-          <div class="navsearchborder"></div>
-          <button type="submit" class="navsearchicon"><i
-              class="fa fa-search"></i></button>
-        </form>
-      </div>
-      <div class="navborder"></div>
-      <div class="hidden">
-        <div class="fixed-overlay-popup-content-con" id="loginpopup">
-          <div class="fixed-overlay-popup-content">
-            <div class="login-dialog standard-box" id="loginpopup"
-              data-login-url="/login">
-              <div class="logo"><img alt="HLTV.org"
-                  src="/img/static/TopSmallLogo2x.png" height="46px"></div>
-              <form><input type="text" name="username" class="loginInput"
-                  required="required" placeholder="Username"><input
-                  type="password" name="password" class="loginInput"
-                  required="required" placeholder="Password">
-                <div class="login-elm clearfix"><span
-                    class="remember-me left"><input type="checkbox"
-                      name="autologin" class="loginCheckbox" checked="checked">
-                    Remember me</span><span class="forgot-link right">Forgot
-                    password</span></div>
-                <div class="g-recaptcha" id="login-recaptcha"></div>
-                <div class="login-error"></div>
-                <button type="submit" class="login-button button"
-                  name="login">Login</button>
-              </form>
-              <hr class="login-elm">
-              <a href="/signup" class="signup-button button">Sign up</a>
-            </div>
-          </div>
+<html lang="en" data-client-country-iso="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" id="metaViewport">
+    <meta property="fb:admins" content="1004164229">
+    <meta property="fb:pages" content="249997999009">
+    <meta property="fb:app_id" content="1460388157605817">
+    <meta name="google-site-verification" content="DcypRFLQvgYQL5Acx7feoGWbblSsmKv6HpPI7mM_1uw">
+    <meta name="yandex-verification" content="00ed04feb3ede037">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/static/favicon/manifest.json">
+    <link rel="mask-icon" href="/img/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Oswald:700&amp;amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <script type="text/javascript" src="/scripts/hltv-csstheme.js?hash=61a4fe9c1ee03626bf7c5c6e61241355" data-day-css="47b7091e0d739eaabe305c8ca5b19874" data-night-css="488220ba90a19c38cdffdc95d7aeff07"></script>
+    <script type="text/javascript" src="https://consent.cookiebot.com/uc.js" id="Cookiebot" data-cbid="e33407d2-0296-4168-a6fb-6e38ce5f1ffb" data-blockingmode="auto" data-framework="IAB1"></script>
+    <script type="text/javascript" src="/scripts/hltv.js?hash=19e6acdae7ccdab85d761a2dc230b6d3"></script>
+    <script type="text/javascript" src="https://notification-secure.hltv.org/hltvNotification.js?v4" async="async"></script>
+    <script type="text/javascript" src="https://scorebot-secure.hltv.org/scorebotClientApi.js?v9" async="async"></script>
+    <script type="text/javascript" src="https://hb.vntsm.com/v3/live/ad-manager.min.js" data-site-id="5e79f53e963d0e25e62b5f4f" data-mode="scan" async="async"></script>
+    <title>CS:GO Matches &amp; livescore | HLTV.org</title>
+    <link href="/rss/news" rel="alternate" type="application/rss+xml">
+    <meta name="description" content="All upcoming CS:GO Matches &amp; events listed in one place. Containing livescore, lineups, statistics and much more!">
+    <meta property="og:title" content="HLTV.org - The home of competitive Counter-Strike">
+    <meta property="og:image" content="https://www.hltv.org/img/static/openGraphHltvLogo.png">
+    <meta property="og:site_name" content="HLTV.org">
+    <link href="https://www.hltv.org/matches" rel="canonical">
+  </head>
+  <body class="preload cols0101  " data-livescore-server-url="https://cf1-scorebot.hltv.org,https://cf2-scorebot.hltv.org,https://cf3-scorebot.hltv.org">
+    <div class="navbar">
+      <nav class="navcon"><a href="/" class="small-logo"><img alt="HLTV.org" src="/img/static/TopSmallLogo2x.png" class="small-logo-img"></a><a href="/" class="navnews">News</a><a href="/matches" class="navmatches">Matches</a><a href="/results" class="navresults">Results</a><a href="/events" class="navevents">Events</a>
+        <div class="navburger navburger1"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <div class="navbreakline1"></div>
+<a href="/stats" class="navstats">Stats</a><a href="/galleries" class="navgalleries">Galleries</a><a href="/ranking/teams" class="navranking smartphone-only">Rankings</a><a href="/forums" class="navforums no-promode">Forums</a><a href="/betting/money" class="nav">Bets</a><a href="/live" class="navlive gtSmartphone-only">Live</a><a href="/fantasy" class="navfantasy">Fantasy<span class="new-feature">UPDATED</span></a>
+        <div class="navburger navburger2"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <div class="navbreakline2"></div>
+        <div class="navsearch search-typeahead">
+          <form action="/search?term="><input type="text" class="navsearchinput" name="query" data-topbar-search-url="/search?term=" placeholder="Search...">
+            <div class="search-submit-hidden"><input type="submit" tabIndex="-1"></div>
+            <div class="navsearchborder"></div>
+<button type="submit" class="navsearchicon"><i class="fa fa-search"></i></button></form>
         </div>
-      </div>
-      <div class="hidden">
-        <div class="fixed-overlay-popup-content-con" id="forgotpopup">
-          <div class="fixed-overlay-popup-content">
-            <div class="forgot-password-dialog standard-box">
-              <div>
-                <div class="logo"><img alt="HLTV.org"
-                    src="/img/static/TopSmallLogo2x.png" height="46px"></div>
-                <div id="forgot-password-username"><input type="text"
-                    name="username" class="loginInput" required="required"
-                    placeholder="Username"><span
-                    class="validation-error hidden"><i class=" fa fa-times"
-                      aria-hidden="true"></i><span
-                      class="message"></span></span></div>
-              </div>
-              <div>
-                <div class="g-recaptcha" id="forgot-password-recaptcha"></div>
-                <button type="button" class="recover-button button"
-                  data-forgot-password-location="/forgotpassword">Recover</button>
+        <div class="navborder"></div>
+        <div class="hidden">
+          <div class="fixed-overlay-popup-content-con" id="loginpopup">
+            <div class="fixed-overlay-popup-content">
+              <div class="login-dialog standard-box" id="loginpopup" data-login-url="/login">
+                <div class="logo"><img alt="HLTV.org" src="/img/static/TopSmallLogo2x.png" height="46px"></div>
+                <form><input type="text" name="username" class="loginInput" required="required" placeholder="Username"><input type="password" name="password" class="loginInput" required="required" placeholder="Password">
+                  <div class="login-elm clearfix"><span class="remember-me left"><input type="checkbox" name="autologin" class="loginCheckbox" checked="checked"> Remember me</span><span class="forgot-link right">Forgot password</span></div>
+                  <div class="g-recaptcha" id="login-recaptcha"></div>
+                  <div class="login-error"></div>
+<button type="submit" class="login-button button" name="login">Login</button></form>
                 <hr class="login-elm">
-                <button type="button" class="back-button button"
-                  id="backToLoginDialog">Back</button>
+<a href="/signup" class="signup-button button">Sign up</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden">
+          <div class="fixed-overlay-popup-content-con" id="forgotpopup">
+            <div class="fixed-overlay-popup-content">
+              <div class="forgot-password-dialog standard-box">
+                <div>
+                  <div class="logo"><img alt="HLTV.org" src="/img/static/TopSmallLogo2x.png" height="46px"></div>
+                  <div id="forgot-password-username"><input type="text" name="username" class="loginInput" required="required" placeholder="Username"><span class="validation-error hidden"><i class=" fa fa-times" aria-hidden="true"></i><span class="message"></span></span></div>
+                </div>
+                <div>
+                  <div class="g-recaptcha" id="forgot-password-recaptcha"></div>
+<button type="button" class="recover-button button" data-forgot-password-location="/forgotpassword">Recover</button>
+                  <hr class="login-elm">
+<button type="button" class="back-button button" id="backToLoginDialog">Back</button></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="navsignin">Sign in</div>
-      <div class="navborder"></div>
-      <div class="navdown"><i class="fa fa-caret-down"></i>
-        <div class="arrow"></div>
-        <div class="arrow2"></div>
-      </div>
-      <div class="navpopup" id="popupsettings">
-        <div class="nav-popup-header">Settings</div>
-        <div class="nav-popup-elm"><span>Theme</span><span
-            class="right slider"><span class="toggleUserTheme userTheme-day"
-              data-url="/profile/settings/changetheme?theme=day">Day</span><span
-              class="toggleUserTheme userTheme-night"
-              data-url="/profile/settings/changetheme?theme=night">Night</span><span
-              class="toggleUserTheme userTheme-auto selected"
-              data-url="/profile/settings/changetheme?theme=auto">Auto</span></span>
+        <div class="navsignin">Sign in</div>
+        <div class="navborder"></div>
+        <div class="navdown"><i class="fa fa-caret-down"></i>
+          <div class="arrow"></div>
+          <div class="arrow2"></div>
         </div>
-        <div class="nav-popup-elm"><span
-            title="Show/hide results in results section &amp; on match pages.">Show
-            results</span><span class="right slider"><span
-              class="toggleSpoilers show-spoilers">Yes</span><span
-              class="toggleSpoilers hide-spoilers">No</span></span></div>
-        <div class="nav-popup-elm"><span>Timezone</span><span class="right">
-            <form action=""><select class="timezoneSelector"
-                data-timezone-update-on-select="1" id="timezoneSelector"
-                name="timezone"></select></form>
-          </span></div>
-        <div class="nav-popup-elm desktop-mode-con"><span>Force desktop
-            mode</span><span class="right slider"><span
-              class="toggleDesktopMode desktopModeOn">On</span><span
-              class="toggleDesktopMode desktopModeOff">off</span></span></div>
-      </div>
-    </nav>
-  </div>
-  <div class="bgPadding">
-    <div class="widthControl">
-      <div class="logoCon"><a href="/">
-          <div class="hltv-logo-container"></div>
-        </a>
-        <div class="" id="g0_middle"></div>
-        <div class="" id="g0_right"></div>
-      </div>
-      <div class="colCon">
-        <div class="contentCol">
-          <div class="matches">
-            <h2 class="standard-headline">Event guide - <span
-                data-time-format="MMMM d" data-unix="1574406290992">November
-                22</span> - <span data-time-format="MMMM d"
-                data-unix="1574924690992">November 28</span></h2>
-            <div class="guide-section">
-              <div class="guide-scroll">
-                <table class="guide-table">
-                  <thead>
-                    <tr>
-                      <th class="guide-event-name">Featured events</th>
-                      <th class="guide-weekday" data-day-timestamp="1574406290">
-                        <span data-time-format="EEE"
-                          data-unix="1574406290992">Fri</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574492690">
-                        <span data-time-format="EEE"
-                          data-unix="1574492690992">Sat</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574579090">
-                        <span data-time-format="EEE"
-                          data-unix="1574579090992">Sun</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574665490">
-                        <span data-time-format="EEE"
-                          data-unix="1574665490992">Mon</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574751890">
-                        <span data-time-format="EEE"
-                          data-unix="1574751890992">Tue</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574838290">
-                        <span data-time-format="EEE"
-                          data-unix="1574838290992">Wed</span></th>
-                      <th class="guide-weekday" data-day-timestamp="1574924690">
-                        <span data-time-format="EEE"
-                          data-unix="1574924690992">Thu</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="guide-event text-ellipsis"><img
-                          alt="CS:GO Asia Championships 2019"
-                          src="https://static.hltv.org/images/eventLogos/4680.png"
-                          class="event-logo"
-                          title="CS:GO Asia Championships 2019"><a
-                          href="/events/4680/csgo-asia-championships-2019"
-                          class="strong a-reset">CAC 2019</a></td>
-                      <td class="guide-day event_4680 no-matches"
-                        data-parent-timestamp="1574406290992"></td>
-                      <td class="guide-day event_4680 active"
-                        data-parent-timestamp="1574492690992">
-                        <div class="guide-same-day-matches" data-event="4680"
-                          data-parent-timestamp="1574492690992"
-                          data-start-timestamp="1574485200000"><a
-                            href="/matches?event=4680"
-                            class="guide-link a-reset"><span
-                              class="guide-day-type">Quarter-finals</span><br><span
-                              data-time-format="H:mm"
-                              data-unix="1574485200000">6:00</span>-<span
-                              data-time-format="H:mm"
-                              data-unix="1574506800000">12:00</span></a></div>
-                      </td>
-                      <td class="guide-day event_4680 active"
-                        data-parent-timestamp="1574579090992">
-                        <div class="guide-same-day-matches" data-event="4680"
-                          data-parent-timestamp="1574579090992"
-                          data-start-timestamp="1574571600000"><a
-                            href="/matches?event=4680"
-                            class="guide-link a-reset"><span
-                              class="guide-day-type">Semi-finals + Grand
-                              final</span><br><span data-time-format="H:mm"
-                              data-unix="1574571600000">6:00</span>-<span
-                              data-time-format="H:mm"
-                              data-unix="1574604000000">15:00</span></a></div>
-                      </td>
-                      <td class="guide-day event_4680 no-matches"
-                        data-parent-timestamp="1574665490992"></td>
-                      <td class="guide-day event_4680 no-matches"
-                        data-parent-timestamp="1574751890992"></td>
-                      <td class="guide-day event_4680 no-matches"
-                        data-parent-timestamp="1574838290992"></td>
-                      <td class="guide-day event_4680 no-matches"
-                        data-parent-timestamp="1574924690992"></td>
-                    </tr>
-                    <tr>
-                      <td class="guide-event text-ellipsis"><img
-                          alt="ECS Season 8 Finals"
-                          src="https://static.hltv.org/images/eventLogos/4926.png"
-                          class="event-logo" title="ECS Season 8 Finals"><a
-                          href="/events/4926/ecs-season-8-finals"
-                          class="strong a-reset">ECS S8 Finals</a></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574406290992"></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574492690992"></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574579090992"></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574665490992"></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574751890992"></td>
-                      <td class="guide-day event_4926 no-matches"
-                        data-parent-timestamp="1574838290992"></td>
-                      <td class="guide-day event_4926 active"
-                        data-parent-timestamp="1574924690992">
-                        <div class="guide-same-day-matches" data-event="4926"
-                          data-parent-timestamp="1574924690992"
-                          data-start-timestamp="1574953200000"><a
-                            href="/matches?event=4926"
-                            class="guide-link a-reset"><span
-                              class="guide-day-type">Group stage</span><br><span
-                              data-time-format="H:mm"
-                              data-unix="1574953200000">16:00</span>-<span
-                              data-time-format="H:mm"
-                              data-unix="1574996400000">4:00</span></a></div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div class="navpopup navpopup-scroll" id="popupsettings">
+          <div class="nav-popup-header">Settings</div>
+          <div class="nav-popup-elm"><span>Theme</span><span class="right slider"><span class="toggleUserTheme userTheme-day" data-url="/profile/settings/changetheme?theme=day">Day</span><span class="toggleUserTheme userTheme-night" data-url="/profile/settings/changetheme?theme=night">Night</span><span class="toggleUserTheme userTheme-auto selected" data-url="/profile/settings/changetheme?theme=auto">Auto</span></span></div>
+          <div class="nav-popup-elm"><span title="Show/hide results in results section &amp; on match pages.">Show results</span><span class="right slider"><span class="toggleSpoilers show-spoilers">Yes</span><span class="toggleSpoilers hide-spoilers">No</span></span></div>
+          <div class="nav-popup-elm"><span>Timezone</span><span class="right">
+              <form action=""><select class="timezoneSelector" data-timezone-update-on-select="1" id="timezoneSelector" name="timezone"></select></form>
+            </span></div>
+          <div class="nav-popup-elm desktop-mode-con"><span>Force desktop mode</span><span class="right slider"><span class="toggleDesktopMode desktopModeOn">On</span><span class="toggleDesktopMode desktopModeOff">off</span></span></div>
+          <div class="match-filter-menu">
+            <div class="nav-popup-header expand-match-filter"><span><i class="fa fa-star"></i>Match filter settings</span><span class="right expand-match-filter-button">Expand</span></div>
+            <div class="match-filter-container match-filter-hidden">
+              <div class="nav-popup-elm"><span title="Enable/disable match filter">Enable filter</span><span class="right slider"><span class="toggleMatchFilter toploginbar-match-filter-enabled">Yes</span><span class="toggleMatchFilter toploginbar-match-filter-disabled">No</span></span></div>
+              <div class="match-filter-configuration">
+                <div class="match-filter-popup-block">
+                  <div class="match-filter-popup-description">Any matchup that fits one or more of the criteria set in the filter will feature in the today's matches column.</div>
+                </div>
+                <div class="nav-popup-elm matchFilterResetRow"><button name="match-filter-reset-all" class="matchFilterResetButton" title="Reset to default filter (1 star)">Reset filter</button></div>
+                <div class="nav-popup-elm"><span>Match type</span><span class="right">Live match<input type="checkbox" name="match-filter-live-match" class="matchFilterCheckbox"></span></div>
+                <div class="nav-popup-elm">Star filter<span class="right"><button name="match-filter-clear-stars" class="matchFilterClearStarsButton" title="Clear star filter">Clear</button></span></div>
+                <div class="nav-popup-elm"><span>Min. stars</span><span class="right match-filter-stars"><span class="fa fa-star-o match-filter-star" title="Include matches with two top 30 teams, or one top 20 team"></span><span class="fa fa-star-o match-filter-star" title="Include matches with two top 20 teams"></span><span class="fa fa-star-o match-filter-star" title="Include matches with two top 10 teams"></span><span class="fa fa-star-o match-filter-star" title="Include matches with two top 5 teams"></span><span class="fa fa-star-o match-filter-star" title="Include matches with two top 3 teams"></span></span></div>
+                <div class="nav-popup-elm"><span>Event type</span><span class="right">LAN<input type="checkbox" name="match-filter-lan" class="matchFilterCheckbox"></span></div>
+                <div class="nav-popup-elm">
+                  <div class="match-filter-popup-block-header">Team</div>
+                  <div class="match-filter-popup-elm match-filter-team"><span><img class="match-filter-team-logo"><span class="match-filter-team-name-placeholder">Team name placeholder</span></span><span class="fa fa-times match-filter-remove-team" title="Remove team"></span></div>
+                  <div class="match-filter-popup-elm match-filter-team"><span><img class="match-filter-team-logo"><span class="match-filter-team-name-placeholder">Team name placeholder</span></span><span class="fa fa-times match-filter-remove-team" title="Remove team"></span></div>
+                  <div class="match-filter-popup-elm match-filter-team"><span><img class="match-filter-team-logo"><span class="match-filter-team-name-placeholder">Team name placeholder</span></span><span class="fa fa-times match-filter-remove-team" title="Remove team"></span></div>
+                  <div class="match-filter-popup-elm match-filter-team"><span><img class="match-filter-team-logo"><span class="match-filter-team-name-placeholder">Team name placeholder</span></span><span class="fa fa-times match-filter-remove-team" title="Remove team"></span></div>
+                  <div class="match-filter-popup-elm match-filter-team"><span><img class="match-filter-team-logo"><span class="match-filter-team-name-placeholder">Team name placeholder</span></span><span class="fa fa-times match-filter-remove-team" title="Remove team"></span></div>
+<span class="match-filter-popup-elm search-typeahead"><input type="text" class="match-filter-team-search" data-url="/searchTeam?term=" placeholder="Search team..."></span></div>
               </div>
             </div>
-            <div class="bet-widget"
-              data-bet-json="{&quot;DK&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;eoddset&quot;,&quot;shortCallToAction&quot;:&quot;Er dit aim godt nok? Så ram her for CS:GO-odds&quot;,&quot;link&quot;:&quot;https://danskespil.dk/oddset/esport/counter-strike-go&quot;,&quot;dayLogo&quot;:&quot;eoddsetlogo.png&quot;,&quot;nightLogo&quot;:&quot;eoddsetlogo.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.55&quot;,&quot;team2Odds&quot;:&quot;2.40&quot;,&quot;rgText&quot;:&quot;*Regler og vilkår gælder&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;PL&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbet&quot;,&quot;shortCallToAction&quot;:&quot;Odbierz freebet 30 zł bez depozytu na esport&quot;,&quot;link&quot;:&quot;https://stsplaffiliates-api.omarsys.com/tracking.php?tracking_code\u0026aid\u003d100072\u0026mid\u003d68\u0026sid\u003d774\u0026pid\u003d46&quot;,&quot;dayLogo&quot;:&quot;sts_day.png&quot;,&quot;nightLogo&quot;:&quot;sts_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9215&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8120&quot;,&quot;team1Name&quot;:&quot;MIBR&quot;,&quot;team2Name&quot;:&quot;AVANGAR&quot;,&quot;team1Odds&quot;:&quot;1.45&quot;,&quot;team2Odds&quot;:&quot;2.52&quot;,&quot;rgText&quot;:&quot;STS posiada zezwolenie na urządzanie zakładów wzajemnych. Udział w nielegalnych grach hazardowych stanowi naruszenie przepisów. Hazard związany jest z ryzykiem.&quot;,&quot;hideBetHere&quot;:true,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;CN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;thunderfire&quot;,&quot;shortCallToAction&quot;:&quot;雷火电竞---亚洲第一电竞盘口&quot;,&quot;link&quot;:&quot;https://www.e8682.com&quot;,&quot;dayLogo&quot;:&quot;thunderfire_day.png&quot;,&quot;nightLogo&quot;:&quot;thunderfire_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.65&quot;,&quot;team2Odds&quot;:&quot;2.26&quot;,&quot;rgText&quot;:&quot;&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;HK&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;thunderfire&quot;,&quot;shortCallToAction&quot;:&quot;雷火电竞---亚洲第一电竞盘口&quot;,&quot;link&quot;:&quot;https://www.e8682.com&quot;,&quot;dayLogo&quot;:&quot;thunderfire_day.png&quot;,&quot;nightLogo&quot;:&quot;thunderfire_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.65&quot;,&quot;team2Odds&quot;:&quot;2.26&quot;,&quot;rgText&quot;:&quot;&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;BR&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Bônus de boas vindas até 650 reais Código da promoção - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Brazil\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;TR&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Hoşgeldin depozito bonusu 130€ Promosyon kodu - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Turkey\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;KZ&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Бірінші депозиттік бонус 130€ дейін Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_KZ\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;IN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;आपका स्वागत है जमा राशि 130€ प्रोमोकोड - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_India\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;UA&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Бонус на первый депозит до 130 € Промокод - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Ukraine\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;VN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Tiền thưởng tiền gửi đầu tiên lên tới 130 € Quảng cáo - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Vietnam\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;MN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Баярлалаа ордын шагнал 130€ Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Mong\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;PH&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Unang Deposit Bonus hanggang 130 € Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaysb.host/L?tag\u003dd_46491m_1599c_Philipp\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/7865&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/10020&quot;,&quot;team1Name&quot;:&quot;HAVU&quot;,&quot;team2Name&quot;:&quot;Aristocracy&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.37&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;GI&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;IS&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;LV&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;LU&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;MT&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;SM&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;SK&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;SI&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;AD&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;stsbetintl&quot;,&quot;shortCallToAction&quot;:&quot;5 euro freebet without deposit with \&quot;HLTV\&quot; code&quot;,&quot;link&quot;:&quot;https://media.stsaffiliates.com/tracking.php?tracking_code\u0026aid\u003d100020\u0026mid\u003d167\u0026sid\u003d75\u0026pid\u003d115&quot;,&quot;dayLogo&quot;:&quot;sts_day.svg&quot;,&quot;nightLogo&quot;:&quot;sts_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/8813&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/6685&quot;,&quot;team1Name&quot;:&quot;Illuminar&quot;,&quot;team2Name&quot;:&quot;Ancient&quot;,&quot;team1Odds&quot;:&quot;1.56&quot;,&quot;team2Odds&quot;:&quot;2.27&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;Bet at STS&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;}}">
-            </div>
-            <div
-              class="section-header featured-match-widget-container wide-widget hidden matchpage-widget geowidget">
-              <a class="a-reset widget-link"
-                href="http://www.pinnacle.com/?refer=XAFF6322&amp;btag=a_17772b_15465c&amp;leagueid=201528&amp;periodnumber=0">
-                <div class="standard-box featured-match-widget">
-                  <div class="extraBox"></div>
-                  <div class="provider gtSmartphone-only">
-                    <div class="provider-logo-container"><img
-                        class="provider-logo day-only gtSmartphone-only"
-                        src="/img/static/betting/pinnacle-esports-logo.svg"><img
-                        class="provider-logo night-only gtSmartphone-only"
-                        src="/img/static/betting/pinnacle-esports-logo-night.svg">
-                    </div>
-                    <span class="gtSmartphone-only matchText">Get the best odds
-                      at Pinnacle*</span>
-                  </div>
-                  <div class="ageIndicator matchpage-widget geowidget">18+</div>
-                  <img src="/img/static/widgets/betway/betwayResponsible2.png"
-                    class="extraImage matchpage-widget geowidget">
-                  <div class="team-part">
-                    <div class="relative">
-                      <div class="team">
-                        <div class="team-logo-square-box"></div>
-                        <img alt="MIBR"
-                          src="https://static.hltv.org/images/team/logo/9215"
-                          class="team-logo team1-logo" title="MIBR">
-                        <div class="team1-name-and-odds">
-                          <div class="team-name text-ellipsis left-name">MIBR
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="bgPadding">
+      <div class="widthControl">
+        <div class="logoCon"><a href="/">
+            <div class="hltv-logo-container"></div>
+          </a>
+          <div class="" id="g0_middle"></div>
+          <div class="" id="g0_right"></div>
+        </div>
+        <div class="colCon">
+          <div class="contentCol">
+            <div class="vm-placement hidden" data-id="5e79f54d963d0e25e62b5f51"></div>
+            <div class="newMatches">
+              <div class="matchpage-widget-container">
+                <div class="bet-widget" data-bet-json="{&quot;RU&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;parimatch&quot;,&quot;shortCallToAction&quot;:&quot;ставка без риска до 2000 рублей&quot;,&quot;link&quot;:&quot;http://out.hltv.org/pari.php?placement\u003d1&quot;,&quot;dayLogo&quot;:&quot;pari_day.svg&quot;,&quot;nightLogo&quot;:&quot;pari_night.svg&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.25&quot;,&quot;team2Odds&quot;:&quot;1.60&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;CN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;thunderfire&quot;,&quot;shortCallToAction&quot;:&quot;雷火电竞--亚洲第一电竞滚球盘口&quot;,&quot;link&quot;:&quot;https://www.e8926.com&quot;,&quot;dayLogo&quot;:&quot;thunderfire_day.png&quot;,&quot;nightLogo&quot;:&quot;thunderfire_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.05&quot;,&quot;team2Odds&quot;:&quot;1.71&quot;,&quot;rgText&quot;:&quot;&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;HK&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;thunderfire&quot;,&quot;shortCallToAction&quot;:&quot;雷火电竞--亚洲第一电竞滚球盘口&quot;,&quot;link&quot;:&quot;https://www.e8926.com&quot;,&quot;dayLogo&quot;:&quot;thunderfire_day.png&quot;,&quot;nightLogo&quot;:&quot;thunderfire_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.05&quot;,&quot;team2Odds&quot;:&quot;1.71&quot;,&quot;rgText&quot;:&quot;&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;BR&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Bônus de boas vindas até 650 reais Código da promoção - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Brazil\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;TR&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Hoşgeldin depozito bonusu 130€ Promosyon kodu - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Turkey\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;KZ&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Бірінші депозиттік бонус 130€ дейін Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_KZ\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;IN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;आपका स्वागत है जमा राशि 130€ प्रोमोकोड - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_India\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;UA&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Бонус на первый депозит до 130 € Промокод - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Ukraine\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;VN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Tiền thưởng tiền gửi đầu tiên lên tới 130 € Quảng cáo - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Vietnam\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;MN&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Баярлалаа ордын шагнал 130€ Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Mong\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/eSports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;},&quot;PH&quot;:{&quot;provider&quot;:{&quot;providerId&quot;:&quot;1xbet&quot;,&quot;shortCallToAction&quot;:&quot;Unang Deposit Bonus hanggang 130 € Promocode - HLTV&quot;,&quot;link&quot;:&quot;http://refpaxjnua.top/L?tag\u003dd_46491m_1599c_Philipp\u0026site\u003d46491\u0026ad\u003d1599\u0026r\u003dline/Esports/&quot;,&quot;dayLogo&quot;:&quot;1xbet_day.png&quot;,&quot;nightLogo&quot;:&quot;1xbet_night.png&quot;},&quot;team1LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9902&quot;,&quot;team2LogoUrl&quot;:&quot;https://static.hltv.org/images/team/logo/9455&quot;,&quot;team1Name&quot;:&quot;Redemption POA&quot;,&quot;team2Name&quot;:&quot;Imperial&quot;,&quot;team1Odds&quot;:&quot;2.10&quot;,&quot;team2Odds&quot;:&quot;1.70&quot;,&quot;rgText&quot;:&quot;*18+ terms \u0026 conditions apply&quot;,&quot;hideBetHere&quot;:false,&quot;customBetHere&quot;:&quot;BET HERE&quot;,&quot;customBetHereMobile&quot;:&quot;BET HERE AT&quot;}}"></div>
+                <div class="section-header featured-match-ASdvuasdr123Gazx-container wide-ASdvuasdr123Gazx hidden matchpage-widget geow"><a class="a-reset ASdvuasdr123Gazx-link" href="https://egbaffiliates.com/track?aff_cid=1&amp;aff_id=52">
+                    <div class="standard-box featured-match-ASdvuasdr123Gazx">
+                      <div class="extraBox"></div>
+                      <div class="provider gtSmartphone-only">
+                        <div class="provider-logo-container"><img class="provider-logo day-only gtSmartphone-only" src="/img/static/logos/egb.png"><img class="provider-logo night-only gtSmartphone-only" src="/img/static/logos/egb.png"></div>
+<span class="gtSmartphone-only matchText"></span></div>
+                      <div class="ageIndicator matchpage-widget geow">18+</div>
+<img src="/img/static/widgets/betway/betwayResponsible2.png" class="extraImage matchpage-widget geow">
+                      <div class="team-part">
+                        <div class="relative">
+                          <div class="team">
+                            <div class="team-logo-square-box"></div>
+<img alt="Redemption POA" src="https://static.hltv.org/images/team/logo/9902" class="team-logo team1-logo" title="Redemption POA">
+                            <div class="team1-name-and-odds">
+                              <div class="team-name text-ellipsis left-name">Redemption POA</div>
+                              <div class="team-odds">2.29</div>
+                            </div>
                           </div>
-                          <div class="team-odds">1.47</div>
+                        </div>
+                        <div class="vs-container">
+                          <div class="vs">VS</div>
+                        </div>
+                        <div class="bet-now gtSmartphone-only bethere"><span class="gtSmartphone-only betheretext">BET HERE</span><img class="provider-logo day-only smartphone-only" src="/img/static/logos/egb.png"><img class="provider-logo night-only smartphone-only" src="/img/static/logos/egb.png"></div>
+                        <div class="relative">
+                          <div class="team reverse">
+                            <div class="team-logo-square-box"></div>
+<img alt="Imperial" src="https://static.hltv.org/images/team/logo/9455" class="team-logo team2-logo" title="Imperial">
+                            <div class="team2-name-and-odds">
+                              <div class="team-name text-ellipsis right-name">Imperial</div>
+                              <div class="team-odds">1.55</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="smartphone-only bet-now-container"><span class="smartphone-only bet-now bethere betheretext-mobile">BET HERE AT</span><span class="smartphone-only matchText custom-bet-here-text-mobile"></span><img class="provider-logo day-only smartphone-only" src="/img/static/logos/egb.png"><img class="provider-logo night-only smartphone-only" src="/img/static/logos/egb.png"></div>
+                    </div>
+                  </a>
+                  <div class="sub-text rg">*18+ terms &amp; conditions apply</div>
+                </div>
+                <div class="hidden" id="matches_overview"></div>
+              </div>
+              <div class="standardPageGrid">
+                <div class="mainContent">
+                  <div class="liveMatchesSection">
+                    <div class="headline-flex no-shadow">
+                      <h2 class="upcoming-headline">Live CS:GO matches</h2>
+                      <div><i class="star-filter-btn matchpage-star-unselected fa fa-star-o" title="Enable match filter"></i><i class="star-filter-btn matchpage-star-selected fa fa-star" title="Disable match filter"></i></div>
+                    </div>
+                    <div class="mach-filter-wrapper">
+                      <div class="match-filter">
+                        <div class="match-filter-box">
+                          <div class="filter-main-content"><a href="/matches" class="filter-button-link">
+                              <div class="filter-button  selected">
+                                <div class="icon"><img src="img/static/gfx/cs_icon_active_day.png" class="day-only custom-icon"><img src="img/static/gfx/cs_icon_active_night.png" class="night-only custom-icon"></div>
+                                <div class="button-title">All matches</div>
+                              </div>
+                            </a><a href="/matches?predefinedFilter=top_tier" class="filter-button-link">
+                              <div class="filter-button  ">
+                                <div class="icon"><i class="fa fa-star"></i></div>
+                                <div class="button-title">Top tier</div>
+                              </div>
+                            </a><a href="/matches?predefinedFilter=lan_only" class="filter-button-link">
+                              <div class="filter-button  ">
+                                <div class="icon"><i class="fa fa-desktop"></i></div>
+                                <div class="button-title">LAN</div>
+                              </div>
+                            </a>
+                            <div class="filter-button custom ">
+                              <div class="icon"><i class="fa fa-trophy"></i></div>
+                              <div class="button-title">Event</div>
+                            </div>
+                            <div class="extraSpacer smartphone-only"></div>
+                          </div>
+                        </div>
+                        <div class="filter-custom-content ">
+                          <div class="event-type">
+                            <div class="custom-content-header">Event type</div>
+                            <div><a href="/matches?eventType=All" class="event-filter-link active">All</a><a href="/matches?eventType=Lan" class="event-filter-link ">Lan</a><a href="/matches?eventType=Online" class="event-filter-link ">Online</a></div>
+                          </div>
+                          <div class="event">
+                            <div class="custom-content-header">Event</div>
+                            <div class="events-container"><a href="/matches?event=1040" class="filter-button-link">
+                                <div class="event-button  tooltip-parent"><img alt="Showmatch CS:GO" src="/img/static/event/logo/noLogo.png" class="event-logo" title="">
+                                  <div class="featured-event-tooltip">
+                                    <div class="featured-event-tooltip-content">Showmatch CS:GO</div>
+                                  </div>
+                                </div>
+                              </a><a href="/matches?event=5318" class="filter-button-link">
+                                <div class="event-button  tooltip-parent"><img alt="ESL Australia &amp; NZ Championship Season 11" src="https://static.hltv.org/images/eventLogos/5318.png" class="event-logo" title="">
+                                  <div class="featured-event-tooltip">
+                                    <div class="featured-event-tooltip-content">ESL Australia &amp; NZ Championship Season 11</div>
+                                  </div>
+                                </div>
+                              </a><a href="/matches?event=5319" class="filter-button-link">
+                                <div class="event-button  tooltip-parent"><img alt="LPL Pro League Season 5" src="https://static.hltv.org/images/eventLogos/5319.png" class="event-logo" title="">
+                                  <div class="featured-event-tooltip">
+                                    <div class="featured-event-tooltip-content">LPL Pro League Season 5</div>
+                                  </div>
+                                </div>
+                              </a><a href="/matches?event=5446" class="filter-button-link">
+                                <div class="event-button  tooltip-parent"><img alt="CTRL PLAY League" src="https://static.hltv.org/images/eventLogos/5446.png" class="event-logo" title="">
+                                  <div class="featured-event-tooltip">
+                                    <div class="featured-event-tooltip-content">CTRL PLAY League</div>
+                                  </div>
+                                </div>
+                              </a>
+                              <div class="event-custom-container">
+                                <div class="event-button expand-event-button event-filter-btn ">...</div>
+                                <div class="event-filter-popup"><a href="/matches?event=5431" class="filter-button-link event-row">
+                                    <div class="event-img"><img alt="Nine to Five 2" src="https://static.hltv.org/images/eventLogos/5431.png" class="" title="Nine to Five 2"></div>
+                                    <div class="event-name">Nine to Five 2</div>
+<input type="checkbox" class="event-checkbox">
+                                    <div class="container-overlay"></div>
+                                  </a><a href="/matches?event=5451" class="filter-button-link event-row">
+                                    <div class="event-img"><img alt="Aorus League 2020 #3 Brazil" src="https://static.hltv.org/images/eventLogos/5451.png" class="" title="Aorus League 2020 #3 Brazil"></div>
+                                    <div class="event-name">Aorus League 2020 #3 Brazil</div>
+<input type="checkbox" class="event-checkbox">
+                                    <div class="container-overlay"></div>
+                                  </a><a href="/matches?event=5183" class="filter-button-link event-row">
+                                    <div class="event-img"><img alt="Gamers Club Masters V" src="https://static.hltv.org/images/eventLogos/5183.png" class="" title="Gamers Club Masters V"></div>
+                                    <div class="event-name">Gamers Club Masters V</div>
+<input type="checkbox" class="event-checkbox">
+                                    <div class="container-overlay"></div>
+                                  </a><a href="/matches?event=5443" class="filter-button-link event-row">
+                                    <div class="event-img"><img alt="ESEA MDL Season 33 Europe Finals" src="https://static.hltv.org/images/eventLogos/5443.png" class="" title="ESEA MDL Season 33 Europe Finals"></div>
+                                    <div class="event-name">ESEA MDL Season 33 Europe Finals</div>
+<input type="checkbox" class="event-checkbox">
+                                    <div class="container-overlay"></div>
+                                  </a></div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="vs-container">
-                      <div class="vs">VS</div>
-                    </div>
-                    <div class="bet-now gtSmartphone-only bethere"><span
-                        class="gtSmartphone-only betheretext">BET
-                        HERE</span><img
-                        class="provider-logo day-only smartphone-only"
-                        src="/img/static/betting/pinnacle-esports-logo.svg"><img
-                        class="provider-logo night-only smartphone-only"
-                        src="/img/static/betting/pinnacle-esports-logo-night.svg">
-                    </div>
-                    <div class="relative">
-                      <div class="team reverse">
-                        <div class="team-logo-square-box"></div>
-                        <img alt="AVANGAR"
-                          src="https://static.hltv.org/images/team/logo/8120"
-                          class="team-logo team2-logo" title="AVANGAR">
-                        <div class="team2-name-and-odds">
-                          <div class="team-name text-ellipsis right-name">
-                            AVANGAR</div>
-                          <div class="team-odds">2.66</div>
+                    <div class="liveMatchesContainer">
+                      <div class="liveMatches" data-scorebot-url="https://cf1-scorebot.hltv.org,https://cf2-scorebot.hltv.org,https://cf3-scorebot.hltv.org">
+                        <div class="liveMatch-container" data-scorebot-id="2343038" data-team1-id="10709" data-team2-id="10669" data-hide-map-before-live="true" data-maps="Mirage,Dust2,Nuke" stars="0" lan="false" filterAsLive="true" team1="10709" team2="10669">
+                          <div class="liveMatch" data-livescore-match="2343038"><a href="/matches/2343038/sws-vs-paquet-aorus-league-2020-3-brazil" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime matchLive">LIVE</div>
+                                <div class="matchRating matchLive"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam">
+                                  <div class="matchTeamLogoContainer"><img alt="SWS" src="https://static.hltv.org/images/team/logo/10709" class="matchTeamLogo" title="SWS"></div>
+                                  <div class="matchTeamName text-ellipsis">SWS</div>
+                                  <div class="matchTeamScore"><span class="currentMapScore" data-livescore-current-map-score="" data-livescore-team="10709"></span><span class="mapScore"> (<span data-livescore-maps-won-for="" data-livescore-team="10709"></span>)</span></div>
+                                </div>
+                                <div class="matchTeam">
+                                  <div class="matchTeamLogoContainer"><img alt="Paquetá" src="https://static.hltv.org/images/team/logo/10669" class="matchTeamLogo" title="Paquetá"></div>
+                                  <div class="matchTeamName text-ellipsis">Paquetá</div>
+                                  <div class="matchTeamScore"><span class="currentMapScore" data-livescore-current-map-score="" data-livescore-team="10669"></span><span class="mapScore"> (<span data-livescore-maps-won-for="" data-livescore-team="10669"></span>)</span></div>
+                                </div>
+                              </div>
+                              <div class="matchEvent ">
+                                <div class="matchEventLogoContainer"><img alt="Aorus League 2020 #3 Brazil" src="https://static.hltv.org/images/eventLogos/5451.png" class="matchEventLogo" title="Aorus League 2020 #3 Brazil"></div>
+                                <div class="matchEventName gtSmartphone-only">Aorus League 2020 #3 Brazil</div>
+                              </div>
+<a href="/betting/analytics/2343038/sws-vs-paquet-aorus-league-2020-3-brazil" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="scorebot-container" id="matchScorebotId2343038"></div>
+                          <div class="expand-match-btn">Expand</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="smartphone-only bet-now-container"><span
-                      class="smartphone-only bet-now bethere betheretext-mobile">BET
-                      HERE AT</span><span
-                      class="smartphone-only matchText custom-bet-here-text-mobile">Get
-                      the best odds at Pinnacle*</span><img
-                      class="provider-logo day-only smartphone-only"
-                      src="/img/static/betting/pinnacle-esports-logo.svg"><img
-                      class="provider-logo night-only smartphone-only"
-                      src="/img/static/betting/pinnacle-esports-logo-night.svg">
+                  <div class="headline-flex">
+                    <h1 class="upcoming-headline">Upcoming CS:GO matches</h1>
                   </div>
-                </div>
-              </a>
-              <div class="sub-text rg">*18+ terms &amp; conditions apply</div>
-            </div>
-            <div class="hidden" id="matches_overview"></div>
-            <div class="section-spacer"></div>
-            <h2 class="standard-headline">Live matches</h2>
-            <div class="live-matches">
-              <div class="live-match"><a
-                  href="/matches/2337928/lynn-vision-vs-aster-champions-cup-china-qualifer-by-jjb"
-                  class="a-reset">
-                  <div class="standard-box">
-                    <div class="live-match-header">
-                      <div class="line-align">
-                        <div><img alt="Champions Cup China Qualifer by JJB"
-                            src="https://static.hltv.org/images/eventLogos/5038.png"
-                            class="event-logo"
-                            title="Champions Cup China Qualifer by JJB"></div>
-                        <div class="event-name">Champions Cup China Qualifer by
-                          JJB</div>
+                  <div class="upcomingMatchesWrapper">
+                    <div class="upcomingMatchesContainer">
+                      <div class="" data-zonedgrouping-headline-format="EEEE - yyyy-MM-dd" data-zonedgrouping-headline-classes="matchDayHeadline" data-zonedgrouping-group-classes="upcomingMatchesSection">
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Wednesday - 2020-07-29</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1595980800000" stars="0" lan="false" filterAsLive="false" team1="9902" team2="9455"><a href="/matches/2343039/redemption-poa-vs-imperial-aorus-league-2020-3-brazil" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1595980800000">02:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Redemption POA" src="https://static.hltv.org/images/team/logo/9902" class="matchTeamLogo" title="Redemption POA"></div>
+                                  <div class="matchTeamName text-ellipsis">Redemption POA</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Imperial" src="https://static.hltv.org/images/team/logo/9455" class="matchTeamLogo" title="Imperial"></div>
+                                  <div class="matchTeamName text-ellipsis">Imperial</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Aorus League 2020 #3 Brazil" src="https://static.hltv.org/images/eventLogos/5451.png" class="matchEventLogo" title="Aorus League 2020 #3 Brazil"></div>
+                                <div class="matchEventName gtSmartphone-only">Aorus League 2020 #3 Brazil</div>
+                              </div>
+<a href="/betting/analytics/2343039/redemption-poa-vs-imperial-aorus-league-2020-3-brazil" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596006000000" stars="0" lan="false" filterAsLive="false"><a href="/matches/2342989/nine-to-five-2-swiss-round-3-2-nine-to-five-2" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596006000000">09:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchInfoEmpty"><span class="line-clamp-3">Nine to Five 2 Swiss Round 3 #2</span></div>
+<a href="/betting/analytics/2342989/nine-to-five-2-swiss-round-3-2-nine-to-five-2" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Thursday - 2020-07-30</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596099600000" stars="0" lan="false" filterAsLive="false" team1="9881" team2="7983"><a href="/matches/2342918/rooster-vs-paradox-lpl-pro-league-season-5" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596099600000">11:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo5</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Rooster" src="https://static.hltv.org/images/team/logo/9881" class="matchTeamLogo" title="Rooster"></div>
+                                  <div class="matchTeamName text-ellipsis">Rooster</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Paradox" src="https://static.hltv.org/images/team/logo/7983" class="matchTeamLogo" title="Paradox"></div>
+                                  <div class="matchTeamName text-ellipsis">Paradox</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="LPL Pro League Season 5" src="https://static.hltv.org/images/eventLogos/5319.png" class="matchEventLogo" title="LPL Pro League Season 5"></div>
+                                <div class="matchEventName gtSmartphone-only">LPL Pro League Season 5</div>
+                              </div>
+<a href="/betting/analytics/2342918/rooster-vs-paradox-lpl-pro-league-season-5" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596128400000" stars="0" lan="false" filterAsLive="false" team1="8574" team2="10678"><a href="/matches/2342967/w7m-vs-asterius-gamers-club-masters-v" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596128400000">19:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo1</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="W7M" src="https://static.hltv.org/images/team/logo/8574" class="matchTeamLogo" title="W7M"></div>
+                                  <div class="matchTeamName text-ellipsis">W7M</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Asterius" src="https://static.hltv.org/images/team/logo/10678" class="matchTeamLogo" title="Asterius"></div>
+                                  <div class="matchTeamName text-ellipsis">Asterius</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Gamers Club Masters V" src="https://static.hltv.org/images/eventLogos/5183.png" class="matchEventLogo" title="Gamers Club Masters V"></div>
+                                <div class="matchEventName gtSmartphone-only">Gamers Club Masters V</div>
+                              </div>
+<a href="/betting/analytics/2342967/w7m-vs-asterius-gamers-club-masters-v" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596133800000" stars="0" lan="false" filterAsLive="false" team1="6033" team2="7733"><a href="/matches/2342968/keyd-vs-boom-gamers-club-masters-v" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596133800000">20:30</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo1</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Keyd" src="https://static.hltv.org/images/team/logo/6033" class="matchTeamLogo" title="Keyd"></div>
+                                  <div class="matchTeamName text-ellipsis">Keyd</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="BOOM" src="https://static.hltv.org/images/team/logo/7733" class="matchTeamLogo" title="BOOM"></div>
+                                  <div class="matchTeamName text-ellipsis">BOOM</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Gamers Club Masters V" src="https://static.hltv.org/images/eventLogos/5183.png" class="matchEventLogo" title="Gamers Club Masters V"></div>
+                                <div class="matchEventName gtSmartphone-only">Gamers Club Masters V</div>
+                              </div>
+<a href="/betting/analytics/2342968/keyd-vs-boom-gamers-club-masters-v" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596139200000" stars="0" lan="false" filterAsLive="false" team1="7176" team2="10605"><a href="/matches/2342969/red-canids-vs-bravos-gamers-club-masters-v" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596139200000">22:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo1</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="RED Canids" src="https://static.hltv.org/images/team/logo/7176" class="matchTeamLogo" title="RED Canids"></div>
+                                  <div class="matchTeamName text-ellipsis">RED Canids</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Bravos" src="https://static.hltv.org/images/team/logo/10605" class="matchTeamLogo" title="Bravos"></div>
+                                  <div class="matchTeamName text-ellipsis">Bravos</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Gamers Club Masters V" src="https://static.hltv.org/images/eventLogos/5183.png" class="matchEventLogo" title="Gamers Club Masters V"></div>
+                                <div class="matchEventName gtSmartphone-only">Gamers Club Masters V</div>
+                              </div>
+<a href="/betting/analytics/2342969/red-canids-vs-bravos-gamers-club-masters-v" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596144600000" stars="0" lan="false" filterAsLive="false" team1="7653" team2="4773"><a href="/matches/2342970/isurus-vs-pain-gamers-club-masters-v" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596144600000">23:30</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo1</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Isurus" src="https://static.hltv.org/images/team/logo/7653" class="matchTeamLogo" title="Isurus"></div>
+                                  <div class="matchTeamName text-ellipsis">Isurus</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="paiN" src="https://static.hltv.org/images/team/logo/4773" class="matchTeamLogo" title="paiN"></div>
+                                  <div class="matchTeamName text-ellipsis">paiN</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Gamers Club Masters V" src="https://static.hltv.org/images/eventLogos/5183.png" class="matchEventLogo" title="Gamers Club Masters V"></div>
+                                <div class="matchEventName gtSmartphone-only">Gamers Club Masters V</div>
+                              </div>
+<a href="/betting/analytics/2342970/isurus-vs-pain-gamers-club-masters-v" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Saturday - 2020-08-01</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596286800000" stars="1" lan="false" filterAsLive="false" team1="10730" team2="4608"><a href="/matches/2342965/navi-2010-vs-natus-vincere-showmatch-csgo" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596286800000">15:00</div>
+                                <div class="matchRating"><i class="fa fa-star"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta"></div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="NAVI 2010" src="https://static.hltv.org/images/team/logo/10730" class="matchTeamLogo" title="NAVI 2010"></div>
+                                  <div class="matchTeamName text-ellipsis">NAVI 2010</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Natus Vincere" src="https://static.hltv.org/images/team/logo/4608" class="matchTeamLogo" title="Natus Vincere"></div>
+                                  <div class="matchTeamName text-ellipsis">Natus Vincere</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="Showmatch CS:GO" src="/img/static/event/logo/noLogo.png" class="matchEventLogo" title="Showmatch CS:GO"></div>
+                                <div class="matchEventName gtSmartphone-only">Showmatch CS:GO</div>
+                              </div>
+<a href="/betting/analytics/2342965/navi-2010-vs-natus-vincere-showmatch-csgo" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596286800000" stars="0" lan="false" filterAsLive="false" team1="9976" team2="10371"><a href="/matches/2343026/gambit-youngsters-vs-navi-junior-ctrl-play-league" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596286800000">15:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Gambit Youngsters" src="https://static.hltv.org/images/team/logo/9976" class="matchTeamLogo" title="Gambit Youngsters"></div>
+                                  <div class="matchTeamName text-ellipsis">Gambit Youngsters</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="NAVI Junior" src="https://static.hltv.org/images/team/logo/10371" class="matchTeamLogo" title="NAVI Junior"></div>
+                                  <div class="matchTeamName text-ellipsis">NAVI Junior</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="CTRL PLAY League" src="https://static.hltv.org/images/eventLogos/5446.png" class="matchEventLogo" title="CTRL PLAY League"></div>
+                                <div class="matchEventName gtSmartphone-only">CTRL PLAY League</div>
+                              </div>
+<a href="/betting/analytics/2343026/gambit-youngsters-vs-navi-junior-ctrl-play-league" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596297600000" stars="0" lan="false" filterAsLive="false" team1="10421" team2="10677"><a href="/matches/2343025/hard-legion-vs-cyber-legacy-ctrl-play-league" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596297600000">18:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Hard Legion" src="https://static.hltv.org/images/team/logo/10421" class="matchTeamLogo" title="Hard Legion"></div>
+                                  <div class="matchTeamName text-ellipsis">Hard Legion</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Cyber Legacy" src="https://static.hltv.org/images/team/logo/10677" class="matchTeamLogo" title="Cyber Legacy"></div>
+                                  <div class="matchTeamName text-ellipsis">Cyber Legacy</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="CTRL PLAY League" src="https://static.hltv.org/images/eventLogos/5446.png" class="matchEventLogo" title="CTRL PLAY League"></div>
+                                <div class="matchEventName gtSmartphone-only">CTRL PLAY League</div>
+                              </div>
+<a href="/betting/analytics/2343025/hard-legion-vs-cyber-legacy-ctrl-play-league" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Friday - 2020-08-07</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596826800000" stars="0" lan="false" filterAsLive="false" team1="8068" team2="8637"><a href="/matches/2343017/ago-vs-sprout-esea-mdl-season-33-europe-finals" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596826800000">21:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="AGO" src="https://static.hltv.org/images/team/logo/8068" class="matchTeamLogo" title="AGO"></div>
+                                  <div class="matchTeamName text-ellipsis">AGO</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Sprout" src="https://static.hltv.org/images/team/logo/8637" class="matchTeamLogo" title="Sprout"></div>
+                                  <div class="matchTeamName text-ellipsis">Sprout</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="ESEA MDL Season 33 Europe Finals" src="https://static.hltv.org/images/eventLogos/5443.png" class="matchEventLogo" title="ESEA MDL Season 33 Europe Finals"></div>
+                                <div class="matchEventName gtSmartphone-only">ESEA MDL Season 33 Europe Finals</div>
+                              </div>
+<a href="/betting/analytics/2343017/ago-vs-sprout-esea-mdl-season-33-europe-finals" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Saturday - 2020-08-08</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596913200000" stars="0" lan="false" filterAsLive="false" team1="10764"><a href="/matches/2343018/galaxy-racer-vs-ago-sprout-loser-esea-mdl-season-33-europe-finals" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596913200000">21:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Galaxy Racer" src="https://static.hltv.org/images/team/logo/10764" class="matchTeamLogo" title="Galaxy Racer"></div>
+                                  <div class="matchTeamName text-ellipsis">Galaxy Racer</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="team text-ellipsis">AGO/Sprout loser</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="ESEA MDL Season 33 Europe Finals" src="https://static.hltv.org/images/eventLogos/5443.png" class="matchEventLogo" title="ESEA MDL Season 33 Europe Finals"></div>
+                                <div class="matchEventName gtSmartphone-only">ESEA MDL Season 33 Europe Finals</div>
+                              </div>
+<a href="/betting/analytics/2343018/galaxy-racer-vs-ago-sprout-loser-esea-mdl-season-33-europe-finals" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Sunday - 2020-08-09</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1596996000000" stars="0" lan="false" filterAsLive="false"><a href="/matches/2343019/esea-mdl-season-33-europe-finals-grand-final-esea-mdl-season-33-europe-finals" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1596996000000">20:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo5</div>
+                              </div>
+                              <div class="matchInfoEmpty"><span class="line-clamp-3">ESEA MDL Season 33 Europe Finals Grand Final</span></div>
+<a href="/betting/analytics/2343019/esea-mdl-season-33-europe-finals-grand-final-esea-mdl-season-33-europe-finals" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
+                        <div class="upcomingMatchesSection"><span class="matchDayHeadline">Tuesday - 2020-08-11</span>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1597134600000" stars="0" lan="false" filterAsLive="false" team1="8536" team2="7983"><a href="/matches/2342643/ground-zero-vs-paradox-esl-australia-nz-championship-season-11" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1597134600000">10:30</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Ground Zero" src="https://static.hltv.org/images/team/logo/8536" class="matchTeamLogo" title="Ground Zero"></div>
+                                  <div class="matchTeamName text-ellipsis">Ground Zero</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="Paradox" src="https://static.hltv.org/images/team/logo/7983" class="matchTeamLogo" title="Paradox"></div>
+                                  <div class="matchTeamName text-ellipsis">Paradox</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="ESL Australia &amp; NZ Championship Season 11" src="https://static.hltv.org/images/eventLogos/5318.png" class="matchEventLogo" title="ESL Australia &amp; NZ Championship Season 11"></div>
+                                <div class="matchEventName gtSmartphone-only">ESL Australia &amp; NZ Championship Season 11</div>
+                              </div>
+<a href="/betting/analytics/2342643/ground-zero-vs-paradox-esl-australia-nz-championship-season-11" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                          <div class="upcomingMatch " data-zonedgrouping-entry-unix="1597147200000" stars="0" lan="false" filterAsLive="false" team1="10712" team2="10713"><a href="/matches/2342520/bantz-vs-truckers-with-attitude-esl-australia-nz-championship-season-11" class="match a-reset">
+                              <div class="matchInfo">
+                                <div class="matchTime" data-time-format="HH:mm" data-unix="1597147200000">14:00</div>
+                                <div class="matchRating"><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i><i class="fa fa-star faded"></i></div>
+                                <div class="matchMeta">bo3</div>
+                              </div>
+                              <div class="matchTeams text-ellipsis">
+                                <div class="matchTeam team1">
+                                  <div class="matchTeamLogoContainer"><img alt="Bantz" src="https://static.hltv.org/images/team/logo/10712" class="matchTeamLogo" title="Bantz"></div>
+                                  <div class="matchTeamName text-ellipsis">Bantz</div>
+                                </div>
+                                <div class="matchTeam team2">
+                                  <div class="matchTeamLogoContainer"><img alt="TRUCKERS WITH ATTITUDE" src="https://static.hltv.org/images/team/logo/10713" class="matchTeamLogo" title="TRUCKERS WITH ATTITUDE"></div>
+                                  <div class="matchTeamName text-ellipsis">TRUCKERS WITH ATTITUDE</div>
+                                </div>
+                              </div>
+                              <div class="matchEvent">
+                                <div class="matchEventLogoContainer"><img alt="ESL Australia &amp; NZ Championship Season 11" src="https://static.hltv.org/images/eventLogos/5318.png" class="matchEventLogo" title="ESL Australia &amp; NZ Championship Season 11"></div>
+                                <div class="matchEventName gtSmartphone-only">ESL Australia &amp; NZ Championship Season 11</div>
+                              </div>
+<a href="/betting/analytics/2342520/bantz-vs-truckers-with-attitude-esl-australia-nz-championship-season-11" class="matchAnalytics" title="Analytics">
+                                <div class="analyticsLink"><i class="fa fa-bar-chart"></i><span class="gtSmartphone-only">A</span></div>
+                              </a></a></div>
+                        </div>
                       </div>
-                      <div class="stars "></div>
-                    </div>
-                    <div class="scores">
-                      <table class="table" data-livescore-match="2337928">
-                        <tr class="header">
-                          <td class="bestof">Best of 3</td>
-                          <td class="map ">nuke</td>
-                          <td class="map ">d2</td>
-                          <td class="map ">inf</td>
-                          <td class="total">Maps</td>
-                        </tr>
-                        <tr>
-                          <td class="teams">
-                            <div class="line-align">
-                              <div class="logo-container"><img alt="Lynn Vision"
-                                  src="https://static.hltv.org/images/team/logo/8840"
-                                  class="logo" title="Lynn Vision"></div>
-                              <span class="team-name">Lynn Vision</span>
-                            </div>
-                          </td>
-                          <td class="livescore map  mapscore"><span
-                              class="leading" data-livescore-full-score=""
-                              data-livescore-map="1"
-                              data-livescore-team="8840">16</span></td>
-                          <td class="livescore map  mapscore"><span class="tied"
-                              data-livescore-full-score=""
-                              data-livescore-map="2"
-                              data-livescore-team="8840">-</span></td>
-                          <td class="livescore map  mapscore"><span class="tied"
-                              data-livescore-full-score=""
-                              data-livescore-map="3"
-                              data-livescore-team="8840">-</span></td>
-                          <td class="total"><span data-livescore-maps-won-for=""
-                              data-livescore-team="8840">1</span></td>
-                        </tr>
-                        <tr>
-                          <td class="teams">
-                            <div class="line-align">
-                              <div class="logo-container"><img alt="Aster"
-                                  src="https://static.hltv.org/images/team/logo/9868"
-                                  class="logo" title="Aster"></div>
-                              <span class="team-name">Aster</span>
-                            </div>
-                          </td>
-                          <td class="livescore map  mapscore"><span
-                              class="trailing" data-livescore-full-score=""
-                              data-livescore-map="1"
-                              data-livescore-team="9868">2</span></td>
-                          <td class="livescore map  mapscore"><span class="tied"
-                              data-livescore-full-score=""
-                              data-livescore-map="2"
-                              data-livescore-team="9868">-</span></td>
-                          <td class="livescore map  mapscore"><span class="tied"
-                              data-livescore-full-score=""
-                              data-livescore-map="3"
-                              data-livescore-team="9868">-</span></td>
-                          <td class="total"><span data-livescore-maps-won-for=""
-                              data-livescore-team="9868">0</span></td>
-                        </tr>
-                      </table>
+                      <div class="match-filter-empty-warning newMatchesEmptystateContainer ">Matches with selected filter are hidden. Disable your match filter to view all matches.
+                        <div class="match-filter-warning-disable-container"><span class="match-filter-warning-disable"><i class="fa fa-star"></i>Disable starfilter</span></div>
+                      </div>
                     </div>
                   </div>
-                </a></div>
-              <div class="live-match no-height"></div>
-            </div>
-            <div class="section-spacer"></div>
-            <h1 class="standard-headline inline">Upcoming CS:GO matches</h1>
-            <div class="upcoming-matches">
-              <div class=""
-                data-zonedgrouping-headline-format="yyyy-MM-dd - EEEE"
-                data-zonedgrouping-headline-classes="standard-headline"
-                data-zonedgrouping-group-classes="match-day">
-                <div class="match-day"><span
-                    class="standard-headline">2019-11-22 - Friday</span>
-                  <!-- MB: A team vs Unknown opponent -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1574444700000">
-                    <div class="match"><a
-                        href="/matches/2338015/hellraisers-vs-melbet-extremum-loser-epicenter-2019-cis-open-qualifier"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1574444700000">20:45</div>
-                              </td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="HellRaisers"
-                                    src="https://static.hltv.org/images/team/logo/5310"
-                                    class="logo" title="HellRaisers">
-                                  <div class="team">HellRaisers</div>
-                                </div>
-                              </td>
-                              <td class="vs">vs</td>
-                              <td class="team-cell">
-                                <div class="team">MELBET/EXTREMUM loser</div>
-                              </td>
-                              <td class="event"><img
-                                  alt="EPICENTER 2019 CIS Open Qualifier"
-                                  src="/img/static/event/logo/noLogo.png"
-                                  class="event-logo"
-                                  title="EPICENTER 2019 CIS Open Qualifier"><span
-                                  class="event-name">EPICENTER 2019 CIS Open
-                                  Qualifier</span></td>
-                              <td class="star-cell">
-                                <div class="map-text">bo3</div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2338015/hellraisers-vs-melbet-extremum-loser-epicenter-2019-cis-open-qualifier"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
-                  <!-- MB: Single star -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1574449200000">
-                    <div class="match"><a
-                        href="/matches/2337980/illuminar-vs-ancient-united-masters-league-season-2"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1574449200000">22:00</div>
-                              </td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="Illuminar"
-                                    src="https://static.hltv.org/images/team/logo/8813"
-                                    class="logo" title="Illuminar">
-                                  <div class="team">Illuminar</div>
-                                </div>
-                              </td>
-                              <td class="vs">vs</td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="Ancient"
-                                    src="https://static.hltv.org/images/team/logo/6685"
-                                    class="logo" title="Ancient">
-                                  <div class="team">Ancient</div>
-                                </div>
-                              </td>
-                              <td class="event"><img
-                                  alt="United Masters League Season 2"
-                                  src="https://static.hltv.org/images/eventLogos/4945.png"
-                                  class="event-logo"
-                                  title="United Masters League Season 2"><span
-                                  class="event-name">United Masters League
-                                  Season 2</span></td>
-                              <td class="star-cell">
-                                <div class="map-and-stars">
-                                  <div class="stars"><i
-                                      class="fa fa-star star"></i></div>
-                                  <div class="map map-text">bo3</div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2337980/illuminar-vs-ancient-united-masters-league-season-2"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
-                  <!-- MB: Two stars -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1574485200000">
-                    <div class="match"><a
-                        href="/matches/2337958/mibr-vs-avangar-csgo-asia-championships-2019"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1574485200000">08:00</div>
-                              </td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="MIBR"
-                                    src="https://static.hltv.org/images/team/logo/9215"
-                                    class="logo" title="MIBR">
-                                  <div class="team">MIBR</div>
-                                </div>
-                              </td>
-                              <td class="vs">vs</td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="AVANGAR"
-                                    src="https://static.hltv.org/images/team/logo/8120"
-                                    class="logo" title="AVANGAR">
-                                  <div class="team">AVANGAR</div>
-                                </div>
-                              </td>
-                              <td class="event"><img
-                                  alt="CS:GO Asia Championships 2019"
-                                  src="https://static.hltv.org/images/eventLogos/4680.png"
-                                  class="event-logo"
-                                  title="CS:GO Asia Championships 2019"><span
-                                  class="event-name">CS:GO Asia Championships
-                                  2019</span></td>
-                              <td class="star-cell">
-                                <div class="map-and-stars">
-                                  <div class="stars"><i
-                                      class="fa fa-star star"></i><i
-                                      class="fa fa-star star"></i></div>
-                                  <div class="map map-text">bo3</div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2337958/mibr-vs-avangar-csgo-asia-championships-2019"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
-                  <!-- MB: Event template -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1574593200000">
-                    <div class="match"><a
-                        href="/matches/2337962/cac-grand-final-csgo-asia-championships-2019"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1574593200000">14:00</div>
-                              </td>
-                              <td class="placeholder-text-cell">CAC - Grand
-                                Final</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2337962/cac-grand-final-csgo-asia-championships-2019"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
-                  <!-- MB: Three stars -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1574953200000">
-                    <div class="match"><a
-                        href="/matches/2337797/evil-geniuses-vs-avangar-ecs-season-8-finals"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1574953200000">18:00</div>
-                              </td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="Evil Geniuses"
-                                    src="https://static.hltv.org/images/team/logo/10399"
-                                    class="logo" title="Evil Geniuses">
-                                  <div class="team">Evil Geniuses</div>
-                                </div>
-                              </td>
-                              <td class="vs">vs</td>
-                              <td class="team-cell">
-                                <div class="line-align"><img alt="AVANGAR"
-                                    src="https://static.hltv.org/images/team/logo/8120"
-                                    class="logo" title="AVANGAR">
-                                  <div class="team">AVANGAR</div>
-                                </div>
-                              </td>
-                              <td class="event"><img alt="ECS Season 8 Finals"
-                                  src="https://static.hltv.org/images/eventLogos/4926.png"
-                                  class="event-logo"
-                                  title="ECS Season 8 Finals"><span
-                                  class="event-name">ECS Season 8 Finals</span>
-                              </td>
-                              <td class="star-cell">
-                                <div class="map-and-stars">
-                                  <div class="stars"><i
-                                      class="fa fa-star star"></i><i
-                                      class="fa fa-star star"></i><i
-                                      class="fa fa-star star"></i></div>
-                                  <div class="map map-text">bo1</div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2337797/evil-geniuses-vs-avangar-ecs-season-8-finals"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
-                  <!-- MB: Event template -->
-                  <div class="upcoming-match standard-box"
-                    data-zonedgrouping-entry-unix="1576252800000">
-                    <div class="match"><a
-                        href="/matches/2337846/blast-global-final-lower-bracket-final-blast-pro-series-global-final-2019"
-                        class="a-reset">
-                        <table class="table">
-                          <tbody>
-                            <tr>
-                              <td class="time">
-                                <div class="time" data-time-format="HH:mm"
-                                  data-unix="1576252800000">19:00</div>
-                              </td>
-                              <td class="placeholder-text-cell">BLAST Global
-                                Final Lower Bracket final</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </a><a
-                        href="/betting/analytics/2337846/blast-global-final-lower-bracket-final-blast-pro-series-global-final-2019"
-                        class="analytics-entrance-link-container"
-                        title="Analytics">
-                        <div class="analytics-entrance-link"><span
-                            class="analytics-entrance"><i
-                              class="fa fa-bar-chart"></i><span
-                              class="gtSmartphone-only">A</span></span></div>
-                      </a></div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="leftCol">
-          <div class="">
-            <aside
-              class="standard-box featured-match-container first-col-bet-pvpro">
-              <span class="featured-header">FEATURED MATCH STARTS IN</span>
-              <div class="featured-match-teams">
-                <div class="team"><img alt="HAVU"
-                    src="https://static.hltv.org/images/team/logo/7865" class=""
-                    title="HAVU"><a
-                    href="https://www.ggking.com/esports-bets/match/103191120740411009"><span
-                      class="team-odds">1.49</span></a></div>
-                <div class="featured-vs-box">vs<span class="time-box"><span
-                      class="" data-time-countdown="LIVE"
-                      data-unix="1574431200000">6h : 54m : 26s</span></span>
-                </div>
-                <div class="team"><img alt="Aristocracy"
-                    src="https://static.hltv.org/images/team/logo/10020"
-                    class="" title="Aristocracy"><a
-                    href="https://www.ggking.com/esports-bets/match/103191120740411009"><span
-                      class="team-odds">2.33</span></a></div>
-              </div>
-              <a href="/matches/2337979/havu-vs-aristocracy-united-masters-league-season-2"
-                data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[1st column]"
-                data-link-tracking-destination="Click on match page [button]">
-                <div class="featured-match-matchpage">Match page</div>
-              </a>
-            </aside>
-          </div>
-          <aside
-            class="standard-box raybet featured-match-container first-col-bet-raybet hidden">
-            <span class="featured-header"><img
-                src="/img/static/betting/raybet2.svg"
-                class="featured-header-provider-logo">HLTV合作伙伴雷竞技提供</span>
-            <div class="featured-match-teams">
-              <div class="team"><img alt="HAVU"
-                  src="https://static.hltv.org/images/team/logo/7865" class=""
-                  title="HAVU"><a
-                  href="https://www.ray50.com/?aid=849266&amp;mid=27209040"><span
-                    class="team-odds">1.46</span></a></div>
-              <div class="featured-vs-box">vs<span class="time-box"><span
-                    class="" data-time-countdown="LIVE"
-                    data-unix="1574431200000">6h : 54m : 26s</span></span></div>
-              <div class="team"><img alt="Aristocracy"
-                  src="https://static.hltv.org/images/team/logo/10020" class=""
-                  title="Aristocracy"><a
-                  href="https://www.ray50.com/?aid=849266&amp;mid=27209040"><span
-                    class="team-odds">2.64</span></a></div>
-            </div>
-            <a href="/matches/2337979/havu-vs-aristocracy-united-masters-league-season-2"
-              data-link-tracking-page="Frontpage"
-              data-link-tracking-column="[1st column]"
-              data-link-tracking-destination="Click on match page [button]">
-              <div class="featured-match-matchpage">Match page</div>
-            </a>
-          </aside>
-          <div class="results">
-            <div class="sidebar-con">
-              <div class="sidebar-box ">
-                <div class="sidebar-headline">Filters</div>
-                <div class="sidebar-first-level">
+                <aside class="newSidebar">
+                  <div class="vm-placement h-250" data-id="5efddea4182a7e3fc2c21013"></div>
                   <div>
-                    <div class="filter-column-con">
-                      <div class="filter-column-header open">Star filter<span
-                          class="fa fa-caret-down"></span><span
-                          class="fa fa-caret-up"></span></div>
-                      <div class="filter-column-content  star-filter"><a
-                          href="/matches"
-                          class="sidebar-single-line-item selected" title="">
-                          All</a><a href="/matches?star=1"
-                          class="sidebar-single-line-item " title=""> </a><a
-                          href="/matches?star=2"
-                          class="sidebar-single-line-item " title=""> </a><a
-                          href="/matches?star=3"
-                          class="sidebar-single-line-item " title=""> </a><a
-                          href="/matches?star=4"
-                          class="sidebar-single-line-item " title=""> </a><a
-                          href="/matches?star=5"
-                          class="sidebar-single-line-item " title=""> </a>
-                      </div>
-                      <div class="filter-column-header open">Events<span
-                          class="fa fa-caret-down"></span><span
-                          class="fa fa-caret-up"></span></div>
-                      <div class="filter-column-content  "><a href="/matches"
-                          class="sidebar-single-line-item selected" title="">
-                          Show all</a><a href="/matches?event=4680"
-                          class="sidebar-single-line-item " title=""> CS:GO Asia
-                          Championships 2019</a><a href="/matches?event=4926"
-                          class="sidebar-single-line-item " title=""> ECS Season
-                          8 Finals</a><a href="/matches?event=4889"
-                          class="sidebar-single-line-item " title=""> BLAST Pro
-                          Series Global Final 2019</a><a
-                          href="/matches?event=4826"
-                          class="sidebar-single-line-item " title=""> European
-                          Champions Cup</a><a href="/matches?event=4945"
-                          class="sidebar-single-line-item " title=""> United
-                          Masters League Season 2</a><a
-                          href="/matches?event=4492"
-                          class="sidebar-single-line-item " title=""> SECTOR:
-                          MOSTBET</a><a href="/matches?event=5022"
-                          class="sidebar-single-line-item " title=""> Qi Banja
-                          Luka 2019 Europe Qualifier</a><a
-                          href="/matches?event=5049"
-                          class="sidebar-single-line-item " title=""> EPICENTER
-                          2019 CIS Open Qualifier</a><a
-                          href="/matches?event=5045"
-                          class="sidebar-single-line-item " title=""> WESG 2019
-                          CIS Closed Qualifier</a><a href="/matches?event=5035"
-                          class="sidebar-single-line-item " title=""> LPCS
-                          Masters 2019</a><a href="/matches?event=5007"
-                          class="sidebar-single-line-item " title=""> Swisscom
-                          Hero League Season 2 Finals</a><a
-                          href="/matches?event=5048"
-                          class="sidebar-single-line-item " title=""> ESL
-                          Proximus Championship Winter 2019</a><a
-                          href="/matches?event=5046"
-                          class="sidebar-single-line-item " title=""> ESL Polish
-                          Championship Autumn 2019</a><a
-                          href="/matches?event=5030"
-                          class="sidebar-single-line-item " title=""> ESEA
-                          Advanced Season 32 North America</a><a
-                          href="/matches?event=5044"
-                          class="sidebar-single-line-item " title=""> NVIDIA
-                          Geforce Cup Pacific Oceania</a><a
-                          href="/matches?event=5041"
-                          class="sidebar-single-line-item " title=""> UTAGE
-                          Japan League Season 3</a><a href="/matches?event=5038"
-                          class="sidebar-single-line-item " title=""> Champions
-                          Cup China Qualifer by JJB</a><a
-                          href="/matches?event=5037"
-                          class="sidebar-single-line-item " title=""> BESL Pro
-                          Season 4 Finals</a><a href="/matches?event=5029"
-                          class="sidebar-single-line-item " title=""> ESL
-                          Masters CS:GO Season 6 Finals</a></div>
-                      <div class="filter-column-header ">Status<span
-                          class="fa fa-caret-down"></span><span
-                          class="fa fa-caret-up"></span></div>
-                      <div class="filter-column-content hidden "><a
-                          href="/matches"
-                          class="sidebar-single-line-item selected" title="">
-                          All</a><a href="/matches?status=Live"
-                          class="sidebar-single-line-item " title=""> Live</a><a
-                          href="/matches?status=Upcoming"
-                          class="sidebar-single-line-item " title="">
-                          Upcoming</a></div>
-                      <div class="filter-column-header ">Type<span
-                          class="fa fa-caret-down"></span><span
-                          class="fa fa-caret-up"></span></div>
-                      <div class="filter-column-content hidden "><a
-                          href="/matches"
-                          class="sidebar-single-line-item selected" title="">
-                          All</a><a href="/matches?eventType=MAJOR"
-                          class="sidebar-single-line-item " title="">
-                          Major</a><a href="/matches?eventType=INTLLAN"
-                          class="sidebar-single-line-item " title="">
-                          International LAN</a><a
-                          href="/matches?eventType=REGIONALLAN"
-                          class="sidebar-single-line-item " title=""> Regional
-                          LAN</a><a href="/matches?eventType=ONLINE"
-                          class="sidebar-single-line-item " title="">
-                          Online</a><a href="/matches?eventType=LOCALLAN"
-                          class="sidebar-single-line-item " title=""> Local
-                          LAN</a><a href="/matches?eventType=OTHER"
-                          class="sidebar-single-line-item " title=""> Other</a>
-                      </div>
-                      <div class="filter-column-header ">Team<span
-                          class="fa fa-caret-down"></span><span
-                          class="fa fa-caret-up"></span></div>
-                      <div class="filter-column-content hidden ">
-                        <div class="padded-content search-typeahead"><input
-                            type="text" class="filter-team-input"
-                            data-search-url="/searchTeam?term="
-                            data-search-team="" data-search-redirect="/matches"
-                            placeholder="Team search"><a href="/matches">
-                            <div class=""> Require all teams</div>
-                          </a></div>
-                      </div>
-                    </div>
+                    <div class="featuredNewsContainer">
+                      <h1 class="standard-headline sidebarHeadline">Featured News</h1>
+<a href="https://www.hltv.org/news/30017/yuurih-we-want-the-next-tournament-season-to-be-even-better-than-the-first" class="a-reset featuredNewsImageContainer"><img src="https://static.hltv.org//images/galleries/1693-full/1595879207.9998.jpeg" class="featuredNewsImage"></a><a href="https://www.hltv.org/news/29982/esl-one-cologne-to-be-held-online" class="a-reset featuredNewsImageContainer"><img src="https://static.hltv.org//images/galleries/1693-full/1594912812.0975.jpeg" class="featuredNewsImage"></a></div>
+                    <div class="latestNewsContainer">
+                      <h1 class="standard-headline sidebarHeadline">Latest News</h1>
+<a href="/news/30022/giants-round-out-roster-with-rizzz" class="a-reset latestNewsPost">
+                        <div class="latestNewsImageContainer"><img src="https://img-cdn.hltv.org/gallerypicture/L0apN_uEVl2341qVUpcHUo.jpg?ixlib=java-2.1.0&amp;w=800&amp;s=8f805a9e70fc479973f2b2acc7f12bf9" class="latestNewsImage"></div>
+                        <div class="latestNewsRight">
+                          <div class="latestNewsTitle line-clamp-3">Giants round out roster with RIZZZ</div>
+                          <div class="latestNewsMeta">
+                            <div class="latestNewsMetaPosted" data-time-format="yyyy-MM-dd • HH:mm" data-unix="1595969820000">2020-07-28 • 22:57</div>
+                            <div class="latestNewsMetaComment"></div>
+                          </div>
+                        </div>
+                      </a><a href="/news/30021/movistar-riders-bench-eastor" class="a-reset latestNewsPost">
+                        <div class="latestNewsImageContainer"><img src="https://img-cdn.hltv.org/gallerypicture/EIHOMo89wzvVF4J80tw7pP.jpg?ixlib=java-2.1.0&amp;w=800&amp;s=0cc34ea4da4a57772c78a519295406be" class="latestNewsImage"></div>
+                        <div class="latestNewsRight">
+                          <div class="latestNewsTitle line-clamp-3">Movistar Riders bench EasTor</div>
+                          <div class="latestNewsMeta">
+                            <div class="latestNewsMetaPosted" data-time-format="yyyy-MM-dd • HH:mm" data-unix="1595961720000">2020-07-28 • 20:42</div>
+                            <div class="latestNewsMetaComment"></div>
+                          </div>
+                        </div>
+                      </a><a href="/news/30020/esl-pays-tribute-on-10-year-anniversary-of-cyxs-death" class="a-reset latestNewsPost">
+                        <div class="latestNewsImageContainer"><img src="https://img-cdn.hltv.org/gallerypicture/lE4fVTql5gBSCjvgEu5z-W.jpg?ixlib=java-2.1.0&amp;w=800&amp;s=226bcee3cfb8f8c20fa25c3707fbf9e4" class="latestNewsImage"></div>
+                        <div class="latestNewsRight">
+                          <div class="latestNewsTitle line-clamp-3">ESL pays tribute on 10-year anniversary of cyx's death</div>
+                          <div class="latestNewsMeta">
+                            <div class="latestNewsMetaPosted" data-time-format="yyyy-MM-dd • HH:mm" data-unix="1595949840000">2020-07-28 • 17:24</div>
+                            <div class="latestNewsMetaComment"></div>
+                          </div>
+                        </div>
+                      </a><a href="/news/30018/video-byali-vs-lvlup" class="a-reset latestNewsPost">
+                        <div class="latestNewsRight">
+                          <div class="latestNewsTitle line-clamp-3">Video: byali vs. lvlUP</div>
+                          <div class="latestNewsMeta">
+                            <div class="latestNewsMetaPosted" data-time-format="yyyy-MM-dd • HH:mm" data-unix="1595946180000">2020-07-28 • 16:23</div>
+                            <div class="latestNewsMetaComment"></div>
+                          </div>
+                        </div>
+                      </a></div>
                   </div>
-                </div>
+                  <div class="sticky mt-16">
+                    <div class="vm-placement h-250" data-id="5efddea4182a7e3fc2c21013"></div>
+                  </div>
+                </aside>
               </div>
             </div>
           </div>
-          <div class="col-rek3">
+          <div class="right2Col">
             <aside>
-              <div class="widget-match-listing widget-unikrn">
-                <div class="widget-logo"><img
-                    src="/img/static/betting/unikrn_night.svg"></div>
-                <div class="widget-upcoming-matches">
-                  <div class="widget-upcoming-matches-text">Matches</div>
-                  <a href="https://unikrn.com/bet/games/counter-strike-go/big-v-hard_legion_european_champions_cup/315133?utm_source=hltv&amp;utm_medium=odds&amp;utm_campaign=sportsbook"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="BIG"
-                              src="https://static.hltv.org/images/team/logo/7532"
-                              class="team-logo" title="BIG"></div>
-                          BIG
-                        </div>
-                        <span class="team-odds">1.16</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574420400000">12 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Hard Legion"
-                              src="https://static.hltv.org/images/team/logo/10421"
-                              class="team-logo" title="Hard Legion"></div>
-                          Hard Legion
-                        </div>
-                        <span class="team-odds">5.00</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://unikrn.com/bet/games/counter-strike-go/havu-v-aristocracy_united_masters_league/313226?utm_source=hltv&amp;utm_medium=odds&amp;utm_campaign=sportsbook"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="HAVU"
-                              src="https://static.hltv.org/images/team/logo/7865"
-                              class="team-logo" title="HAVU"></div>
-                          HAVU
-                        </div>
-                        <span class="team-odds">1.53</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574431200000">15 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Aristocracy"
-                              src="https://static.hltv.org/images/team/logo/10020"
-                              class="team-logo" title="Aristocracy"></div>
-                          Aristocracy
-                        </div>
-                        <span class="team-odds">2.37</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://unikrn.com/bet/games/counter-strike-go/illuminar-v-ancient_united_masters_league/313225?utm_source=hltv&amp;utm_medium=odds&amp;utm_campaign=sportsbook"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Illuminar"
-                              src="https://static.hltv.org/images/team/logo/8813"
-                              class="team-logo" title="Illuminar"></div>
-                          Illuminar
-                        </div>
-                        <span class="team-odds">1.53</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574449200000">20 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Ancient"
-                              src="https://static.hltv.org/images/team/logo/6685"
-                              class="team-logo" title="Ancient"></div>
-                          Ancient
-                        </div>
-                        <span class="team-odds">2.37</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://unikrn.com/bet/games/counter-strike-go/made_in_brazil-v-avangar_asia_championship/315304?utm_source=hltv&amp;utm_medium=odds&amp;utm_campaign=sportsbook"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="MIBR"
-                              src="https://static.hltv.org/images/team/logo/9215"
-                              class="team-logo" title="MIBR"></div>
-                          MIBR
-                        </div>
-                        <span class="team-odds">1.44</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574485200000">06 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="AVANGAR"
-                              src="https://static.hltv.org/images/team/logo/8120"
-                              class="team-logo" title="AVANGAR"></div>
-                          AVANGAR
-                        </div>
-                        <span class="team-odds">2.62</span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <a href="https://unikrn.com/bet/offer/deposit/hltv50">
-                  <div class="widget-cta">Bet now</div>
-                </a><a href="https://unikrn.com/bet/offer/deposit/hltv50">
-                  <div class="bonuscode-container">
-                    <div class="line1">DEPOSIT 5, GET 50 </div>
-                    <div class="line2"><b>10x</b> SIGN UP WITH</div>
-                    <div class="bonuscode-cta">HLTV</div>
-                    <div class="line4">BONUSCODE</div>
-                  </div>
-                </a>
-                <div class="line5">T&amp;C's apply.</div>
+              <div class="recent-activity">
+                <h1><a href="/forums" class="a-reset">RECENT ACTIVITY</a></h1>
+                <div class="pro-mode-toggle" title="Toggle Sport mode on, in Sport mode we reduce community interaction, and present mainly HLTV produced content. The Sport mode is in beta, and will be expanded going forward.">SPORT</div>
+              </div>
+              <div class="col-box-con">
+                <div class="activitylist"><a href="/forums/threads/2340193/i-rate-your-player" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: I rate your player">I rate your player</span>271</a><a href="/forums/threads/2340523/catboy-kami" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Catboy kami">Catboy kami</span>76</a><a href="/forums/threads/2340577/na-people-kkkkk" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: NA PEOPLE KKKKK">NA PEOPLE KKKKK</span>49</a><a href="/forums/threads/2340541/are-escorts-legal-in-your-country" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Are escorts legal in your country??">Are escorts legal in your country??</span>92</a><a href="/forums/threads/2340587/anime-to-watch" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: ANIME TO WATCH">ANIME TO WATCH</span>9</a><a href="/forums/threads/2340539/western-countries-come-here" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Western countries come here">Western countries come here</span>77</a><a href="/forums/threads/2340558/approval-of-us-leadership" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Approval of US leadership">Approval of US leadership</span>27</a><a href="/matches/2343038/sws-vs-paquet-aorus-league-2020-3-brazil" class="col-box activity a-reset matchCat "><span class="topic a-default" title="Match: SWS vs Paquetá">SWS vs Paquetá</span>22</a><a href="/forums/threads/2340588/uncle-with-covid" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Uncle with covid">Uncle with covid</span>7</a><a href="/matches/2342988/avez-vs-big-academy-nine-to-five-2" class="col-box activity a-reset matchCat "><span class="topic a-default" title="Match: AVEZ vs BIG Academy">AVEZ vs BIG Academy</span>403</a><a href="/forums/threads/2340399/blm-vs-trump-supporters" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: BLM vs. Trump supporters">BLM vs. Trump supporters</span>203</a><a href="/forums/threads/2339979/csgo-player-tier-list-rankings" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: CSGO player tier list rankings">CSGO player tier list rankings</span>205</a><a href="/news/30022/giants-round-out-roster-with-rizzz" class="col-box activity a-reset newsCat "><span class="topic a-default" title="News: Giants round out roster with RIZZZ">Giants round out roster with RIZZZ</span>29</a><a href="/matches/2342989/nine-to-five-2-swiss-round-3-2-nine-to-five-2" class="col-box activity a-reset matchCat "><span class="topic a-default" title="Match: Nine to Five 2 Swiss Round 3 #2">Nine to Five 2 Swiss Round 3 #2</span>8</a><a href="/forums/threads/2340562/god-strikes-again" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: GOD STRIKES AGAIN">GOD STRIKES AGAIN</span>35</a><a href="/forums/threads/2340579/godnot-exist" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: God=Not Exist">God=Not Exist</span>65</a><a href="/forums/threads/2340570/rankings-after-the-break" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: rankings after the break ?">rankings after the break ?</span>26</a><a href="/forums/threads/2340422/low-lvl-faceitplayer" class="col-box activity a-reset csCat no-promode"><span class="topic a-default" title="Cs: Low lvl faceitplayer">Low lvl faceitplayer</span>30</a><a href="/matches/2343039/redemption-poa-vs-imperial-aorus-league-2020-3-brazil" class="col-box activity a-reset matchCat "><span class="topic a-default" title="Match: Redemption POA vs Imperial">Redemption POA vs Imperial</span>6</a><a href="/matches/2342991/nine-to-five-2-swiss-round-3-3-nine-to-five-2" class="col-box activity a-reset matchCat "><span class="topic a-default" title="Match: Nine to Five 2 Swiss Round 3 #3">Nine to Five 2 Swiss Round 3 #3</span>2</a></div>
               </div>
             </aside>
-          </div>
-          <div class="thunderfire-first">
-            <div class="col-rek3" id="g1_bottom_2"></div>
-          </div>
-          <div class="ggbet-first">
+            <div class="kgN8P9bvyb2EqDJR ">
+              <div class="kgN8P9bvyb2EqDJR etbx-fourth">
+                <aside class="column-ASdvuasdr123Gazx-box etbx">
+                  <div class="a-reset"><a href="http://out.hltv.org/1xbet_new.php?ref=%2Fline%2FEsports%2F2115813-CSGO-Aorus-League-Season-3-Brazil%2F80269441-Redemption-POA-Imperial%2F&amp;placement=widgetmain">
+                      <div class="column-ASdvuasdr123Gazx-box-header"><img src="/img/static/logos/1xbet_night.png" class="column-ASdvuasdr123Gazx-box-header-img"></div>
+                      <div class="column-ASdvuasdr123Gazx-box-content">
+                        <div class="column-ASdvuasdr123Gazx-box-content-teams">
+                          <div class="column-ASdvuasdr123Gazx-box-team">
+                            <div class="column-ASdvuasdr123Gazx-box-team-logo-container"><img alt="Redemption POA" src="https://static.hltv.org/images/team/logo/9902" class="column-ASdvuasdr123Gazx-box-team-logo" title="Redemption POA"></div>
+                            <div class="column-ASdvuasdr123Gazx-box-odds">2.10</div>
+                          </div>
+                          <div class="column-ASdvuasdr123Gazx-box-team">
+                            <div class="column-ASdvuasdr123Gazx-box-team-logo-container"><img alt="Imperial" src="https://static.hltv.org/images/team/logo/9455" class="column-ASdvuasdr123Gazx-box-team-logo" title="Imperial"></div>
+                            <div class="column-ASdvuasdr123Gazx-box-odds">1.70</div>
+                          </div>
+                        </div>
+                        <div class="column-ASdvuasdr123Gazx-box-cta">BET NOW</div>
+                      </div>
+<a href="https://out.hltv.org/1xbet_new.php?placement=ASdvuasdr123Gazxreg&amp;ref=registration/" class="flex">
+                        <div class="column-ASdvuasdr123Gazx-box-bonus-container">
+                          <div class="column-ASdvuasdr123Gazx-box-bonus">HLTV</div>
+                          <div class="column-ASdvuasdr123Gazx-box-bonus-text">BONUS CODE</div>
+                        </div>
+                      </a></a></div>
+                </aside>
+              </div>
+              <div class="hidden onestav-fourth">
+                <aside class="column-ASdvuasdr123Gazx-box onestav">
+                  <div class="a-reset"><a href="http://out.hltv.org/1xbet_new.php?ref=%2Fline%2FEsports%2F2115813-CSGO-Aorus-League-Season-3-Brazil%2F80269441-Redemption-POA-Imperial%2F&amp;placement=widgetmain">
+                      <div class="column-ASdvuasdr123Gazx-box-header"><img src="/img/static/logos/1xstavka_night.png" class="column-ASdvuasdr123Gazx-box-header-img"></div>
+                      <div class="column-ASdvuasdr123Gazx-box-content">
+                        <div class="column-ASdvuasdr123Gazx-box-content-teams">
+                          <div class="column-ASdvuasdr123Gazx-box-team">
+                            <div class="column-ASdvuasdr123Gazx-box-team-logo-container"><img alt="Redemption POA" src="https://static.hltv.org/images/team/logo/9902" class="column-ASdvuasdr123Gazx-box-team-logo" title="Redemption POA"></div>
+                            <div class="column-ASdvuasdr123Gazx-box-odds">2.10</div>
+                          </div>
+                          <div class="column-ASdvuasdr123Gazx-box-team">
+                            <div class="column-ASdvuasdr123Gazx-box-team-logo-container"><img alt="Imperial" src="https://static.hltv.org/images/team/logo/9455" class="column-ASdvuasdr123Gazx-box-team-logo" title="Imperial"></div>
+                            <div class="column-ASdvuasdr123Gazx-box-odds">1.70</div>
+                          </div>
+                        </div>
+                        <div class="column-ASdvuasdr123Gazx-box-cta">ПОСТАВИТЬ</div>
+                      </div>
+<a href="https://out.hltv.org/1xbet_new.php?placement=ASdvuasdr123Gazxreg&amp;ref=registration/" class="flex">
+                        <div class="column-ASdvuasdr123Gazx-box-bonus-container">
+                          <div class="column-ASdvuasdr123Gazx-box-bonus">HLTVRU</div>
+                          <div class="column-ASdvuasdr123Gazx-box-bonus-text">ПРОМОКОД</div>
+                        </div>
+                      </a></a></div>
+                </aside>
+              </div>
+            </div>
+            <div class="">
+              <div class="kgN8P9bvyb2EqDJR" id="g4_middle"></div>
+            </div>
             <aside>
-              <div class="widget-match-listing widget-ggbet hidden"><a
-                  href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1"
-                  class="a-reset">
-                  <div class="widget-logo"><img
-                      src="/img/static/betting/ggbetnew_white.png"></div>
-                </a>
-                <div class="widget-upcoming-matches">
-                  <div class="widget-upcoming-matches-text">МАТЧИ</div>
-                  <a href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1&amp;mid=5:8de50b28-e0f9-4591-ba0f-ee3e93a8df11"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="BIG"
-                              src="https://static.hltv.org/images/team/logo/7532"
-                              class="team-logo" title="BIG"></div>
-                          BIG
-                        </div>
-                        <span class="team-odds">1.20</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574420400000">12 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Hard Legion"
-                              src="https://static.hltv.org/images/team/logo/10421"
-                              class="team-logo" title="Hard Legion"></div>
-                          Hard Legion
-                        </div>
-                        <span class="team-odds">4.32</span>
-                      </div>
+              <h1><a href="/results?content=vod" class="a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'LATEST REPLAYS' [text]">LATEST REPLAYS</a></h1>
+              <div class="col-box-con"><a href="/matches/2342988/avez-vs-big-academy-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Poland" src="https://static.hltv.org/images/bigflags/30x20/PL.gif" class="flag" title="Poland"> <span class="team">AVEZ</span></div>
+                      <div class="teamrow"><img alt="Germany" src="https://static.hltv.org/images/bigflags/30x20/DE.gif" class="flag" title="Germany"> <span class="team">BIG Academy</span></div>
                     </div>
-                  </a><a
-                    href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1&amp;mid=5:66c6ec7f-b7e6-4dc0-a80e-74ba5834dd66"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="HAVU"
-                              src="https://static.hltv.org/images/team/logo/7865"
-                              class="team-logo" title="HAVU"></div>
-                          HAVU
-                        </div>
-                        <span class="team-odds">1.56</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574431200000">15 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Aristocracy"
-                              src="https://static.hltv.org/images/team/logo/10020"
-                              class="team-logo" title="Aristocracy"></div>
-                          Aristocracy
-                        </div>
-                        <span class="team-odds">2.36</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1&amp;mid=5:dca85c8e-65c8-4e83-bf3b-35ace164e258"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="GODSENT"
-                              src="https://static.hltv.org/images/team/logo/6902"
-                              class="team-logo" title="GODSENT"></div>
-                          GODSENT
-                        </div>
-                        <span class="team-odds">1.45</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574442000000">18 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="m1x"
-                              src="https://static.hltv.org/images/team/logo/7376"
-                              class="team-logo" title="m1x"></div>
-                          m1x
-                        </div>
-                        <span class="team-odds">2.66</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1&amp;mid=5:ea68115e-8501-4387-9743-0f776102a6a7"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Illuminar"
-                              src="https://static.hltv.org/images/team/logo/8813"
-                              class="team-logo" title="Illuminar"></div>
-                          Illuminar
-                        </div>
-                        <span class="team-odds">1.64</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574449200000">20 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Ancient"
-                              src="https://static.hltv.org/images/team/logo/6685"
-                              class="team-logo" title="Ancient"></div>
-                          Ancient
-                        </div>
-                        <span class="team-odds">2.20</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar1&amp;mid=5:2180c0fa-fa99-4167-b4ac-dab8027294ae"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="MIBR"
-                              src="https://static.hltv.org/images/team/logo/9215"
-                              class="team-logo" title="MIBR"></div>
-                          MIBR
-                        </div>
-                        <span class="team-odds">1.50</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574485200000">06 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="AVANGAR"
-                              src="https://static.hltv.org/images/team/logo/8120"
-                              class="team-logo" title="AVANGAR"></div>
-                          AVANGAR
-                        </div>
-                        <span class="team-odds">2.51</span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <a
-                  href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_logo&amp;mid=&amp;goto=sitereg">
-                  <div class="widget-cta">ПОСТАВИТЬ</div>
-                </a>
-              </div>
-            </aside>
-          </div>
-        </div>
-        <div class="right2Col">
-          <aside>
-            <div class="recent-activity">
-              <h1><a href="/forums" class="a-reset">RECENT ACTIVITY</a></h1>
-              <div class="pro-mode-toggle"
-                title="Toggle Sport mode on, in Sport mode we reduce community interaction, and present mainly HLTV produced content. The Sport mode is in beta, and will be expanded going forward.">
-                SPORT</div>
-            </div>
-            <div class="col-box-con">
-              <div class="activitylist"><a
-                  href="/forums/threads/2190698/jonathan-e-is-a-ni"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: Jonathan E is a ni...">Jonathan E is a
-                    ni...</span>15</a><a
-                  href="/forums/threads/2190701/best-playermodels"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: Best playermodels">Best
-                    playermodels</span>0</a><a
-                  href="/forums/threads/2190606/road-to-700-from-5"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: Road to $700 (from $5)">Road to $700 (from
-                    $5)</span>161</a><a
-                  href="/forums/threads/2190440/best-underrated-igl"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: Best underrated igl">Best
-                    underrated igl</span>60</a><a
-                  href="/forums/threads/2190699/played-last-cs-game"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: Played last cs game">Played last cs
-                    game</span>8</a><a
-                  href="/forums/threads/2190635/ctrlv-thread"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: ctrl+v thread">ctrl+v
-                    thread</span>47</a><a
-                  href="/news/28443/dreamhack-releases-mini-documentary-on-the-life-of-a-broadcast-talent"
-                  class="col-box activity a-reset newsCat "><span
-                    class="topic a-default"
-                    title="News: DreamHack releases mini-documentary on the life of a broadcast talent">DreamHack
-                    releases mini-documentary on the life of a broadcast
-                    talent</span>74</a><a
-                  href="/forums/threads/2190689/essay-help-18-urgent"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: essay help (18+) (urgent)">essay help (18+)
-                    (urgent)</span>26</a><a
-                  href="/forums/threads/2190313/worldedit-shit"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: Worldedit shit">Worldedit
-                    shit</span>41</a><a
-                  href="/forums/threads/2190700/hot-girl-18"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: hot girl (18+)">hot girl
-                    (18+)</span>1</a><a
-                  href="/forums/threads/2188926/sweden-propaganda"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: SWEDEN PROPAGANDA">SWEDEN
-                    PROPAGANDA</span>113</a><a
-                  href="/forums/threads/2190547/your-favorite-neighbor-country"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: Your favorite neighbor country">Your favorite
-                    neighbor country</span>66</a><a
-                  href="/matches/2337979/havu-vs-aristocracy-united-masters-league-season-2"
-                  class="col-box activity a-reset matchCat "><span
-                    class="topic a-default"
-                    title="Match: HAVU vs Aristocracy">HAVU vs
-                    Aristocracy</span>8</a><a
-                  href="/forums/threads/2190612/brazilian-major-wont-happen-because-of-left-wing"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: BRAZILIAN MAJOR WONT HAPPEN BECAUSE OF LEFT WING">BRAZILIAN
-                    MAJOR WONT HAPPEN BECAUSE OF LEFT WING</span>49</a><a
-                  href="/forums/threads/2190562/overwatch-lul"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default" title="Cs: Overwatch LUL">Overwatch
-                    LUL</span>95</a><a
-                  href="/matches/2337995/copenhagen-flames-vs-winstrike-qi-banja-luka-2019-europe-qualifier"
-                  class="col-box activity a-reset matchCat "><span
-                    class="topic a-default"
-                    title="Match: Copenhagen Flames vs Winstrike">Copenhagen
-                    Flames vs Winstrike</span>8</a><a
-                  href="/forums/threads/2190561/8343-million-people-and-no-tier-1-team"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: 83.43 million people and no tier 1 team">83.43
-                    million people and no tier 1 team</span>99</a><a
-                  href="/forums/threads/2190684/countries-that-wont-exist"
-                  class="col-box activity a-reset csCat no-promode"><span
-                    class="topic a-default"
-                    title="Cs: Countries that wont exist">Countries that wont
-                    exist</span>31</a><a
-                  href="/news/28451/sanji-returns-to-avangar-lineup-for-cac-playoffs"
-                  class="col-box activity a-reset newsCat "><span
-                    class="topic a-default"
-                    title="News: SANJI returns to AVANGAR lineup for CAC playoffs">SANJI
-                    returns to AVANGAR lineup for CAC playoffs</span>66</a><a
-                  href="/news/28448/100-thieves-pull-out-of-dreamhack-open-winter"
-                  class="col-box activity a-reset newsCat "><span
-                    class="topic a-default"
-                    title="News: 100 Thieves pull out of DreamHack Open Winter">100
-                    Thieves pull out of DreamHack Open Winter</span>188</a>
-              </div>
-            </div>
-          </aside>
-          <div class="col-rek3 xbet-fourth">
-            <aside class="column-widget-box xbet">
-              <div class="a-reset"><a
-                  href="http://co.hltv.org/1xbet_new.php?ref=%2Fline%2FEsports%2F2001269-CSGO-European-Champions-Cup%2F62713025-BIG-Hard-Legion-Esports%2F&amp;placement=widgetmain">
-                  <div class="column-widget-box-header"><img
-                      src="/img/static/betting/1xbet_night.png"
-                      class="column-widget-box-header-img"></div>
-                  <div class="column-widget-box-content">
-                    <div class="column-widget-box-content-teams">
-                      <div class="column-widget-box-team">
-                        <div class="column-widget-box-team-logo-container"><img
-                            alt="BIG"
-                            src="https://static.hltv.org/images/team/logo/7532"
-                            class="column-widget-box-team-logo" title="BIG">
-                        </div>
-                        <div class="column-widget-box-odds">1.26</div>
-                      </div>
-                      <div class="column-widget-box-team">
-                        <div class="column-widget-box-team-logo-container"><img
-                            alt="Hard Legion"
-                            src="https://static.hltv.org/images/team/logo/10421"
-                            class="column-widget-box-team-logo"
-                            title="Hard Legion"></div>
-                        <div class="column-widget-box-odds">3.88</div>
-                      </div>
-                    </div>
-                    <div class="column-widget-box-cta">BET NOW</div>
+                    <div class="middleExtra">VOD</div>
                   </div>
-                  <a href="https://co.hltv.org/1xbet_new.php?placement=widgetreg&amp;ref=registration/"
-                    class="flex">
-                    <div class="column-widget-box-bonus-container">
-                      <div class="column-widget-box-bonus">HLTV</div>
-                      <div class="column-widget-box-bonus-text">BONUS CODE</div>
+                </a><a href="/matches/2342987/izako-boars-vs-gambit-youngsters-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Poland" src="https://static.hltv.org/images/bigflags/30x20/PL.gif" class="flag" title="Poland"> <span class="team">Izako Boars</span></div>
+                      <div class="teamrow"><img alt="Russia" src="https://static.hltv.org/images/bigflags/30x20/RU.gif" class="flag" title="Russia"> <span class="team">Gambit Youngsters</span></div>
                     </div>
-                  </a>
+                    <div class="middleExtra">VOD</div>
+                  </div>
+                </a><a href="/matches/2342986/syman-vs-excellency-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Kazakhstan" src="https://static.hltv.org/images/bigflags/30x20/KZ.gif" class="flag" title="Kazakhstan"> <span class="team">Syman</span></div>
+                      <div class="teamrow"><img alt="Europe" src="https://static.hltv.org/images/bigflags/30x20/EU.gif" class="flag" title="Europe"> <span class="team">Excellency</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342985/tikitakan-vs-alternate-attax-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Europe" src="https://static.hltv.org/images/bigflags/30x20/EU.gif" class="flag" title="Europe"> <span class="team">Tikitakan</span></div>
+                      <div class="teamrow"><img alt="Germany" src="https://static.hltv.org/images/bigflags/30x20/DE.gif" class="flag" title="Germany"> <span class="team">ALTERNATE aTTaX</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342984/lvlup-vs-navi-junior-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Serbia" src="https://static.hltv.org/images/bigflags/30x20/RS.gif" class="flag" title="Serbia"> <span class="team">lvlUP</span></div>
+                      <div class="teamrow"><img alt="Ukraine" src="https://static.hltv.org/images/bigflags/30x20/UA.gif" class="flag" title="Ukraine"> <span class="team">NAVI Junior</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342983/sgpro-vs-ldlc-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Russia" src="https://static.hltv.org/images/bigflags/30x20/RU.gif" class="flag" title="Russia"> <span class="team">SG.pro</span></div>
+                      <div class="teamrow"><img alt="France" src="https://static.hltv.org/images/bigflags/30x20/FR.gif" class="flag" title="France"> <span class="team">LDLC</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342982/illuminar-vs-cr4zy-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Poland" src="https://static.hltv.org/images/bigflags/30x20/PL.gif" class="flag" title="Poland"> <span class="team">Illuminar</span></div>
+                      <div class="teamrow"><img alt="Ukraine" src="https://static.hltv.org/images/bigflags/30x20/UA.gif" class="flag" title="Ukraine"> <span class="team">CR4ZY</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342981/gamerlegion-vs-selectah-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Europe" src="https://static.hltv.org/images/bigflags/30x20/EU.gif" class="flag" title="Europe"> <span class="team">GamerLegion</span></div>
+                      <div class="teamrow"><img alt="CIS" src="https://static.hltv.org/images/bigflags/30x20/CIS.gif" class="flag" title="CIS"> <span class="team">selectah</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342980/navi-junior-vs-big-academy-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Ukraine" src="https://static.hltv.org/images/bigflags/30x20/UA.gif" class="flag" title="Ukraine"> <span class="team">NAVI Junior</span></div>
+                      <div class="teamrow"><img alt="Germany" src="https://static.hltv.org/images/bigflags/30x20/DE.gif" class="flag" title="Germany"> <span class="team">BIG Academy</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
+                </a><a href="/matches/2342979/gambit-youngsters-vs-ldlc-nine-to-five-2" class="col-box a-reset" data-link-tracking-page="Frontpage" data-link-tracking-column="[4th column]" data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
+                  <div class="teambox">
+                    <div class="teamrows">
+                      <div class="teamrow"><img alt="Russia" src="https://static.hltv.org/images/bigflags/30x20/RU.gif" class="flag" title="Russia"> <span class="team">Gambit Youngsters</span></div>
+                      <div class="teamrow"><img alt="France" src="https://static.hltv.org/images/bigflags/30x20/FR.gif" class="flag" title="France"> <span class="team">LDLC</span></div>
+                    </div>
+                    <div class="middleExtra">DEMO</div>
+                  </div>
                 </a></div>
             </aside>
-          </div>
-          <div class="hidden stavka-fourth">
-            <aside class="column-widget-box xbet">
-              <div class="a-reset"><a
-                  href="http://co.hltv.org/1xbet_new.php?ref=%2Fline%2FEsports%2F2001269-CSGO-European-Champions-Cup%2F62713025-BIG-Hard-Legion-Esports%2F&amp;placement=widgetmain">
-                  <div class="column-widget-box-header"><img
-                      src="/img/static/betting/1xstavka_night.png"
-                      class="column-widget-box-header-img"></div>
-                  <div class="column-widget-box-content">
-                    <div class="column-widget-box-content-teams">
-                      <div class="column-widget-box-team">
-                        <div class="column-widget-box-team-logo-container"><img
-                            alt="BIG"
-                            src="https://static.hltv.org/images/team/logo/7532"
-                            class="column-widget-box-team-logo" title="BIG">
-                        </div>
-                        <div class="column-widget-box-odds">1.26</div>
-                      </div>
-                      <div class="column-widget-box-team">
-                        <div class="column-widget-box-team-logo-container"><img
-                            alt="Hard Legion"
-                            src="https://static.hltv.org/images/team/logo/10421"
-                            class="column-widget-box-team-logo"
-                            title="Hard Legion"></div>
-                        <div class="column-widget-box-odds">3.88</div>
-                      </div>
-                    </div>
-                    <div class="column-widget-box-cta">ПОСТАВИТЬ</div>
-                  </div>
-                  <a href="https://co.hltv.org/1xbet_new.php?placement=widgetreg&amp;ref=registration/"
-                    class="flex">
-                    <div class="column-widget-box-bonus-container">
-                      <div class="column-widget-box-bonus">HLTVRU</div>
-                      <div class="column-widget-box-bonus-text">ПРОМОКОД</div>
-                    </div>
-                  </a>
-                </a></div>
-            </aside>
-          </div>
-          <aside>
-            <h1><a href="/results?content=vod" class="a-reset"
-                data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'LATEST REPLAYS' [text]">LATEST
-                REPLAYS</a></h1>
-            <div class="col-box-con"><a
-                href="/matches/2338011/espada-vs-melbet-epicenter-2019-cis-open-qualifier"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Russia"
-                        src="https://static.hltv.org/images/bigflags/30x20/RU.gif"
-                        class="flag" title="Russia"> <span
-                        class="team">Espada</span></div>
-                    <div class="teamrow"><img alt="Russia"
-                        src="https://static.hltv.org/images/bigflags/30x20/RU.gif"
-                        class="flag" title="Russia"> <span
-                        class="team">Melbet</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2338010/natus-vincere-junior-vs-h2l2-epicenter-2019-cis-open-qualifier"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Ukraine"
-                        src="https://static.hltv.org/images/bigflags/30x20/UA.gif"
-                        class="flag" title="Ukraine"> <span class="team">Natus
-                        Vincere Junior</span></div>
-                    <div class="teamrow"><img alt="Russia"
-                        src="https://static.hltv.org/images/bigflags/30x20/RU.gif"
-                        class="flag" title="Russia"> <span
-                        class="team">H2L2</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2337994/heretics-vs-m1x-qi-banja-luka-2019-europe-qualifier"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="France"
-                        src="https://static.hltv.org/images/bigflags/30x20/FR.gif"
-                        class="flag" title="France"> <span
-                        class="team">Heretics</span></div>
-                    <div class="teamrow"><img alt="Europe"
-                        src="https://static.hltv.org/images/bigflags/30x20/EU.gif"
-                        class="flag" title="Europe"> <span
-                        class="team">m1x</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2338008/extremum-vs-risefrom-epicenter-2019-cis-open-qualifier"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Russia"
-                        src="https://static.hltv.org/images/bigflags/30x20/RU.gif"
-                        class="flag" title="Russia"> <span
-                        class="team">EXTREMUM</span></div>
-                    <div class="teamrow"><img alt="Russia"
-                        src="https://static.hltv.org/images/bigflags/30x20/RU.gif"
-                        class="flag" title="Russia"> <span
-                        class="team">risefrom</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2338009/kryvbas-vs-hellraisers-epicenter-2019-cis-open-qualifier"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Ukraine"
-                        src="https://static.hltv.org/images/bigflags/30x20/UA.gif"
-                        class="flag" title="Ukraine"> <span
-                        class="team">Kryvbas</span></div>
-                    <div class="teamrow"><img alt="Ukraine"
-                        src="https://static.hltv.org/images/bigflags/30x20/UA.gif"
-                        class="flag" title="Ukraine"> <span
-                        class="team">HellRaisers</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2337948/sj-vs-unicorns-of-love-esea-advanced-season-32-europe"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Finland"
-                        src="https://static.hltv.org/images/bigflags/30x20/FI.gif"
-                        class="flag" title="Finland"> <span
-                        class="team">SJ</span></div>
-                    <div class="teamrow"><img alt="Germany"
-                        src="https://static.hltv.org/images/bigflags/30x20/DE.gif"
-                        class="flag" title="Germany"> <span
-                        class="team">Unicorns of Love</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2337947/ambush-vs-agf-esea-advanced-season-32-europe"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Denmark"
-                        src="https://static.hltv.org/images/bigflags/30x20/DK.gif"
-                        class="flag" title="Denmark"> <span
-                        class="team">Ambush</span></div>
-                    <div class="teamrow"><img alt="Denmark"
-                        src="https://static.hltv.org/images/bigflags/30x20/DK.gif"
-                        class="flag" title="Denmark"> <span
-                        class="team">AGF</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2337949/izako-boars-vs-lyngby-vikings-esea-advanced-season-32-europe"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Poland"
-                        src="https://static.hltv.org/images/bigflags/30x20/PL.gif"
-                        class="flag" title="Poland"> <span class="team">Izako
-                        Boars</span></div>
-                    <div class="teamrow"><img alt="Denmark"
-                        src="https://static.hltv.org/images/bigflags/30x20/DK.gif"
-                        class="flag" title="Denmark"> <span class="team">Lyngby
-                        Vikings</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a href="/matches/2337977/ago-vs-havu-lootbet-season-5"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Poland"
-                        src="https://static.hltv.org/images/bigflags/30x20/PL.gif"
-                        class="flag" title="Poland"> <span
-                        class="team">AGO</span></div>
-                    <div class="teamrow"><img alt="Finland"
-                        src="https://static.hltv.org/images/bigflags/30x20/FI.gif"
-                        class="flag" title="Finland"> <span
-                        class="team">HAVU</span></div>
-                  </div>
-                  <div class="middleExtra">DEMO</div>
-                </div>
-              </a><a
-                href="/matches/2337946/nordavind-vs-ldlc-esea-advanced-season-32-europe"
-                class="col-box a-reset" data-link-tracking-page="Frontpage"
-                data-link-tracking-column="[4th column]"
-                data-link-tracking-destination="Click on 'VOD / DEMO' [box]">
-                <div class="teambox">
-                  <div class="teamrows">
-                    <div class="teamrow"><img alt="Norway"
-                        src="https://static.hltv.org/images/bigflags/30x20/NO.gif"
-                        class="flag" title="Norway"> <span
-                        class="team">Nordavind</span></div>
-                    <div class="teamrow"><img alt="France"
-                        src="https://static.hltv.org/images/bigflags/30x20/FR.gif"
-                        class="flag" title="France"> <span
-                        class="team">LDLC</span></div>
-                  </div>
-                  <div class="middleExtra">VOD</div>
-                </div>
-              </a></div>
-          </aside>
-          <div class="col-rek3">
-            <div class="col-rek3" id="g4_bottom"></div>
-          </div>
-          <div class="bet365-fourth">
-            <aside>
-              <div class="widget-match-listing widget-lootbet">
-                <div class="widget-logo"><img
-                    src="/img/static/betting/lootbet_night.png"></div>
-                <div class="widget-upcoming-matches">
-                  <div class="widget-upcoming-matches-text">Matches</div>
-                  <a href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="BIG"
-                              src="https://static.hltv.org/images/team/logo/7532"
-                              class="team-logo" title="BIG"></div>
-                          BIG
-                        </div>
-                        <span class="team-odds">1.15</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574420400000">12 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Hard Legion"
-                              src="https://static.hltv.org/images/team/logo/10421"
-                              class="team-logo" title="Hard Legion"></div>
-                          Hard Legion
-                        </div>
-                        <span class="team-odds">5.00</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="HAVU"
-                              src="https://static.hltv.org/images/team/logo/7865"
-                              class="team-logo" title="HAVU"></div>
-                          HAVU
-                        </div>
-                        <span class="team-odds">1.54</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574431200000">15 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img
-                              alt="Aristocracy"
-                              src="https://static.hltv.org/images/team/logo/10020"
-                              class="team-logo" title="Aristocracy"></div>
-                          Aristocracy
-                        </div>
-                        <span class="team-odds">2.38</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="GODSENT"
-                              src="https://static.hltv.org/images/team/logo/6902"
-                              class="team-logo" title="GODSENT"></div>
-                          GODSENT
-                        </div>
-                        <span class="team-odds">1.40</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574442000000">18 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="m1x"
-                              src="https://static.hltv.org/images/team/logo/7376"
-                              class="team-logo" title="m1x"></div>
-                          m1x
-                        </div>
-                        <span class="team-odds">2.81</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Illuminar"
-                              src="https://static.hltv.org/images/team/logo/8813"
-                              class="team-logo" title="Illuminar"></div>
-                          Illuminar
-                        </div>
-                        <span class="team-odds">1.63</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574449200000">20 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="Ancient"
-                              src="https://static.hltv.org/images/team/logo/6685"
-                              class="team-logo" title="Ancient"></div>
-                          Ancient
-                        </div>
-                        <span class="team-odds">2.19</span>
-                      </div>
-                    </div>
-                  </a><a
-                    href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner"
-                    target="_blank">
-                    <div class="widget-upcoming-match">
-                      <div class="team1">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="MIBR"
-                              src="https://static.hltv.org/images/team/logo/9215"
-                              class="team-logo" title="MIBR"></div>
-                          MIBR
-                        </div>
-                        <span class="team-odds">1.42</span><span
-                          class="match-time"><span data-time-format="HH : mm"
-                            data-unix="1574485200000">06 : 00</span></span>
-                      </div>
-                      <div class="team2">
-                        <div class="team-name text-ellipsis">
-                          <div class="team-logo-container"><img alt="AVANGAR"
-                              src="https://static.hltv.org/images/team/logo/8120"
-                              class="team-logo" title="AVANGAR"></div>
-                          AVANGAR
-                        </div>
-                        <span class="team-odds">2.75</span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <a
-                  href="https://lootclick.net/_gsv9t6kIvAnlE-K0mpYMyWNd7ZgqdRLk/1609/?payload=bottom_banner">
-                  <div class="widget-cta">Bet now</div>
-                </a>
-              </div>
-            </aside>
-          </div>
-          <div class="ggbet-fourth">
-            <aside class="vertical-box single-widget-ggbet hidden"><a
-                href="http://ggrus.bet/ggbetting/rus?lp=00&amp;lg=ru&amp;param=hltv_sidebar2&amp;mid=5:66c6ec7f-b7e6-4dc0-a80e-74ba5834dd66">
-                <div class="vertical-container">
-                  <div class="provider"><img
-                      src="/img/static/betting/ggbetnew_white.png"></div>
-                  <div class="bets">
-                    <div class="team-1"><img alt="HAVU"
-                        src="https://static.hltv.org/images/team/logo/7865"
-                        class="team-logo" title="HAVU"><span
-                        class="bet-box">1.56</span></div>
-                    <div class="vs-box">vs</div>
-                    <div class="team-2"><img alt="Aristocracy"
-                        src="https://static.hltv.org/images/team/logo/10020"
-                        class="team-logo" title="Aristocracy"><span
-                        class="bet-box">2.36</span></div>
-                  </div>
-                </div>
-              </a></aside>
+            <div class="kgN8P9bvyb2EqDJR">
+              <div class="kgN8P9bvyb2EqDJR" id="g4_bottom"></div>
+            </div>
+            <div class="bet365-fourth">
+              <div class="vm-placement" data-id="5ea1c28867200b43179499d0"></div>
+            </div>
+            <div class="">
+              <div class="kgN8P9bvyb2EqDJR" id="g4_bottom_2"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer class="footer">
-    <div class="widthControl footerlinks"><span><a href="/jobs"
-          class="footerlink">Jobs</a></span><span><a href="/contact"
-          class="footerlink">Contact</a></span><span><a href="/terms"
-          class="footerlink">Terms</a></span><span><a href="/privacy"
-          class="footerlink">Privacy policy</a></span><span
-        class="gtSmartphone-only"><a href="/rss/news"
-          class="footerlink">RSS</a></span><span class="gtSmartphone-only"><a
-          href="https://www.facebook.com/HLTV.org" target="_blank"
-          class="footerlink socicon"><i class="fa fa-facebook"
-            aria-hidden="true"></i></a><a href="https://www.twitch.tv/hltvorg"
-          target="_blank" class="footerlink socicon"><i class="fa fa-twitch"
-            aria-hidden="true"></i></a><a
-          href="https://www.youtube.com/user/wwwHLTVorg" target="_blank"
-          class="footerlink socicon"><i class="fa fa-youtube"
-            aria-hidden="true"></i></a><a href="https://www.twitter.com/HLTVorg"
-          target="_blank" class="footerlink socicon"><i class="fa fa-twitter"
-            aria-hidden="true"></i></a><a href="https://vk.com/hltvorg"
-          target="_blank" class="footerlink socicon"><i class="fa fa-vk"
-            aria-hidden="true"></i></a><a
-          href="https://www.instagram.com/hltvorg/" target="_blank"
-          class="footerlink socicon"><i class="fa fa-instagram"
-            aria-hidden="true"></i></a></span><span><span class="footer-hltv">©
-          HLTV.org</span><span class="footer-responsible">18+ Bet Responsibly<a
-            href="https://www.gamblingtherapy.org"><img
-              src="/img/static/gamcare.png"
-              class="invertNight"></a></span></span></div>
-  </footer>
-  <!--Version: 2.1.550-->
-  <!---->
-  <div id="overlay"></div>
-  <button class="leftColPullInButton"><i class="fa fa-th-list"
-      aria-hidden="true"></i></button>
-</body>
+    <footer class="footer">
+      <div class="widthControl gtSmartphone-only footer-content">
+        <div class="g-grid">
+          <div class="col-6">
+            <div class="footer-section footer-shop">
+              <div class="footer-section-header">Shop HLTV &amp; team merchandise</div>
+<br>
+              <div class="footer-section-subtext">Find your favorite team jersey in our webshop</div>
+              <div class="footer-section-cta"><a href="https://shop.hltv.org" target="_blank" class="footer-cta-button">Go to HLTV webshop</a></div>
+<img src="/img/static/footer/hltv_shirt.png" class="footer-img"></div>
+          </div>
+          <div class="col-6">
+            <div class="footer-section footer-app">
+              <div class="footer-section-header">Download the HLTV app</div>
+<br>
+              <div class="footer-section-subtext">Optimized to keep you up to date on the go</div>
+              <div class="footer-section-cta"><a href="https://apps.apple.com/us/app/hltv-org/id1078945675" target="_blank" class="footer-cta-img"><img src="/img/static/gfx/app/appButton.svg" class="appstoreButton"></a><a href="https://play.google.com/store/apps/details?id=org.hltv.android" target="_blank" class="footer-cta-img"><img src="/img/static/gfx/app/playButton.png" class="playstoreButton"></a></div>
+<img src="/img/static/footer/app.png" class="footer-img"></div>
+          </div>
+        </div>
+      </div>
+      <div class="widthControl footerlinks"><span><a href="/jobs" class="footerlink">Jobs</a></span><span><a href="/contact" class="footerlink">Contact</a></span><span><a href="/terms" class="footerlink">Terms</a></span><span><a href="/privacy" class="footerlink">Privacy policy</a></span><span><a href="/cookie-policy" class="footerlink">Cookie policy</a></span><span class="gtSmartphone-only"><a href="/rss/news" class="footerlink">RSS</a></span><span class="gtSmartphone-only"><a href="https://www.facebook.com/HLTV.org" target="_blank" class="footerlink socicon"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="https://www.twitch.tv/hltvorg" target="_blank" class="footerlink socicon"><i class="fa fa-twitch" aria-hidden="true"></i></a><a href="https://www.youtube.com/user/wwwHLTVorg" target="_blank" class="footerlink socicon"><i class="fa fa-youtube" aria-hidden="true"></i></a><a href="https://www.twitter.com/HLTVorg" target="_blank" class="footerlink socicon"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://vk.com/hltvorg" target="_blank" class="footerlink socicon"><i class="fa fa-vk" aria-hidden="true"></i></a><a href="https://www.instagram.com/hltvorg/" target="_blank" class="footerlink socicon"><i class="fa fa-instagram" aria-hidden="true"></i></a></span><span><span class="footer-hltv">© HLTV.org</span></span></div>
+      <div class="widthControl footer-responsible-container"><a href="https://www.gamblingtherapy.org"><img src="/img/static/gamcare.png" class="invertNight gamcare-logo"></a>18+ Bet Responsibly</div>
+    </footer>
+    <!--Version: 2.1.741-->
+    <!--Country: ru-->
+    <!--
+AddonEventRepository.getFrontpageFeaturedEvents called 1 times
+AddonEventRepository.getTeams called 1 times
+AddonMatchRepository.getMatchesForEvents called 1 times
+GuideRepository.getEntriesBetween called 1 times
+-->
+    <div id="overlay"></div>
+<button class="leftColPullInButton"><i class="fa fa-th-list" aria-hidden="true"></i></button></body>
 </html>
 `

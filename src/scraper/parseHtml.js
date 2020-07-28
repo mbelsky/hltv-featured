@@ -1,13 +1,14 @@
 const cheerio = require('cheerio')
 
 const s = {
-  container: 'div.upcoming-match',
-  event: '.event .event-name',
-  eventPlaceholder: 'td.placeholder-text-cell',
-  teamName: '.team-cell div.team',
-  time: '.time div.time',
-  star: 'i.star',
-  upcomingMatch: 'div.match a',
+  container: 'div.upcomingMatch',
+  event: '.matchEvent .matchEventName',
+  eventPlaceholder: '.matchInfoEmpty span',
+  teamName: '.matchTeam div.matchTeamName',
+  teamNameWinner: '.matchTeam div.team',
+  time: '.matchInfo div.matchTime',
+  star: 'i.fa-star.faded',
+  upcomingMatch: 'a.match',
 }
 
 module.exports = function htmlToMatches(html, { root }) {
@@ -25,16 +26,16 @@ module.exports = function htmlToMatches(html, { root }) {
     }
 
     const unixTimestamp = Number(container.find(s.time).data('unix'))
-    const stars = container.find(s.star).length
-    const teams = container.find(s.teamName)
+    const stars = 5 - container.find(s.star).length
+    const teams = container
+      .find(s.teamName)
+      .toArray()
+      .concat(container.find(s.teamNameWinner).toArray())
     let title = 'TBD vs TBD'
     let event
 
     if (teams.length) {
-      title = teams
-        .map((_, el) => $(el).text())
-        .get()
-        .join(' vs ')
+      title = teams.map((el) => $(el).text()).join(' vs ')
       event = container.find(s.event).text()
     } else {
       event = container.find(s.eventPlaceholder).text()
