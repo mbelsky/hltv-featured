@@ -18,10 +18,10 @@ const logResult = (data, matches) => {
     alerter.warn('Zero matches scraped. HTML:\n\n' + data)
   }
 
-  if ('production' === process.env.NODE_ENV) {
-    const message = `Scraped & saved ${matches.length} matches`
+  const message = `Scraped & saved ${matches.length} matches`
+  console.log(message)
 
-    console.log(message)
+  if ('production' === process.env.NODE_ENV) {
     log({
       level: 'info',
       data: {
