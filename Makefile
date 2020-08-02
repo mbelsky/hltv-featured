@@ -17,8 +17,8 @@ dev: build
 
 .PHONY: bot
 bot:
-		docker run $(COMMON_RUN_ARGS) -d --restart on-failure:3 $(IMG)
+		docker run --name=hltv-featured-bot $(COMMON_RUN_ARGS) -d --restart on-failure:3 $(IMG)
 
 .PHONY: cron
 cron:
-		docker run $(COMMON_RUN_ARGS) --env CRON=true -d --restart on-failure:3 $(IMG)
+		docker run --name=hltv-featured-cron $(COMMON_RUN_ARGS) --env CRON=true -d --restart on-failure:3 $(IMG)
