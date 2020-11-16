@@ -10,15 +10,10 @@ This is a set of nodejs applications to get data about upcoming CSGO matches and
 
 ## Configure server
 
-- Install lts node
-- Install yarn
-- `sudo adduser hltv`
-- `sudo git clone https://github.com/mbelsky/hltv-featured.git /opt/hltv-featured`
-- `sudo chmod -R 755 /opt/hltv-featured`
-- `sudo chown -R hltv:hltv /opt/hltv-featured`
-- Setup `.env` and `src/common/cert.json` files
-- `sudo cp -r /opt/hltv-featured/systemd/* /etc/systemd/system/`
-- `sudo systemctl enable --now hltvf-scrap.timer hltvf-notify.timer hltvf-backend.service hltvf-scrap.service hltvf-notify.service`
+- Install make, git, [docker](https://docs.docker.com/engine/install/ubuntu/)
+- `git clone https://github.com/mbelsky/hltv-featured.git && cd hltv-featured`
+- Setup `.env` and `cert.json` files
+- `make pull && make bot && make cron`
 
 ## License
 
