@@ -23,11 +23,12 @@
 README.md
 
 .github
+.eslint*
 .prettier*
 *.config.js
 coverage/
 systemd/
 Makefile
-**/.cert.json
+**/cert.json
 **/.env*
 **/.nvmrc
