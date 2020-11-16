@@ -1,7 +1,7 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 COMMON_RUN_ARGS:=-it --env-file ./.env --env FIREBASE_CONFIG=/data/cert.json --mount type=bind,src=$(ROOT_DIR)/cert.json,dst=/data/cert.json,ro
-IMG:=mbelsky/hltv-featured:latest
-
+IMGV?=latest
+IMG:=mbelsky/hltv-featured:$(IMGV)
 
 .PHONY: build
 build:
