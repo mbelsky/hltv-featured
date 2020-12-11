@@ -1,4 +1,6 @@
-FROM node:12.18.2-alpine3.11 AS deps
+ARG NODEIMG=14.15.1-alpine3.12
+
+FROM $NODEIMG AS deps
 
 WORKDIR /app
 
@@ -11,7 +13,7 @@ RUN find src \! -name "package.json" \
   -print \
   | xargs rm -rf
 
-FROM node:12.18.2-alpine3.11
+FROM $NODEIMG
 
 ENV NODE_ENV production
 
