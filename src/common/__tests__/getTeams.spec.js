@@ -21,9 +21,9 @@ const matches = [
   },
 ]
 
-describe('getTeams', () => {
+describe.only('getTeams', () => {
   test('getTeams', () => {
-    expect(getTeams(matches)).toMatchInlineSnapshot(`
+    expect(getTeams({ matches })).toMatchInlineSnapshot(`
       Array [
         "hellraisers",
         "melbet/extremum loser",
@@ -36,7 +36,9 @@ describe('getTeams', () => {
       ]
     `)
   })
-  test('throws exception', () => {
-    expect(() => getTeams([{ title: 'TBDvs' }])).toThrow()
+  test('invalid input returns empty array', () => {
+    const matches = [{ title: 'TBDvs' }]
+
+    expect(getTeams({ matches })).toEqual([])
   })
 })

@@ -46,7 +46,8 @@ const getFavoriteTeamsMatchesMessage = (
 
   const matches = todayMatches
     .filter((match) => {
-      const teams = getMatchTeams(match)
+      // TODO: pass alerter
+      const teams = getMatchTeams({ match })
       const isFavoriteTeamMatch =
         0 !== teams.filter((team) => favorites.includes(team)).length
 

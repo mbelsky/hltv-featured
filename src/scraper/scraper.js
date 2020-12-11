@@ -44,7 +44,7 @@ function scrap() {
     .then(() => axios(url))
     .then(({ data }) => {
       const matches = htmlToMatches(data, { root })
-      const teams = getTeams(matches)
+      const teams = getTeams({ alerter, matches })
 
       const addTeamsPromise = addTeams(teams).catch(alerter.error)
       const saveMatchesPromise = saveFeaturedMatches(matches)
