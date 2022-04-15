@@ -22,6 +22,7 @@ async function _notify({ alerter, fetchData, log, telegram, updateUser }) {
 
   await sendMessages({
     alerter,
+    log,
     telegram,
     updateUser,
     usersTgMessages: usersTelegramMessages,

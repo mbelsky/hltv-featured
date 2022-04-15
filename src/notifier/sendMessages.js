@@ -1,5 +1,6 @@
 exports.sendMessages = async ({
   alerter,
+  log,
   telegram,
   updateUser,
   usersTgMessages,
@@ -39,7 +40,7 @@ exports.sendMessages = async ({
     }
   }
 
-  if (0 < forbiddenIds.length) {
-    alerter.warn('forbiddenIds: ' + forbiddenIds.join(', '))
-  }
+  log(
+    `Total users count: ${usersTgMessages.length}. forbiddenIds count: ${forbiddenIds.length}`,
+  )
 }
