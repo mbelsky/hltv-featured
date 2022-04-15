@@ -6,6 +6,10 @@ exports.sendMessages = async ({
   usersTgMessages,
 }) => {
   const forbiddenIds = []
+  const sendTelegramMessagesFn =
+    process.env.NODE_ENV === 'production'
+      ? sendTelegramMessages
+      : sendTelegramMessagesDevelopmentEnviroment
 
   for await (const userTgMessages of usersTgMessages) {
     const { id, messages } = userTgMessages
@@ -16,7 +20,7 @@ exports.sendMessages = async ({
           continue
         }
 
-        await telegram.sendMessage(id, message.getText(), message.getExtra())
+        await sendTelegramMessagesFn({ message, userId: id })
 
         const data = message.getUserPayload()
 
@@ -43,4 +47,22 @@ exports.sendMessages = async ({
   log(
     `Total users count: ${usersTgMessages.length}. forbiddenIds count: ${forbiddenIds.length}`,
   )
+
+  async function sendTelegramMessages({ message, userId }) {
+    return telegram.sendMessage(userId, message.getText(), message.getExtra())
+  }
+
+  async function sendTelegramMessagesDevelopmentEnviroment(data) {
+    const testAccountsRaw = process.env.TELEGRAM_USER_TEST_IDS || ''
+    const allowlist = testAccountsRaw
+      .split(',')
+      .filter(Boolean)
+      .map((id) => Number.parseInt(id, 10))
+
+    if (!allowlist.includes(data.userId)) {
+      return
+    }
+
+    return sendTelegramMessages(data)
+  }
 }

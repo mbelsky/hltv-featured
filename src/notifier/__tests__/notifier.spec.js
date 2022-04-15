@@ -22,9 +22,19 @@ const fetchDataFb = (users) => async () => {
 const log = () => {}
 const telegram = {}
 const updateUser = jest.fn()
+let processEnv
+
+beforeAll(() => {
+  processEnv = process.env
+})
 
 beforeEach(() => {
+  process.env.NODE_ENV = 'production'
   telegram.sendMessage = jest.fn()
+})
+
+afterAll(() => {
+  process.env = processEnv
 })
 
 describe('_notify', () => {
@@ -158,5 +168,44 @@ describe('_notify', () => {
 
     expect(telegram.sendMessage.mock.calls.length).toBe(1)
     expect(telegram.sendMessage.mock.calls[0]).toMatchSnapshot()
+  })
+
+  describe('dev enviroment', () => {
+    const fetchData = fetchDataFb({
+      128526: {
+        filter: 1,
+        location: {
+          timeZoneId: 'Europe/Moscow',
+        },
+      },
+    })
+
+    beforeEach(() => {
+      process.env = {}
+    })
+
+    test('send a featured match message for dev enviroment', async () => {
+      process.env.TELEGRAM_USER_TEST_IDS = '128526'
+
+      await _notify({
+        fetchData,
+        log,
+        telegram,
+        updateUser,
+      })
+
+      expect(telegram.sendMessage.mock.calls.length).toBe(1)
+    })
+
+    test('does not send a featured match message for dev enviroment', async () => {
+      await _notify({
+        fetchData,
+        log,
+        telegram,
+        updateUser,
+      })
+
+      expect(telegram.sendMessage.mock.calls.length).toBe(0)
+    })
   })
 })
