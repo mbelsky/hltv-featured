@@ -1,0 +1,10 @@
+{
+  "name": "playwright-scraper",
+  "version": "0.1.0",
+  "main": "playwright-scraper.js",
+  "license": "GNU GPLv3",
+  "private": true,
+  "optionalDependencies": {
+    "playwright-chromium": "1.18.0"
+  }
+}

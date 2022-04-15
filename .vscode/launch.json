@@ -25,6 +25,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch Playwright Scraper",
+      "program": "${workspaceFolder}/src/playwright-scraper/playwright-scraper.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Jest Scraper",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": ["--runInBand", "src/scraper/__tests__/"],

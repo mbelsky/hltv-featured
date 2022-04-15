@@ -46,12 +46,12 @@ function scrap() {
       const matches = htmlToMatches(data, { root })
       const teams = getTeams({ alerter, matches })
 
-      const addTeamsPromise = addTeams(teams).catch(alerter.error)
-      const saveMatchesPromise = saveFeaturedMatches(matches)
-        .then(() => logResult(data, matches))
-        .catch(alerter.error)
+      // const addTeamsPromise = addTeams(teams).catch(alerter.error)
+      // const saveMatchesPromise = saveFeaturedMatches(matches)
+      //   .then(() => logResult(data, matches))
+      //   .catch(alerter.error)
 
-      return Promise.all([addTeamsPromise, saveMatchesPromise])
+      // return Promise.all([addTeamsPromise, saveMatchesPromise])
     })
 }
 
