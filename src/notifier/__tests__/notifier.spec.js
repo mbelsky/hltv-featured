@@ -208,4 +208,47 @@ describe('_notify', () => {
       expect(telegram.sendMessage.mock.calls.length).toBe(0)
     })
   })
+
+  test('splits long telegram messages', async () => {
+    const fetchData = async () => {
+      const match = {
+        stars: 2,
+        id: 2341452,
+        event: 'CLUTCH Season 2',
+        href:
+          'https://www.hltv.org/matches/2341452/w7m-vs-red-canids-clutch-season-2',
+        title: 'W7M vs RED Canids',
+        unixTimestamp: 1589749051000,
+      }
+      const matches = []
+
+      while (matches.length < 100) {
+        matches.push(match)
+      }
+
+      return {
+        matches,
+        timeZoneOffsetsMap: {
+          'Europe/Moscow': 10800,
+        },
+        users: {
+          0: {
+            filter: 1,
+            location: {
+              timeZoneId: 'Europe/Moscow',
+            },
+          },
+        },
+      }
+    }
+
+    await _notify({
+      fetchData,
+      log,
+      telegram,
+      updateUser,
+    })
+
+    expect(telegram.sendMessage.mock.calls.length).toBe(2)
+  })
 })

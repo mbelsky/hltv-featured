@@ -1,3 +1,5 @@
+const { splitLongTelegramMessage } = require('./splitLongTelegramMessage')
+
 exports.sendMessages = async ({
   alerter,
   log,
@@ -49,7 +51,12 @@ exports.sendMessages = async ({
   )
 
   async function sendTelegramMessages({ message, userId }) {
-    return telegram.sendMessage(userId, message.getText(), message.getExtra())
+    const extra = message.getExtra()
+    const texts = splitLongTelegramMessage(message)
+
+    for (const text of texts) {
+      await telegram.sendMessage(userId, text, extra)
+    }
   }
 
   async function sendTelegramMessagesDevelopmentEnviroment(data) {
