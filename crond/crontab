@@ -1,2 +1,2 @@
-0 5 * * * node /app/src/notifier/notifier.js
-55 4-21 * * * node /app/src/scraper/scraper.js
+0 5 * * * /???/start-notifier.sh
+55 4-21 * * * /???/start-scraper.sh

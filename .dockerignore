@@ -27,7 +27,8 @@ README.md
 .prettier*
 *.config.js
 coverage/
-systemd/
+crond/
+scripts/
 Makefile
 **/cert.json
 **/.env*

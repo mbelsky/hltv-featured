@@ -27,9 +27,8 @@ COPY . .
 
 # To restore workspaces symlinks
 RUN yarn install --frozen-lockfile --production=true && \
-    chmod -R 755 scripts src && \
+    chmod -R 755 src && \
     touch .env && \
-    touch ~/.env && \
-    cat crond/crontab >> /var/spool/cron/crontabs/root
+    touch ~/.env
 
-CMD scripts/start.sh
+CMD ["node", "src/backend/backend.js"]
