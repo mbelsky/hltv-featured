@@ -19,7 +19,7 @@ const logResult = (data, matches) => {
   }
 
   const message = `Scraped & saved ${matches.length} matches`
-  console.log(message)
+  console.log(new Date().toUTCString(), message)
 
   if ('production' === process.env.NODE_ENV) {
     log({

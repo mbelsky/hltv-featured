@@ -3,7 +3,7 @@ const log = require('@hltvf/monitoring/logger').logFabric(
 )
 
 const devLog = (message) => {
-  console.log(message)
+  console.log(new Date().toUTCString(), message)
 }
 
 const prodLog = (message) => {
@@ -13,7 +13,8 @@ const prodLog = (message) => {
       message,
     },
   })
-  console.log(message)
+
+  devLog(message)
 }
 
 const loggersMap = {
