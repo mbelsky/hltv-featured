@@ -1,10 +1,10 @@
 #! /bin/sh
 
-docker run \
-  --name=hltv-featured-notifier \
+docker create \
+  --name=hltv-featured-scraper \
   --env-file /???/.env \
   --env FIREBASE_CONFIG=/data/cert.json \
   --mount type=bind,src=/???/cert.json,dst=/data/cert.json,ro \
   --detach \
   mbelsky/hltv-featured:v??? \
-  node /app/src/notifier/notifier.js
+  node /app/src/scraper/scraper.js

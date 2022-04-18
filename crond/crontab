@@ -1,2 +1,2 @@
-0 5 * * * /???/start-notifier.sh
-55 4-21 * * * /???/start-scraper.sh
+0 5 * * * docker start hltv-featured-notifier
+55 4-21 * * * docker start hltv-featured-scraper
