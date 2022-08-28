@@ -249,6 +249,6 @@ describe('_notify', () => {
       updateUser,
     })
 
-    expect(telegram.sendMessage.mock.calls.length).toBe(2)
+    expect(telegram.sendMessage.mock.calls.length).toBe(4)
   })
 })

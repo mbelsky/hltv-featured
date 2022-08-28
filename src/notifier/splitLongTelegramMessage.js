@@ -1,5 +1,5 @@
 const { MESSAGE_TYPES } = require('./consts')
-const MAX_TELEGRAM_MESSAGE_LENGTH = 10000
+const MAX_TELEGRAM_MESSAGE_LENGTH = 4000
 
 const splitFunctions = {
   [MESSAGE_TYPES.favoriteTeamsMatches]: splitMatchesMessage,

@@ -55,7 +55,13 @@ exports.sendMessages = async ({
     const texts = splitLongTelegramMessage(message)
 
     for (const text of texts) {
-      await telegram.sendMessage(userId, text, extra)
+      try {
+        await telegram.sendMessage(userId, text, extra)
+      } catch (e) {
+        log(`Faield to send ${text.length} length message`)
+
+        throw e
+      }
     }
   }
 

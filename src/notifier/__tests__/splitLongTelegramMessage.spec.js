@@ -5,7 +5,7 @@ const {
 } = require('../messages')
 const { splitLongTelegramMessage } = require('../splitLongTelegramMessage')
 
-const LONG_MESSAGE = `ABC vs XYZ\n\n`.repeat(833) + 'abcdef\n\n123456'
+const LONG_MESSAGE = `ABC vs XYZ\n\n`.repeat(333) + 'abcdef\n\n123456'
 const UNSPLITABLE_MESSAGE = '0123456789'.repeat(10001)
 
 test('throws `Split function is not defined` error', () => {
@@ -31,7 +31,7 @@ test('splits featured matches message', () => {
 
   const result = splitLongTelegramMessage(message)
 
-  expect(result[0]).toBe(`ABC vs XYZ\n\n`.repeat(833).trim())
+  expect(result[0]).toBe(`ABC vs XYZ\n\n`.repeat(333).trim())
   expect(result[1]).toBe('abcdef\n\n123456')
 })
 
