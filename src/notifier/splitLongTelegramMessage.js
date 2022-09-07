@@ -29,7 +29,7 @@ function splitMatchesMessage(text) {
   }
 
   const substring = text.substring(0, MAX_TELEGRAM_MESSAGE_LENGTH).trim()
-  const index = substring.search(/\n\n[^\n]+$/)
+  const index = substring.lastIndexOf('\n\n')
 
   if (-1 === index) {
     throw new Error('Unsplitable message: ' + text)
