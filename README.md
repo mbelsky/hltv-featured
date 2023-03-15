@@ -7,6 +7,7 @@ This is a set of nodejs applications to get data about upcoming CSGO matches and
 - `src/backend` handles subscribers requests
 - `src/notifier` deliveries data to subscribers
 - `src/scraper` parses HLTV.org/matches
+- `src/playwright-scraper` same as scraper but uses playwright
 
 ## Configure server
 

@@ -1,5 +1,5 @@
 {
-  "name": "scraper",
+  "name": "@hltvf/scraper",
   "version": "0.1.0",
   "main": "scraper.js",
   "license": "GNU GPLv3",
