@@ -1,2 +1,2 @@
 0 5 * * * docker start hltv-featured-notifier
-55 4-21 * * * docker start hltv-featured-scraper
+55 4-21 * * * docker start hltv-featured-playwright-scraper
