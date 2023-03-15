@@ -33,3 +33,4 @@ Makefile
 **/cert.json
 **/.env*
 **/.nvmrc
+seccomp_profile.json
